@@ -28,16 +28,16 @@ public class UserServiceApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		User user1 = new User();
-		user1.setUserId(1311L);
 		user1.setUsername("user1");
 		user1.setPassword(bCryptPasswordEncoder.encode("user1"));
+		user1.setEmail("user1@yahoo.com");
 		user1.setRole("ROLE_USER");
 		userRepository.save(user1);
 
 		User admin1 = new User();
-		admin1.setUserId(1312L);
 		admin1.setUsername("admin1");
 		admin1.setPassword(bCryptPasswordEncoder.encode("admin1"));
+		admin1.setEmail("admin1@yahoo.com");
 		admin1.setRole("ROLE_ADMIN");
 		userRepository.save(admin1);
 
