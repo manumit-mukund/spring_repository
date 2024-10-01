@@ -2,9 +2,7 @@ package com.user_service_form_login_db_security.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.user_service_form_login_db_security.model.User;
 
 @Service

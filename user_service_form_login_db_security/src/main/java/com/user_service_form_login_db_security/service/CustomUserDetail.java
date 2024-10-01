@@ -2,11 +2,9 @@ package com.user_service_form_login_db_security.service;
 
 import java.util.Collection;
 import java.util.HashSet;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.user_service_form_login_db_security.model.User;
 
 public class CustomUserDetail implements UserDetails {
