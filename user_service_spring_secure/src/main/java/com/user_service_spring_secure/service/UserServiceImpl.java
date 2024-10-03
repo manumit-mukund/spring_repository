@@ -10,12 +10,13 @@ import com.user_service_spring_secure.model.User;
 @Service
 public class UserServiceImpl implements UserService {
 
-	private List<User> listUser = new ArrayList<User>();
+	private List<User> listUser;
 
 	public UserServiceImpl() {
 
 		super();
 
+		listUser = new ArrayList<User>();
 		listUser.add(new User("abc", "abc", "abc@yahoo.com"));
 		listUser.add(new User("xyz", "xyz@", "xyz@yahoo.com"));
 
