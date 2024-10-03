@@ -4,7 +4,7 @@ public class User {
 
 	private String username;
 	private String password;
-	private String emai;
+	private String email;
 
 	public User() {
 
@@ -12,11 +12,11 @@ public class User {
 
 	}
 
-	public User(String username, String password, String emai) {
+	public User(String username, String password, String email) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.emai = emai;
+		this.email = email;
 	}
 
 	public String getUsername() {
@@ -35,12 +35,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getEmai() {
-		return emai;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmai(String emai) {
-		this.emai = emai;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
