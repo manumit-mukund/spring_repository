@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
@@ -14,7 +13,6 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableWebSecurity
 public class MySecurityConfig {
 
 	@Bean
@@ -23,14 +21,14 @@ public class MySecurityConfig {
 		http.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(
 						authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
-								.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN").requestMatchers("/admin/**")
-								.hasAnyRole("ADMIN")
-//								.requestMatchers("/users/**").hasAnyRole("USER", "ADMIN")
-								.requestMatchers("/users/**").hasRole("ADMIN").requestMatchers("/login/**").permitAll()
+								.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")								
+								.requestMatchers("/public/**", "/login/**").permitAll()
+								.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+								.requestMatchers("/admin/users/**").hasRole("ADMIN")								
 								.anyRequest().authenticated())
-				.httpBasic(Customizer.withDefaults())
-				.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
-						.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+								.httpBasic(Customizer.withDefaults())								
+								.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
+								.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		return http.build();
 

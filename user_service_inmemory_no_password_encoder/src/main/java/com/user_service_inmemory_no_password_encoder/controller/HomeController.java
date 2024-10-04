@@ -5,13 +5,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/public")
+public class HomeController {
 
-	@GetMapping("/hello")
-	public String hello() {
+	@GetMapping("/home")
+	public String home() {
 
-		return "Hello World for user!";
+		return "This is a home page.";
+
+	}
+
+	@GetMapping("/register")
+	public String register() {
+
+		return "This is a register page.";
+
 	}
 
 }
