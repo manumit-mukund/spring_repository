@@ -56,6 +56,7 @@ public class MySecurityConfig {
 	        .password(bCryptPasswordEncoder.encode("admin1"))
 	        .roles("USER", "ADMIN")
 	        .build());
+	    
 	    return manager;
 	}
 
