@@ -25,9 +25,7 @@ public class MySecurityConfig {
 			.authorizeHttpRequests(
 				authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
 					.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")								
-					.requestMatchers("/public/**", "/login/**").permitAll()
-					//.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-					//.requestMatchers("/admin/users/**").hasRole("ADMIN")								
+					.requestMatchers("/public/**", "/login/**").permitAll()												
 					.anyRequest().authenticated())
 					.httpBasic(Customizer.withDefaults())								
 					.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
