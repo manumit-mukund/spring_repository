@@ -13,7 +13,7 @@ public class StudentService {
 
 	public StudentService() {
 
-		System.out.println("Inside Profile constructor.");
+		System.out.println("Inside StudentService constructor.");
 
 	}
 
