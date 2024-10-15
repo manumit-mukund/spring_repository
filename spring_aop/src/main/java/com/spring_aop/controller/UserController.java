@@ -11,13 +11,19 @@ public class UserController {
 	@GetMapping("/getall")
 	public String getAllUsers() {
 
-		return "Hello users for Spring AOP...";
+		return "Hello, users for Spring AOP...";
 	}
 
 	@GetMapping("/hello")
 	public String hello() {
 
-		return "Hello World!";
+		return "Hello, World!";
+	}
+
+	@GetMapping("/hi")
+	public String hi() {
+
+		return "Hi, World!";
 	}
 
 }

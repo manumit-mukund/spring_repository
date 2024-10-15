@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Service;
@@ -34,18 +35,24 @@ public class UserServiceAspect {
 
 	}
 
-	// @Around("execution(* com.spring_aop.controller..*(..))")
-	public void myAroundAdvice(ProceedingJoinPoint jp) {
+	@Around("execution(* com.spring_aop.controller.UserController.hi(..))")
+	public String myAroundAdvice(ProceedingJoinPoint jp) {
 
 		System.out.println("myAroundAdvice called.");
+
+		String result = "";
+
 		try {
 
-			jp.proceed();
+			result = jp.proceed().toString();
 
 		} catch (Throwable e) {
 
 			System.out.println("Exception occurred : " + e);
+
 		}
+
+		return result;
 
 	}
 }
