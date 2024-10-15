@@ -2,7 +2,7 @@ package com.spring_core_autowire.model;
 
 public class A {
 
-	B b1;
+	B b;
 
 	A() {
 
@@ -11,13 +11,13 @@ public class A {
 
 	public B getB() {
 
-		return b1;
+		return b;
 
 	}
 
 	public void setB(B b) {
 
-		this.b1 = b;
+		this.b = b;
 
 	}
 
@@ -30,7 +30,7 @@ public class A {
 	public void display() {
 
 		print();
-		b1.print();
+		b.print();
 
 	}
 }
