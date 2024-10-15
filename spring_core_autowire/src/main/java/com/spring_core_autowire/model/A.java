@@ -4,10 +4,17 @@ public class A {
 
 	B b;
 	C c;
+	D d;
 
 	A() {
 
-		System.out.println("A is created");
+		System.out.println("A() is called");
+	}
+
+	A(D d) {
+
+		this.d = d;
+		System.out.println("A(D d) is called");
 	}
 
 	public B getB() {
@@ -39,6 +46,12 @@ public class A {
 	public void displayC() {
 
 		c.hello();
+
+	}
+
+	public void displayD() {
+
+		d.hello();
 
 	}
 }

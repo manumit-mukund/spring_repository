@@ -15,4 +15,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<bean id="a1" class="com.spring_core_autowire.model.A"
 		autowire="byType"></bean>
 
+	<bean id="d" class="com.spring_core_autowire.model.D"></bean>
+
+	<bean id="a2" class="com.spring_core_autowire.model.A"
+		autowire="constructor"></bean>
+
 </beans>  

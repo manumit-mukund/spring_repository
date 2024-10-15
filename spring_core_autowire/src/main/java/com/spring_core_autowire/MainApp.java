@@ -17,5 +17,8 @@ public class MainApp {
 		A a1 = context.getBean("a1", A.class);
 		a1.displayC();
 
+		A a2 = context.getBean("a2", A.class);
+		a2.displayD();
+
 	}
 }
