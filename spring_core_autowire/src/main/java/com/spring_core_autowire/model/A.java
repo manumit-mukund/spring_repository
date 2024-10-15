@@ -3,10 +3,11 @@ package com.spring_core_autowire.model;
 public class A {
 
 	B b;
+	C c;
 
 	A() {
 
-		System.out.println("a is created");
+		System.out.println("A is created");
 	}
 
 	public B getB() {
@@ -21,16 +22,23 @@ public class A {
 
 	}
 
-	void print() {
+	public C getC() {
+		return c;
+	}
 
-		System.out.println("hello a");
+	public void setC(C c) {
+		this.c = c;
+	}
+
+	public void displayB() {
+
+		b.hello();
 
 	}
 
-	public void display() {
+	public void displayC() {
 
-		print();
-		b.print();
+		c.hello();
 
 	}
 }

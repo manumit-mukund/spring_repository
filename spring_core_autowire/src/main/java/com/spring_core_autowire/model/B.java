@@ -4,13 +4,13 @@ public class B {
 
 	B() {
 
-		System.out.println("b is created");
+		System.out.println("B is created");
 
 	}
 
-	void print() {
+	void hello() {
 
-		System.out.println("hello b");
+		System.out.println("hello B");
 
 	}
 }

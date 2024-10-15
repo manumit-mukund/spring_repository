@@ -10,4 +10,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<bean id="a" class="com.spring_core_autowire.model.A"
 		autowire="byName"></bean>
 
+	<bean id="c1" class="com.spring_core_autowire.model.C"></bean>
+
+	<bean id="a1" class="com.spring_core_autowire.model.A"
+		autowire="byType"></bean>
+
 </beans>  

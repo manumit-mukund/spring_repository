@@ -10,8 +10,12 @@ public class MainApp {
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
 		A a = context.getBean("a", A.class);
-		a.display();
+		a.displayB();
+
+		A a1 = context.getBean("a1", A.class);
+		a1.displayC();
 
 	}
 }
