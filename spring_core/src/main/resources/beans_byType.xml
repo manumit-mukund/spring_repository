@@ -12,18 +12,12 @@
 
 	<!-- Definition for profile bean -->
 	<bean id="studentservice"
-		class="com.spring_core.service.StudentService"></bean>
+		class="com.spring_core_autowire_with_annotation.service.StudentService_ByType"></bean>
 
-	<!-- Definition for student1 bean -->
-	<bean id="student1" class="com.spring_core.model.Student">
-		<property name="name" value="N1" />
+	<!-- Definition for student bean -->
+	<bean id="student" class="com.spring_core_autowire_with_annotation.model.Student">
+		<property name="name" value="N_ByType" />
 		<property name="age" value="20" />
-	</bean>
-
-	<!-- Definition for student2 bean -->
-	<bean id="student2" class="com.spring_core.model.Student">
-		<property name="name" value="N2" />
-		<property name="age" value="21" />
 	</bean>
 
 </beans>

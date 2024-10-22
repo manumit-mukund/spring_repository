@@ -1,9 +1,16 @@
-package com.spring_core.model;
+package com.spring_core_autowire_with_annotation.model;
 
 public class Student {
 
 	private Integer age;
 	private String name;
+
+	public Student() {
+
+		super();
+		System.out.println("Student() called...");
+
+	}
 
 	public void setAge(Integer age) {
 

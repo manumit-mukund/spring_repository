@@ -1,19 +1,17 @@
-package com.spring_core.service;
+package com.spring_core_autowire_with_annotation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
-import com.spring_core.model.Student;
+import com.spring_core_autowire_with_annotation.model.Student;
 
-public class StudentService {
+public class StudentService_ByType {
 
 	@Autowired
-	@Qualifier("student2")
 	private Student student;
 
-	public StudentService() {
+	public StudentService_ByType() {
 
-		System.out.println("Inside StudentService constructor.");
+		System.out.println("StudentService_ByName() called...");
 
 	}
 
