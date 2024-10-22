@@ -1,40 +1,36 @@
 package com.spring_core_autowire_with_annotation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.spring_core_autowire_with_annotation.model.Student;
 
-public class StudentService_ByName {
+public class StudentService_ByType_ConsctructorAnnotation {
 
-	@Autowired
-	@Qualifier("student2")
 	private Student student;
 
-	public StudentService_ByName() {
+	public StudentService_ByType_ConsctructorAnnotation() {
 
-		super();
-		System.out.println("StudentService_ByName() called...");
+		System.out.println("StudentService_ByType_ConsctructorAnnotation() called...");
 
 	}
 
-	public StudentService_ByName(Student student) {
+	@Autowired
+	public StudentService_ByType_ConsctructorAnnotation(Student student) {
 
 		super();
 		this.student = student;
-		System.out.println("StudentService_ByName(Student student) called...");
+		System.out.println("StudentService_ByType_ConsctructorAnnotation(Student student) called...");
 	}
 
 	public Student getStudent() {
-
 		return student;
-
 	}
 
 	public void setStudent(Student student) {
 
 		this.student = student;
 		System.out.println("setStudent(Student student) called...");
+
 	}
 
 	public void printAge() {
