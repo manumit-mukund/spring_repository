@@ -11,7 +11,25 @@ public class StudentService_ByType {
 
 	public StudentService_ByType() {
 
-		System.out.println("StudentService_ByName() called...");
+		System.out.println("StudentService_ByType() called...");
+
+	}
+
+	public StudentService_ByType(Student student) {
+
+		super();
+		this.student = student;
+		System.out.println("StudentService_ByType(Student student) called...");
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+
+		this.student = student;
+		System.out.println("setStudent(Student student) called...");
 
 	}
 

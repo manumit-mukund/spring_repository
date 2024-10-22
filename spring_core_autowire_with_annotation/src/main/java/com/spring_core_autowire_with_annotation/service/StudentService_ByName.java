@@ -17,6 +17,25 @@ public class StudentService_ByName {
 
 	}
 
+	public StudentService_ByName(Student student) {
+
+		super();
+		this.student = student;
+		System.out.println("StudentService_ByName(Student student) called...");
+	}
+
+	public Student getStudent() {
+
+		return student;
+
+	}
+
+	public void setStudent(Student student) {
+
+		this.student = student;
+		System.out.println("setStudent(Student student) called...");
+	}
+
 	public void printAge() {
 
 		System.out.println("Age : " + student.getAge());
