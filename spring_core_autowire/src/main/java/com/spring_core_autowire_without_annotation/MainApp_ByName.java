@@ -1,9 +1,9 @@
-package com.spring_core_autowire;
+package com.spring_core_autowire_without_annotation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.spring_core_autowire.model.A;
+import com.spring_core_autowire_without_annotation.model.A;
 
 public class MainApp_ByName {
 

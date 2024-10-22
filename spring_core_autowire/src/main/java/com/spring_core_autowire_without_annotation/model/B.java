@@ -1,4 +1,4 @@
-package com.spring_core_autowire.model;
+package com.spring_core_autowire_without_annotation.model;
 
 public class B {
 
