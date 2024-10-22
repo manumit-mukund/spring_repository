@@ -8,7 +8,7 @@ public class A {
 
 	A() {
 
-		System.out.println("A() is called");
+		System.out.println("A is created");
 	}
 
 	A(D d) {
@@ -26,6 +26,7 @@ public class A {
 	public void setB(B b) {
 
 		this.b = b;
+		System.out.println("setB(B b) is called");
 
 	}
 
@@ -34,7 +35,9 @@ public class A {
 	}
 
 	public void setC(C c) {
+		
 		this.c = c;
+		System.out.println("setC(C c) is called");
 	}
 
 	public void displayB() {

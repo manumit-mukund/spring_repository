@@ -4,7 +4,7 @@ public class D {
 
 	D() {
 
-		System.out.println("D() is called");
+		System.out.println("D is created");
 
 	}
 
