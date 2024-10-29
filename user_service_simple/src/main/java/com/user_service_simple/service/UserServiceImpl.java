@@ -25,7 +25,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String username) {
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElse(null);
 
 	}
 
