@@ -27,8 +27,8 @@ public class MySecurityConfig {
 					.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")								
 					.requestMatchers("/public/**", "/login/**").permitAll()												
 					.anyRequest().authenticated())
-					.httpBasic(Customizer.withDefaults())								
-					.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
+			.httpBasic(Customizer.withDefaults())								
+			.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
 					.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		return http.build();
