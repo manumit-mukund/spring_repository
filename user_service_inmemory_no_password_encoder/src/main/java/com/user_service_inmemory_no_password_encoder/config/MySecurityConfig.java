@@ -25,10 +25,11 @@ public class MySecurityConfig {
 						.requestMatchers("/public/**", "/login/**").permitAll()
 						.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
 						.requestMatchers("/admin/users/**").hasRole("ADMIN")								
-						.anyRequest().authenticated())
+						.anyRequest()
+						.authenticated())
 			.httpBasic(Customizer.withDefaults())								
 			.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
-			.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+					.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		return http.build();
 
