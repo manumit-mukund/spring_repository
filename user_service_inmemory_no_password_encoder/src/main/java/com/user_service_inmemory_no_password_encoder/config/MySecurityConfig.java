@@ -19,16 +19,16 @@ public class MySecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.csrf(AbstractHttpConfigurer::disable)
-				.authorizeHttpRequests(
-						authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
-								.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")								
-								.requestMatchers("/public/**", "/login/**").permitAll()
-								.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-								.requestMatchers("/admin/users/**").hasRole("ADMIN")								
-								.anyRequest().authenticated())
-								.httpBasic(Customizer.withDefaults())								
-								.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
-								.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+			.authorizeHttpRequests(
+				authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
+						.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")								
+						.requestMatchers("/public/**", "/login/**").permitAll()
+						.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+						.requestMatchers("/admin/users/**").hasRole("ADMIN")								
+						.anyRequest().authenticated())
+			.httpBasic(Customizer.withDefaults())								
+			.sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
+			.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		return http.build();
 
