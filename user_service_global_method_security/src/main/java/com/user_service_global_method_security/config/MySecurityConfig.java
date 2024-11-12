@@ -47,15 +47,18 @@ public class MySecurityConfig {
 		
 	    InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 	    
-	    manager.createUser(User.withUsername("user1")
+	    manager.createUser(User
+	    	.withUsername("user1")
 	        .password(bCryptPasswordEncoder.encode("user1"))
 	        .roles("USER")
 	        .build());
 	    
-	    manager.createUser(User.withUsername("admin1")
+	    manager.createUser(User
+	    	.withUsername("admin1")
 	        .password(bCryptPasswordEncoder.encode("admin1"))
 	        .roles("USER", "ADMIN")
 	        .build());
+	    
 	    return manager;
 	}
 
