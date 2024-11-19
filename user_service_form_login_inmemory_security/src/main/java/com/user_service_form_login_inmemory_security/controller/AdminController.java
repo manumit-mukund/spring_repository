@@ -3,6 +3,7 @@ package com.user_service_form_login_inmemory_security.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.user_service_form_login_inmemory_security.service.UserServiceImpl;
 
 @RestController
 @RequestMapping("/admin/users")
+@PreAuthorize("hasRole('ADMIN')")
 public class AdminController {
 
 	@Autowired
