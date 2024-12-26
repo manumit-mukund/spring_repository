@@ -23,7 +23,7 @@ public class UserController {
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		if (username.equals("null")) {
+		if (username.equals("null") || username.strip().equals("")) {
 
 			throw new IllegalArgumentException("Invalid username: " + username);
 
