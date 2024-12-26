@@ -6,7 +6,7 @@ class LombokTest {
 
 	public static void main(String[] args) {
 
-		Employee employee = Employee
+		Employee employee1 = Employee
 				.builder()
 				.employeeId(21)
 				.name("E1")
@@ -14,7 +14,16 @@ class LombokTest {
 				.emailId("abc@yahoo.com")
 				.build();
 
-		System.out.println("employee = " + employee);
+		System.out.println("employee1 = " + employee1);
+		
+		Employee employee2 = Employee
+				.builder()
+				.employeeId(21)
+				.name("E1")
+				.company("C1")			
+				.build();
+
+		System.out.println("employee2 = " + employee2);
 
 	}
 }
