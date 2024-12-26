@@ -8,7 +8,7 @@ class LombokTest {
 
 		Employee employee1 = Employee
 				.builder()
-				.employeeId(21)
+				.employeeId(1)
 				.name("E1")
 				.company("C1")
 				.emailId("abc@yahoo.com")
@@ -18,9 +18,9 @@ class LombokTest {
 		
 		Employee employee2 = Employee
 				.builder()
-				.employeeId(21)
-				.name("E1")
-				.company("C1")			
+				.employeeId(2)
+				.name("E2")
+				.company("C2")			
 				.build();
 
 		System.out.println("employee2 = " + employee2);
