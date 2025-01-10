@@ -12,20 +12,20 @@ public class ExampleController {
 
 	@GetMapping("/test")
 	public String testLogging() {
-		
-		log.info("An informational message");
+
+		log.info("testLogging(): An info message");
 
 		try {
 
 			// Simulate an error
-			log.debug("A debug message");
+			log.debug("testLogging(): A debug message");
 			throw new RuntimeException("Test exception");
 
 		} catch (RuntimeException e) {
 
-			// Log at different levels		
-			log.warn("A warning message", e);
-			log.error("An error message", e);
+			// Log at different levels
+			log.warn("testLogging(): A warning message", e);
+			log.error("testLogging(): An error message", e);
 			throw e;
 
 		}

@@ -16,22 +16,22 @@ public class UserServiceImpl implements UserService {
 
 		super();
 
-		log.info("Performing an action on UserServiceImpl()...");
+		log.info("UserServiceImpl(): info: Performing an action on UserServiceImpl()...");
 
 		listUser = new ArrayList<User>();
 		listUser.add(new User("abc", "abc", "abc@yahoo.com"));
 		listUser.add(new User("xyz", "xyz", "xyz@yahoo.com"));
 
-		log.debug("debug: Action completed successfully UserServiceImpl().");
-		log.warn("warn: Action completed successfully UserServiceImpl().");
-		log.error("error: Action completed successfully UserServiceImpl().");
+		log.debug("UserServiceImpl(): debug: Action completed successfully UserServiceImpl().");
+		log.warn("UserServiceImpl(): warn: Action completed successfully UserServiceImpl().");
+		log.error("UserServiceImpl(): error: Action completed successfully UserServiceImpl().");
 
 	}
 
 	@Override
 	public User getUser(String username) {
 
-		log.info("Performing an action on getUser(String username)...");
+		log.info("getUser(String username): info: Performing an action on ...");
 
 		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
 
