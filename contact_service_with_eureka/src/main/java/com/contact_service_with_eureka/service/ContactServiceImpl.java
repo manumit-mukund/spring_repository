@@ -17,7 +17,9 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	public ContactServiceImpl() {
+		
 		super();
+		
 		listContact = List.of(
 				new Contact(1L, "c1@gmail.com", "c1", 1311L), 
 				new Contact(2L, "c2@gmail.com", "c2", 1311L),
@@ -29,7 +31,10 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public List<Contact> getContactsOfUser(Long userId) {
 
-		return listContact.stream().filter(contact -> contact.getUserId().equals(userId)).collect(Collectors.toList());
+		return listContact
+				.stream()
+				.filter(contact -> contact.getUserId().equals(userId))
+				.collect(Collectors.toList());
 	}
 
 }
