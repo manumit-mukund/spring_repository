@@ -19,7 +19,9 @@ public class ContactController {
 
 	@GetMapping("/user/{userId}")
 	public List<Contact> getContactsOfUser(@PathVariable("userId") Long userId) {
+
 		return contactService.getContactsOfUser(userId);
+
 	}
 
 }
