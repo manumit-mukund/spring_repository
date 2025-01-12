@@ -11,18 +11,25 @@ public class UserServiceImpl implements UserService {
 	private List<User> listUser;
 
 	public UserServiceImpl() {
+		
 		super();
+		
 		listUser = new ArrayList<User>();
 		listUser.add(new User(1311L, "ABC", "123"));
 		listUser.add(new User(1312L, "XYZ", "124"));
 		listUser.add(new User(1313L, "PQR", "125"));
+		
 
 	}
 
 	@Override
 	public User getUser(Long id) {
 
-		return listUser.stream().filter(user -> user.getUserId().equals(id)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUserId().equals(id))
+				.findAny()
+				.orElse(null);
 
 	}
 

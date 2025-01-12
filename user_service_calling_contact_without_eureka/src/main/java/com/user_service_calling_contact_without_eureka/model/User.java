@@ -16,10 +16,12 @@ public class User {
 	}
 
 	public User(Long userId, String name, String phone) {
+		
 		super();
 		this.userId = userId;
 		this.username = name;
 		this.phone = phone;
+		
 	}
 
 	public Long getUserId() {
