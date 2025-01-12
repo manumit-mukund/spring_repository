@@ -23,5 +23,12 @@ public class ContactController {
 		return contactService.getContactsOfUser(userId);
 
 	}
+	
+	@GetMapping("/getall")
+	public List<Contact> getAllContacts() {
+
+		return contactService.getAllContacts();
+
+	}
 
 }
