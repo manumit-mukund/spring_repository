@@ -36,5 +36,12 @@ public class ContactServiceImpl implements ContactService {
 				.filter(contact -> contact.getUserId().equals(userId))
 				.collect(Collectors.toList());
 	}
+	
+	@Override
+	public List<Contact> getAllContacts() {
+
+		return listContact;
+
+	}
 
 }

@@ -8,4 +8,6 @@ public interface ContactService {
 
 	public List<Contact> getContactsOfUser(Long userId);
 
+	public List<Contact> getAllContacts();
+
 }
