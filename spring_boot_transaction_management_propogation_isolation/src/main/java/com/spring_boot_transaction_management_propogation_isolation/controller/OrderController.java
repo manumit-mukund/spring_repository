@@ -23,8 +23,11 @@ public class OrderController {
 	public ResponseEntity<String> createOrder(@RequestBody OrderDto orderDto) {
 
 		User user = new User(orderDto.getUsername());
+
 		Order order = new Order(orderDto.getOrderId());
+
 		orderService.createOrder(order, user);
+
 		return ResponseEntity.ok("Order created successfully");
 
 	}

@@ -23,6 +23,7 @@ public class OrderService {
 	public void createOrder(Order order, User user) {
 
 		userService.createUser(user); // Calls createUser in a new transaction
+
 		orderRepository.save(order); // Saves order with SERIALIZABLE isolation
 
 	}
