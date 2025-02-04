@@ -12,8 +12,11 @@ public class MainApp_ByType {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_ByType.xml");
 
 		A a1 = context.getBean("a1", A.class);
+
 		a1.displayC();
+
 		// a1.displayB(); // java.lang.NullPointerException
+
 		// a1.displayD(); // java.lang.NullPointerException
 
 	}

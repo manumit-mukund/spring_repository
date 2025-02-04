@@ -13,7 +13,9 @@ public class MainApp_ByName {
 
 		A a = context.getBean("a1", A.class);
 		a.displayB();
+
 		// a.displayC(); // java.lang.NullPointerException
+
 		// a.displayD(); // java.lang.NullPointerException
 
 	}
