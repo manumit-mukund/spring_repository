@@ -12,11 +12,12 @@ public class MainApp_ByConstructor {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_ByConstructor.xml");
 
 		A a = context.getBean("a1", A.class);
+
+		// a.displayB(); // java.lang.NullPointerException, if will work if only b is defined in .xml file
+
+		// a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml file
+
 		a.displayD();
-
-		// a.displayB(); // java.lang.NullPointerException
-
-		// a.displayC(); // java.lang.NullPointerException
 
 	}
 }
