@@ -5,9 +5,17 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="a1" class="com.spring_core_autowire_without_annotation.model.A"
+	<bean id="a1"
+		class="com.spring_core_autowire_without_annotation.model.A"
 		autowire="byType"></bean>
 
-	<bean id="c1" class="com.spring_core_autowire_without_annotation.model.C"></bean>
+	<bean id="b1"
+		class="com.spring_core_autowire_without_annotation.model.B"></bean>
+
+	<bean id="c1"
+		class="com.spring_core_autowire_without_annotation.model.C"></bean>
+
+	<bean id="d1"
+		class="com.spring_core_autowire_without_annotation.model.D"></bean>
 
 </beans>  

@@ -13,11 +13,11 @@ public class MainApp_ByType {
 
 		A a1 = context.getBean("a1", A.class);
 
+		a1.displayB();
+
 		a1.displayC();
 
-		// a1.displayB(); // java.lang.NullPointerException
-
-		// a1.displayD(); // java.lang.NullPointerException
+		a1.displayD();
 
 	}
 }

@@ -11,6 +11,18 @@ public class A {
 		System.out.println("A is created");
 	}
 
+	A(B b) {
+
+		this.b = b;
+		System.out.println("A(B b) is called");
+	}
+
+	A(C c) {
+
+		this.c = c;
+		System.out.println("A(C c) is called");
+	}
+
 	A(D d) {
 
 		this.d = d;
@@ -35,9 +47,18 @@ public class A {
 	}
 
 	public void setC(C c) {
-		
+
 		this.c = c;
 		System.out.println("setC(C c) is called");
+	}
+
+	public D getD() {
+		return d;
+	}
+
+	public void setD(D d) {
+		this.d = d;
+		System.out.println("setD(D d) is called");
 	}
 
 	public void displayB() {
