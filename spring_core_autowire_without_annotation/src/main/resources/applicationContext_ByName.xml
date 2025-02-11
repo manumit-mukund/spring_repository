@@ -5,20 +5,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="a1" class="com.spring_core_autowire_without_annotation.model.A"
+	<bean id="a1"
+		class="com.spring_core_autowire_without_annotation.model.A"
 		autowire="byName"></bean>
 
-	<bean id="b" class="com.spring_core_autowire_without_annotation.model.B"></bean>
+	<bean id="b"
+		class="com.spring_core_autowire_without_annotation.model.B"></bean>
 
-	<!-- If we remove the commented lines, the objects will be loaded / created 
-		<bean id="c1" class="com.spring_core_autowire.model.C"></bean> -->
 
-	<!-- <bean id="a1" class="com.spring_core_autowire.model.A" -->
-	<!-- autowire="byType"></bean> -->
+	<bean id="c1"
+		class="com.spring_core_autowire_without_annotation.model.C"></bean>
 
-	<!-- <bean id="d" class="com.spring_core_autowire.model.D"></bean> -->
-
-	<!-- <bean id="a2" class="com.spring_core_autowire.model.A" -->
-	<!-- autowire="constructor"></bean> -->
+	<bean id="d1"
+		class="com.spring_core_autowire_without_annotation.model.D"></bean>
 
 </beans>  
