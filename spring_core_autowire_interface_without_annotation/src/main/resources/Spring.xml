@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="electricMotor1"
+		class="com.spring_core_autowire_interface_without_annotation.model.ElectricMotor1" />
+
+	<bean id="electricMotor2"
+		class="com.spring_core_autowire_interface_without_annotation.model.ElectricMotor2" />
+
+	<bean id="modelX"
+		class="com.spring_core_autowire_interface_without_annotation.model.TeslaModelX"
+		autowire="constructor" />
+
+</beans>
