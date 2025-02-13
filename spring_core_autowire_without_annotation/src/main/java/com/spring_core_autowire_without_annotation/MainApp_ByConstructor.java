@@ -13,11 +13,16 @@ public class MainApp_ByConstructor {
 
 		A a = context.getBean("a1", A.class);
 
-		// a.displayB(); // java.lang.NullPointerException, if will work if only b is defined in .xml file
+		//a.displayB(); // java.lang.NullPointerException, if will work if only b is defined in .xml
+						// file
 
-		// a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml file
+		//a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml
+						// file
 
-		a.displayD();
+		a.displayD(); // Sometimes it will work fine, and at other times it will show error:
+						// java.lang.NullPointerException: Cannot invoke
+						// "com.spring_core_autowire_without_annotation.model.D.hello()" because
+						// "this.d"
 
 	}
 }
