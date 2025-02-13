@@ -1,10 +1,11 @@
 package com.spring_core_autowire_interface_with_annotation.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.spring_core_autowire_interface_with_annotation.model.Shape;
 
-@Component
+//@Component // -- This will also work fine
+@Service
 public class ShapeService {
 
 	private Shape shape;
@@ -20,7 +21,7 @@ public class ShapeService {
 		if (shape != null) {
 
 			shape.draw();
-			
+
 		} else {
 
 			System.out.println("No shape set.");
