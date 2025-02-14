@@ -12,8 +12,9 @@ public class MainApp {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
 		Profile profile = (Profile) context.getBean("profile");
-		profile.printAge();
+
 		profile.printName();
+		profile.printAge();
 
 	}
 }

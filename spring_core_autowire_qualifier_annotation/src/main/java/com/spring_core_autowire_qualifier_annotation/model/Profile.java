@@ -10,14 +10,20 @@ public class Profile {
 	private Student student;
 
 	public Profile() {
-		System.out.println("Inside Profile constructor.");
-	}
 
-	public void printAge() {
-		System.out.println("Age : " + student.getAge());
+		System.out.println("Inside Profile constructor\n");
+
 	}
 
 	public void printName() {
+
 		System.out.println("Name : " + student.getName());
+
+	}
+
+	public void printAge() {
+
+		System.out.println("Age : " + student.getAge());
+
 	}
 }

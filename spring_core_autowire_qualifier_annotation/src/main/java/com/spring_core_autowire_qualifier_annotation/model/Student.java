@@ -2,8 +2,8 @@ package com.spring_core_autowire_qualifier_annotation.model;
 
 public class Student {
 
-	private Integer age;
 	private String name;
+	private Integer age;
 
 	public void setAge(Integer age) {
 		this.age = age;

@@ -18,14 +18,14 @@
 	<bean id="student1"
 		class="com.spring_core_autowire_qualifier_annotation.model.Student">
 		<property name="name" value="Student1" />
-		<property name="age" value="11" />
+		<property name="age" value="10" />
 	</bean>
 
 	<!-- Definition for student2 bean -->
 	<bean id="student2"
 		class="com.spring_core_autowire_qualifier_annotation.model.Student">
-		<property name="name" value="Student1" />
-		<property name="age" value="2" />
+		<property name="name" value="Student2" />
+		<property name="age" value="20" />
 	</bean>
 
 </beans>
