@@ -1,8 +1,8 @@
-package com.spring_core_autowire_interface_with_annotation.service;
+package com.spring_core_autowire_abstract_class_with_annotation.service;
 
 import org.springframework.stereotype.Service;
 
-import com.spring_core_autowire_interface_with_annotation.model.Shape;
+import com.spring_core_autowire_abstract_class_with_annotation.model.Shape;
 
 //@Component // -- This will also work fine
 @Service
