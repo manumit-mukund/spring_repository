@@ -18,15 +18,15 @@ public class PrototypeController {
 	@GetMapping("/prototype")
 	public String usePrototype() {
 
-		PrototypeBean prototypeBean = context.getBean(PrototypeBean.class);	
+		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);	
 		
-		prototypeBean.setState("Updated State at " + new Date());		
-		System.out.println("\nPrototype Bean State fetched first time:  = " + prototypeBean.getState());
+		prototypeBean1.setState("Updated State at " + new Date());		
+		System.out.println("\nprototypeBean1.getState()  = " + prototypeBean1.getState());
 		
-		prototypeBean = context.getBean(PrototypeBean.class);	
-		System.out.println("\nPrototype Bean State fetched second time:  = " + prototypeBean.getState());
+		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);	
+		System.out.println("\nprototypeBean2.getState()  = " + prototypeBean2.getState());
 		
-		return "Prototype Bean State retuned: " + prototypeBean.getState();
+		return "returned prototypeBean2.getState() =" + prototypeBean2.getState();
 
 	}
 }
