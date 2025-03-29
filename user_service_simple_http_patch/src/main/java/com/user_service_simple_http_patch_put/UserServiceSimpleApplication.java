@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch;
+package com.user_service_simple_http_patch_put;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

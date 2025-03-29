@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch.model;
+package com.user_service_simple_http_patch_put.model;
 
 public class User {
 

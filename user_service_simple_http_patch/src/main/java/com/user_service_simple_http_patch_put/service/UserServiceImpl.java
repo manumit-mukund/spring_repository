@@ -1,11 +1,11 @@
-package com.user_service_simple_http_patch.service;
+package com.user_service_simple_http_patch_put.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_simple_http_patch.model.User;
+import com.user_service_simple_http_patch_put.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -49,8 +49,24 @@ public class UserServiceImpl implements UserService {
 		User user = getUser(username);
 
 		if (user != null) {
-			
+
 			user.setEmail(email);
+
+		}
+
+		return user;
+
+	}
+
+	@Override
+	public User updateUser(String username, User user) {
+
+		User user1 = getUser(username);
+
+		if (user1 != null) {
+
+			user1.setEmail(user.getEmail());
+			user1.setPassword(user.getPassword());
 
 		}
 
