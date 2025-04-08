@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user_service_form_login_inmemory_security.model.User;
-import com.user_service_form_login_inmemory_security.service.UserServiceImpl;
+import com.user_service_form_login_inmemory_security.service.UserService;
 
 @RestController
 @RequestMapping("/admin/users")
@@ -20,24 +20,24 @@ import com.user_service_form_login_inmemory_security.service.UserServiceImpl;
 public class AdminController {
 
 	@Autowired
-	private UserServiceImpl userUserServiceImpl;
+	private UserService userUserService;
 
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		return userUserServiceImpl.getUser(username);
+		return userUserService.getUser(username);
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
-		return userUserServiceImpl.getAllUsers();
+		return userUserService.getAllUsers();
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
-		return userUserServiceImpl.addUser(user);
+		return userUserService.addUser(user);
 
 	}
 
