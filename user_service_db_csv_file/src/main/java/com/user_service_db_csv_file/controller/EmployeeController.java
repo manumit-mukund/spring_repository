@@ -27,7 +27,9 @@ public class EmployeeController {
 
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees() {
+		
 		return employeeRepository.findAll();
+		
 	}
 
 	@GetMapping("/employees/csv")
