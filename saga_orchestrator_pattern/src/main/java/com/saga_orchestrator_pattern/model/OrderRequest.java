@@ -42,4 +42,9 @@ public class OrderRequest {
 		this.product = product;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderRequest [orderId=" + orderId + ", amount=" + amount + ", product=" + product + "]";
+	}
+
 }

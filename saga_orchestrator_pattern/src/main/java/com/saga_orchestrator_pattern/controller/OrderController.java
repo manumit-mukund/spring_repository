@@ -1,6 +1,5 @@
 package com.saga_orchestrator_pattern.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +14,6 @@ import com.saga_orchestrator_pattern.service.OrderService;
 @RequestMapping("/order")
 public class OrderController {
 
-	@Autowired
 	private final OrderService orderService;
 
 	public OrderController(OrderService orderService) {

@@ -1,6 +1,7 @@
 package com.saga_orchestrator_pattern.model;
 
 public class PaymentRequest {
+
 	private Long orderId;
 	private Double amount;
 
