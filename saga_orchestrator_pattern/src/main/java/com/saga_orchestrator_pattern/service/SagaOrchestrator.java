@@ -8,7 +8,10 @@ import com.saga_orchestrator_pattern.model.OrderRequest;
 import com.saga_orchestrator_pattern.model.PaymentRequest;
 import com.saga_orchestrator_pattern.model.ShippingRequest;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class SagaOrchestrator {
 
 	private final RestTemplate restTemplate = new RestTemplate();
@@ -21,7 +24,7 @@ public class SagaOrchestrator {
 			paymentRequest.setOrderId(orderRequest.getOrderId());
 			paymentRequest.setAmount(orderRequest.getAmount());
 
-			System.out.println("paymentRequest = " + paymentRequest);
+			log.debug("paymentRequest = " + paymentRequest);
 
 			ResponseEntity<String> paymentResponse = restTemplate.postForEntity("http://localhost:9001/payment/process",
 					paymentRequest, String.class);
@@ -37,7 +40,7 @@ public class SagaOrchestrator {
 			shippingRequest.setOrderId(orderRequest.getOrderId());
 			shippingRequest.setProduct(orderRequest.getProduct());
 
-			System.out.println("shippingRequest = " + shippingRequest);
+			log.debug("shippingRequest = " + shippingRequest);
 
 			ResponseEntity<String> shippingResponse = restTemplate.postForEntity("http://localhost:9001/shipping/ship",
 					shippingRequest, String.class);
@@ -59,13 +62,13 @@ public class SagaOrchestrator {
 	private void compensateOrder(OrderRequest orderRequest) {
 
 		// Compensation logic (e.g., refund payment)
-		System.out.println("Compensating for order: " + orderRequest.getOrderId());
+		log.error("Compensating for order: " + orderRequest.getOrderId());
 
 		PaymentRequest paymentRequest = new PaymentRequest();
 		paymentRequest.setOrderId(orderRequest.getOrderId());
 		paymentRequest.setAmount(-orderRequest.getAmount());
 
-		System.out.println("paymentRequest1 = " + paymentRequest);
+		log.info("paymentRequest1 = " + paymentRequest);
 
 		restTemplate.postForEntity("http://localhost:9001/payment/process", paymentRequest, String.class);
 
