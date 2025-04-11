@@ -19,7 +19,6 @@ public class SingletonController {
 	public String usePrototype() {
 
 		SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
-
 		singletonBean1.setState("Updated State at " + new Date());
 		System.out.println("\nsingletonBean1.getState()  = " + singletonBean1.getState());
 
