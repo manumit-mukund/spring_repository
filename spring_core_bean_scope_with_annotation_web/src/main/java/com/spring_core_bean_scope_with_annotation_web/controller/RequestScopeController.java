@@ -8,10 +8,11 @@ import org.springframework.web.context.annotation.RequestScope;
 @RequestScope
 public class RequestScopeController {
 
-	@GetMapping("message")
+	@GetMapping("request-scope")
 	public String getMessage() {
 
 		System.out.println("\n" + this);
+		
 		return "Hello from RequestScopeController";
 
 	}

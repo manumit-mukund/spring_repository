@@ -8,10 +8,11 @@ import org.springframework.web.context.annotation.SessionScope;
 @SessionScope
 public class SessionScopeController {
 
-	@GetMapping("/session/message")
+	@GetMapping("/session-scope")
 	public String getMessage() {
 
 		System.out.println("\n" + this);
+		
 		return "Hello from SessionScopeController";
 
 	}
