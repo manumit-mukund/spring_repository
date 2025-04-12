@@ -16,6 +16,7 @@ public class ApplicationScopeController {
 	public String getApplicationScope() {
 
 		System.out.println("\n" + this);
+
 		return "Application Scoped Data: " + applicationScopedBean.getAppData();
 
 	}

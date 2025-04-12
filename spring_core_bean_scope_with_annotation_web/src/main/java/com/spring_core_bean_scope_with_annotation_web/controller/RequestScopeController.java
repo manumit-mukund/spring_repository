@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
 @RestController
+//@Scope("request")//This will also work fine
 @RequestScope
 public class RequestScopeController {
 
@@ -12,7 +13,7 @@ public class RequestScopeController {
 	public String getMessage() {
 
 		System.out.println("\n" + this);
-		
+
 		return "Hello from RequestScopeController";
 
 	}

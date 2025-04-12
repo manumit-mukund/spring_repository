@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.SessionScope;
 
 @RestController
+//@Scope("session") //This will also work fine
 @SessionScope
 public class SessionScopeController {
 
@@ -12,7 +13,7 @@ public class SessionScopeController {
 	public String getMessage() {
 
 		System.out.println("\n" + this);
-		
+
 		return "Hello from SessionScopeController";
 
 	}
