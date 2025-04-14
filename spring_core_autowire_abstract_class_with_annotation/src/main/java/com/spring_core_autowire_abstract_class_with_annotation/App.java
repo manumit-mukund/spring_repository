@@ -1,5 +1,6 @@
 package com.spring_core_autowire_abstract_class_with_annotation;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.spring_core_autowire_abstract_class_with_annotation.config.BeanConfig;
@@ -9,7 +10,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
 
 		ShapeService shapeService = (ShapeService) context.getBean(ShapeService.class);
 

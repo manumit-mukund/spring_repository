@@ -13,14 +13,14 @@ public class BeanConfig {
 
 //	If we want to use Square, we'll have to comment out the Circle bean
 //	@Bean
-//	Square square() {
+//	Square mySquare() {
 //
 //		return new Square();
 //
 //	}
 
 	@Bean
-	Circle circle() {
+	Circle myCircle() {
 
 		return new Circle();
 
