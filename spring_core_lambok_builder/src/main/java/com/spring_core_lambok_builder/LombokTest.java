@@ -23,7 +23,7 @@ class LombokTest {
 				.company("C2")			
 				.build();
 
-		System.out.println("employee2 = " + employee2);
+		System.out.println("\nemployee2 = " + employee2);
 
 	}
 }
