@@ -5,6 +5,13 @@ public class Student {
 	private String name;
 	private Integer age;
 
+	public Student() {
+
+		super();
+
+		System.out.println("Inside Student() constructor\n");
+	}
+
 	public void setAge(Integer age) {
 		this.age = age;
 	}
