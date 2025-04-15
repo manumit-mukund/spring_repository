@@ -8,16 +8,20 @@ import org.springframework.context.annotation.Configuration;
 import com.spring_core_autowire_primary_annotation.service.CarService;
 
 @Configuration
-@ComponentScan(basePackages = { "com.spring_core_autowire_primary_annotation.service" })
+@ComponentScan(basePackages = { "com.spring_core_autowire_primary_annotation.component",
+		"com.spring_core_autowire_primary_annotation.service" })
 public class SpringPrimaryAnnotationExample {
 
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringPrimaryAnnotationExample.class);
 
-		CarService carService = (CarService) ctx.getBean("carService");
+		CarService carService1 = (CarService) ctx.getBean("carService");
 
-		carService.getCar().printCarName();
+		// carService1.printCarName(); //The method printCarName() is undefined for the
+		// type CarService
+
+		carService1.getCar().printCarName();
 
 	}
 

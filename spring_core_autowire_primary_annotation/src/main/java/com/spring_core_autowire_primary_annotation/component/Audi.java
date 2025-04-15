@@ -1,4 +1,4 @@
-package com.spring_core_autowire_primary_annotation.service;
+package com.spring_core_autowire_primary_annotation.component;
 
 import org.springframework.stereotype.Component;
 
