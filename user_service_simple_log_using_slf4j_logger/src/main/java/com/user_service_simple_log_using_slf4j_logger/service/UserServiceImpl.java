@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.user_service_simple_log_using_slf4j_logger.model.User;
 
-@Service
+@Service //If we put it on the UserService interface and not here, there will be an error
 public class UserServiceImpl implements UserService {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
