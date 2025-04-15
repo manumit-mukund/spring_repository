@@ -12,7 +12,7 @@ public class App {
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
 
-		ShapeService shapeService = (ShapeService) context.getBean(ShapeService.class);
+		ShapeService shapeService = context.getBean(ShapeService.class);
 
 		shapeService.drawShape();
 
