@@ -73,4 +73,19 @@ public class UserServiceImpl implements UserService {
 		return user1;
 
 	}
+
+	@Override
+	public User deleteUser(String username) {
+
+		User user = getUser(username);
+
+		if (user != null) {
+
+			listUser.remove(user);
+
+		}
+
+		return user;
+
+	}
 }

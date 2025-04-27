@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,31 +22,31 @@ import com.user_service_simple_http_patch_put.service.UserServiceImpl;
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl userUserServiceImpl;
+	private UserServiceImpl userUserService;
 
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		return userUserServiceImpl.getUser(username);
+		return userUserService.getUser(username);
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
-		return userUserServiceImpl.getAllUsers();
+		return userUserService.getAllUsers();
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
-		return userUserServiceImpl.addUser(user);
+		return userUserService.addUser(user);
 
 	}
 
 	@PutMapping("/update/{username}")
 	public ResponseEntity<User> updateUser(@PathVariable("username") String username, @RequestBody User user) {
 
-		User updatedUser = userUserServiceImpl.updateUser(username, user);
+		User updatedUser = userUserService.updateUser(username, user);
 
 		return ResponseEntity.ok(updatedUser);
 
@@ -65,12 +66,23 @@ public class UserController {
 	@PatchMapping("/update/{username}")
 	public ResponseEntity<User> updateUserEmail(@PathVariable("username") String username, @RequestBody String email) {
 
-		User updatedUser = userUserServiceImpl.updateUserEmail(username, email);
+		User updatedUser = userUserService.updateUserEmail(username, email);
 
 		return ResponseEntity.ok(updatedUser);
 
 		// Postman PATCH url: http://localhost:9001/users/update/abc
 		// Postman Body: abc1@yahoo.com
+
+	}
+
+	@DeleteMapping("/delete/{username}")
+	public ResponseEntity<User> deleteUser(@PathVariable("username") String username) {
+
+		User deleteddUser = userUserService.deleteUser(username);
+
+		return ResponseEntity.ok(deleteddUser);
+
+		// Postman DELETE url: http://localhost:9001/users/delete/abc
 
 	}
 
