@@ -1,7 +1,6 @@
 package com.user_service_simple_http_patch_put.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user_service_simple_http_patch_put.model.User;
-import com.user_service_simple_http_patch_put.service.UserServiceImpl;
+import com.user_service_simple_http_patch_put.service.UserService;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl userService;
+	private UserService userService;
 
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
