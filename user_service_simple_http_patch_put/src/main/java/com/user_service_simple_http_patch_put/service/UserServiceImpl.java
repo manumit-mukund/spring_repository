@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.user_service_simple_http_patch_put.exception.ResourceNotFoundException;
 import com.user_service_simple_http_patch_put.model.User;
 
 @Service
@@ -25,7 +26,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String username) {
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElseThrow(() -> new ResourceNotFoundException("user not found with username : " + username));
 
 	}
 

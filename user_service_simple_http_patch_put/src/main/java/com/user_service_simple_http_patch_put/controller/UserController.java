@@ -1,6 +1,7 @@
 package com.user_service_simple_http_patch_put.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,31 +23,31 @@ import com.user_service_simple_http_patch_put.service.UserServiceImpl;
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl userUserService;
+	private UserServiceImpl userService;
 
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		return userUserService.getUser(username);
+		return userService.getUser(username);
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
-		return userUserService.getAllUsers();
+		return userService.getAllUsers();
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
-		return userUserService.addUser(user);
+		return userService.addUser(user);
 
 	}
 
 	@PutMapping("/update/{username}")
 	public ResponseEntity<User> updateUser(@PathVariable("username") String username, @RequestBody User user) {
 
-		User updatedUser = userUserService.updateUser(username, user);
+		User updatedUser = userService.updateUser(username, user);
 
 		return ResponseEntity.ok(updatedUser);
 
@@ -66,7 +67,7 @@ public class UserController {
 	@PatchMapping("/update/{username}")
 	public ResponseEntity<User> updateUserEmail(@PathVariable("username") String username, @RequestBody String email) {
 
-		User updatedUser = userUserService.updateUserEmail(username, email);
+		User updatedUser = userService.updateUserEmail(username, email);
 
 		return ResponseEntity.ok(updatedUser);
 
@@ -78,7 +79,15 @@ public class UserController {
 	@DeleteMapping("/delete/{username}")
 	public ResponseEntity<User> deleteUser(@PathVariable("username") String username) {
 
-		User deleteddUser = userUserService.deleteUser(username);
+		User existingUser = userService.getUser(username);
+
+		if (existingUser == null) {
+
+			return ResponseEntity.notFound().build();
+
+		}
+
+		User deleteddUser = userService.deleteUser(username);
 
 		return ResponseEntity.ok(deleteddUser);
 
