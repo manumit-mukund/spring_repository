@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
 		super();
 
 		listUser = new ArrayList<User>();
+		
 		listUser.add(new User("abc", "abc", "abc@yahoo.com"));
 		listUser.add(new User("xyz", "xyz", "xyz@yahoo.com"));
 
