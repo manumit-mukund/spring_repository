@@ -10,7 +10,13 @@ import org.springframework.web.context.annotation.ApplicationScope;
 @ApplicationScope
 public class ApplicationScopedBean {
 
-	private String appData = "Application-Wide Data" + new Date();
+	private String appData;
+
+	public ApplicationScopedBean() {
+
+		appData = "Application-Wide Data" + new Date();
+
+	}
 
 	public String getAppData() {
 
