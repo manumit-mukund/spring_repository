@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootTransactionManagement {
+public class SpringBootSessionManagement {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(SpringBootTransactionManagement.class, args);
+		SpringApplication.run(SpringBootSessionManagement.class, args);
 
 	}
 
