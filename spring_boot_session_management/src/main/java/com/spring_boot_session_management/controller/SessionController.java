@@ -27,7 +27,9 @@ public class SessionController {
 		String username = (String) session.getAttribute("username");
 
 		if (username == null) {
+
 			return "No session found!";
+
 		}
 
 		return "Session found with username: " + username;
