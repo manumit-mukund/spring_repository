@@ -14,11 +14,13 @@ public class SessionController {
 	public String manageSession(HttpSession session) {
 
 		String sessionId = session.getId();
+
 		String attribute = (String) session.getAttribute("myAttribute");
 
 		if (attribute == null) {
 
-			session.setAttribute("myAttribute", "Hello from Session!");
+			session.setAttribute("myAttribute", "Manu");
+
 			attribute = (String) session.getAttribute("myAttribute");
 
 		}
