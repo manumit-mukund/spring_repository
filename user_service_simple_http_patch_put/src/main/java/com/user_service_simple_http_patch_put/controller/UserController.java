@@ -41,6 +41,19 @@ public class UserController {
 
 		return userService.addUser(user);
 
+		/*
+		 * Postman PUT url: http://localhost:9001/users/add
+		 * 
+		 * Postman Body:
+		 * 
+		 * {
+		 * 
+		 * "username": "pqr" , "password": "pqr" , "email": "pqr@yahoo.com"
+		 * 
+		 * }
+		 * 
+		 */
+
 	}
 
 	@PutMapping("/update/{username}")
