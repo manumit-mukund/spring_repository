@@ -1,12 +1,14 @@
 package com.spring_boot_jdbc_session_management.component;
 
+import java.sql.Connection;
+
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.stereotype.Component;
-import javax.sql.DataSource;
-import java.sql.Connection;
 
 @Component
 public class SqlScriptRunner implements CommandLineRunner {
