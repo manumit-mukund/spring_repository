@@ -28,7 +28,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 
 			log.info("Job finished, checking the results...");
-			
+
 			System.out.println("Job finished, checking the results...");
 
 			jdbcTemplate

@@ -33,7 +33,7 @@ public class BatchConfig {
 
 	@Bean
 	public FlatFileItemReader<Person> reader() {
-		
+
 		return new FlatFileItemReaderBuilder<Person>().name("personItemReader")
 				.resource(new ClassPathResource("data.csv")).delimited().names(new String[] { "firstName", "lastName" })
 				.fieldSetMapper(fieldSet -> {
@@ -42,17 +42,17 @@ public class BatchConfig {
 					person.setLastName(fieldSet.readString("lastName"));
 					return person;
 				}).build();
-		
+
 	}
 
 	@Bean
 	public JdbcBatchItemWriter<Person> writer(DataSource dataSource) {
-		
+
 		return new JdbcBatchItemWriterBuilder<Person>()
 				.itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
 				.sql("INSERT INTO people (first_name, last_name) VALUES (:firstName, :lastName)").dataSource(dataSource)
 				.build();
-		
+
 	}
 
 	@Bean
@@ -67,14 +67,14 @@ public class BatchConfig {
 
 	@Bean
 	public Job job(JobRepository jobRepository, Step step) {
-		
+
 		return new JobBuilder("importUserJob", jobRepository).start(step).build();
-		
+
 	}
 
 	@Bean
 	public CommandLineRunner runJob(JobLauncher jobLauncher, Job job) {
-		
+
 		return args -> {
 			try {
 				// Create unique JobParameters
@@ -88,14 +88,14 @@ public class BatchConfig {
 				System.err.println("Job failed: " + e.getMessage());
 			}
 		};
-		
+
 	}
 
 	@Bean
 	public PlatformTransactionManager transactionManager() {
-		
+
 		return new ResourcelessTransactionManager(); // For simple batch processing without needing a real database
 														// transaction manager.
-		
+
 	}
 }
