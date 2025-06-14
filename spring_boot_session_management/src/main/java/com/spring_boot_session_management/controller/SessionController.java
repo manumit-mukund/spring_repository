@@ -32,7 +32,7 @@ public class SessionController {
 
 		}
 
-		return "Session found with username: " + username;
+		return "Session found with username: " + username + " and ID: " + session.getId();
 
 	}
 
