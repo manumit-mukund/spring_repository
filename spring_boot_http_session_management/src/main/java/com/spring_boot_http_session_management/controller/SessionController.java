@@ -107,8 +107,6 @@ public class SessionController {
 		HttpSession session = request.getSession(false); // Use false to avoid creating a new session if it doesn't
 		// exist);
 
-
-
 		String output = "session not found";
 
 		if (session != null) {
