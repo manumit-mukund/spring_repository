@@ -1,6 +1,5 @@
 package com.spring_boot_cookie_session_management.controller;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/cookie")
@@ -86,8 +84,8 @@ public class SessionController {
 
 			for (Cookie cookie : cookies) {
 
-				cookie.setValue(null); // Clear the cookie value
-				cookie.setMaxAge(0); // Set Max-Age to 0 for immediate deletion				
+				// cookie.setValue(null); // Clear the cookie value. This is optional
+				cookie.setMaxAge(0); // Set Max-Age to 0 for immediate deletion
 				response.addCookie(cookie);
 
 			}
