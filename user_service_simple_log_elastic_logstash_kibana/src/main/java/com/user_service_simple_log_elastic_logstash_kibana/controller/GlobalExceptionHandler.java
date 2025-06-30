@@ -5,10 +5,8 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
 import com.user_service_simple_log_elastic_logstash_kibana.exception.ResourceNotFoundException;
 
@@ -24,30 +22,6 @@ public class GlobalExceptionHandler {
 
 		// Test url: http://localhost:9001/api/test2/-2
 
-	}
-
-	// Method to handle generic exceptions
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<String> handleGeneralException(Exception ex) {
-
-		// Return a custom error message with HTTP 500 status
-		return new ResponseEntity<>("handleGeneralException: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-
-		// Test url: http://localhost:9001/api/test
-
-	}
-
-	@ExceptionHandler(MissingPathVariableException.class)
-	public ResponseEntity<Map<String, String>> handleMissingPathVariableException(MissingPathVariableException ex) {
-
-		Map<String, String> error = new HashMap<>();
-
-		error.put("error", "Missing path variable exception");
-		error.put("message", "Required path variable is missing in this request. Please add it to your request.");
-
-		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-
-		// Test url: http://localhost:9001/users/
 	}
 
 	// handling a custom ResourceNotFoundException
@@ -66,20 +40,40 @@ public class GlobalExceptionHandler {
 
 	}
 
-	@ExceptionHandler(NoHandlerFoundException.class)
-	// @ResponseStatus(HttpStatus.NOT_FOUND) //This is optional.
-	public ResponseEntity<Map<String, String>> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+//	Not working -- try again
+//	@ExceptionHandler(MissingPathVariableException.class)
+//	public ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex, WebRequest request) {
+//		
+//		String error = ex.getVariableName() + " path variable is missing.";
+//		
+//		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+//	}
 
-		Map<String, String> error = new HashMap<>();
+	// Method to handle generic exceptions
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> handleGeneralException(Exception ex) {
 
-		error.put("error", "No handler found xception");
-		error.put("message",
-				"Requested resource wasn't found on the server: " + ex.getHttpMethod() + " " + ex.getRequestURL());
+		// Return a custom error message with HTTP 500 status
+		return new ResponseEntity<>("handleGeneralException: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 
-		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-
-		// http://localhost:9001/users
 		// Test url: http://localhost:9001/api/test
 
 	}
+
+//	@ExceptionHandler(NoHandlerFoundException.class)
+//	// @ResponseStatus(HttpStatus.NOT_FOUND) //This is optional.
+//	public ResponseEntity<Map<String, String>> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+//
+//		Map<String, String> error = new HashMap<>();
+//
+//		error.put("error", "No handler found xception");
+//		error.put("message",
+//				"Requested resource wasn't found on the server: " + ex.getHttpMethod() + " " + ex.getRequestURL());
+//
+//		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+//
+//		// http://localhost:9001/users
+//		// Test url: http://localhost:9001/api/test
+//
+//	}
 }
