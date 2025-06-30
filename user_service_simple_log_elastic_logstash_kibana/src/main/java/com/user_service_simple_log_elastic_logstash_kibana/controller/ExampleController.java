@@ -44,9 +44,9 @@ public class ExampleController {
 			log.debug("testIllegalArgumentException(): A debug message, number = " + number);
 
 			if (number <= 0) {
-				
+
 				throw new IllegalArgumentException("number must be positive: -> " + number);
-				
+
 			}
 			return "Fetching number: " + number;
 

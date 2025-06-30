@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -19,7 +20,7 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
 
 		// Return a custom error message with HTTP 400 status
-		return new ResponseEntity<>("IllegalArgumentException: " + ex.getMessage(), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>("handleIllegalArgumentException: " + ex.getMessage(), HttpStatus.BAD_REQUEST);
 
 		// Test url: http://localhost:9001/api/test2/-2
 
@@ -30,27 +31,26 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleGeneralException(Exception ex) {
 
 		// Return a custom error message with HTTP 500 status
-		return new ResponseEntity<>("An unexpected error occurred: " + ex.getMessage(),
-				HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>("handleGeneralException: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 
 		// Test url: http://localhost:9001/api/test
 
 	}
 
-	@ExceptionHandler(NoHandlerFoundException.class)
-	// @ResponseStatus(HttpStatus.NOT_FOUND) //This is optional.
-	public ResponseEntity<Map<String, String>> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+	@ExceptionHandler(MissingPathVariableException.class)
+	public ResponseEntity<Map<String, String>> handleMissingPathVariableException(MissingPathVariableException ex) {
 
 		Map<String, String> error = new HashMap<>();
 
-		error.put("error", "Resource not found");
-		error.put("message", "No handler found for " + ex.getHttpMethod() + " " + ex.getRequestURL());
+		error.put("error", "Missing path variable exception");
+		error.put("message", "Required path variable is missing in this request. Please add it to your request.");
 
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 
+		// Test url: http://localhost:9001/users/
 	}
 
-	// Example of handling a custom ResourceNotFoundException
+	// handling a custom ResourceNotFoundException
 	@ExceptionHandler(ResourceNotFoundException.class)
 	// @ResponseStatus(HttpStatus.NOT_FOUND) //This is optional.
 	public ResponseEntity<Map<String, String>> handleResourceNotFoundException(ResourceNotFoundException ex) {
@@ -63,6 +63,23 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 
 		// Test url: http://localhost:9001/users/abc1
+
+	}
+
+	@ExceptionHandler(NoHandlerFoundException.class)
+	// @ResponseStatus(HttpStatus.NOT_FOUND) //This is optional.
+	public ResponseEntity<Map<String, String>> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+
+		Map<String, String> error = new HashMap<>();
+
+		error.put("error", "No handler found xception");
+		error.put("message",
+				"Requested resource wasn't found on the server: " + ex.getHttpMethod() + " " + ex.getRequestURL());
+
+		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+
+		// http://localhost:9001/users
+		// Test url: http://localhost:9001/api/test
 
 	}
 }

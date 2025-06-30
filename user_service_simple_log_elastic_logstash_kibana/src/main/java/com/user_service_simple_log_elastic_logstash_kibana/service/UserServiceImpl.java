@@ -37,12 +37,8 @@ public class UserServiceImpl implements UserService {
 
 		log.info("getUser(String username): info: Performing an action on ...");
 
-		return listUser
-				.stream()
-				.filter(user -> user.getUsername().equals(username))
-				.findAny()
+		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny()
 				.orElseThrow(() -> new ResourceNotFoundException("user not found with username : " + username));
-
 
 	}
 
