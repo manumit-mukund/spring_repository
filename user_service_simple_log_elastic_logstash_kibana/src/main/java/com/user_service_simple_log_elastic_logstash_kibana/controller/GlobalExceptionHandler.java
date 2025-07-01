@@ -5,8 +5,10 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
 
 import com.user_service_simple_log_elastic_logstash_kibana.exception.ResourceNotFoundException;
 
@@ -41,13 +43,13 @@ public class GlobalExceptionHandler {
 	}
 
 //	Not working -- try again
-//	@ExceptionHandler(MissingPathVariableException.class)
-//	public ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex, WebRequest request) {
-//		
-//		String error = ex.getVariableName() + " path variable is missing.";
-//		
-//		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-//	}
+	@ExceptionHandler(MissingPathVariableException.class)
+	public ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex, WebRequest request) {
+		
+		String error = ex.getVariableName() + " path variable is missing.";
+		
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+	}
 
 	// Method to handle generic exceptions
 	@ExceptionHandler(Exception.class)
