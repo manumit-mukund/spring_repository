@@ -1,4 +1,4 @@
-package com.user_service_simple_globalexception;
+package com.spring_user_service_simple_globalexception;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

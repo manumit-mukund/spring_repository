@@ -1,4 +1,4 @@
-package com.user_service_simple_globalexception.controller;
+package com.spring_user_service_simple_globalexception.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

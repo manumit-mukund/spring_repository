@@ -1,4 +1,4 @@
-package com.user_service_simple_globalexception.model;
+package com.spring_user_service_simple_globalexception.model;
 
 public class User {
 

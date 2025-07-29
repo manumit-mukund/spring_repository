@@ -1,11 +1,11 @@
-package com.user_service_simple_globalexception.service;
+package com.spring_user_service_simple_globalexception.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_simple_globalexception.model.User;
+import com.spring_user_service_simple_globalexception.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

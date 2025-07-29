@@ -1,8 +1,8 @@
-package com.user_service_simple_globalexception.service;
+package com.spring_user_service_simple_globalexception.service;
 
 import java.util.List;
 
-import com.user_service_simple_globalexception.model.User;
+import com.spring_user_service_simple_globalexception.model.User;
 
 public interface UserService {
 
