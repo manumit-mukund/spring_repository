@@ -1,8 +1,8 @@
-package com.user_service_simple_log_using_slf4j_logger.service;
+package com.spring_user_service_simple_log_using_slf4j_logger.service;
 
 import java.util.List;
 
-import com.user_service_simple_log_using_slf4j_logger.model.User;
+import com.spring_user_service_simple_log_using_slf4j_logger.model.User;
 
 public interface UserService {
 

@@ -8,8 +8,8 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user_service_simple_log_using_slf4j_logger</groupId>
-	<artifactId>user_service_simple_log_using_slf4j_logger</artifactId>
+	<groupId>com.spring_user_service_simple_log_using_slf4j_logger</groupId>
+	<artifactId>spring_user_service_simple_log_using_slf4j_logger</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>

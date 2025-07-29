@@ -1,4 +1,4 @@
-package com.user_service_simple_log_using_slf4j_logger.model;
+package com.spring_user_service_simple_log_using_slf4j_logger.model;
 
 public class User {
 
