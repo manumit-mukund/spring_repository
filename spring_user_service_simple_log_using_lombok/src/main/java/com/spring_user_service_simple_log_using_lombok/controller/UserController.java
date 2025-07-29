@@ -1,4 +1,4 @@
-package com.user_service_simple_log_using_lombok.controller;
+package com.spring_user_service_simple_log_using_lombok.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user_service_simple_log_using_lombok.model.User;
-import com.user_service_simple_log_using_lombok.service.UserService;
+import com.spring_user_service_simple_log_using_lombok.model.User;
+import com.spring_user_service_simple_log_using_lombok.service.UserService;
 
 @RestController
 @RequestMapping("/users")

@@ -1,4 +1,4 @@
-package com.user_service_simple_log_using_lombok;
+package com.spring_user_service_simple_log_using_lombok;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

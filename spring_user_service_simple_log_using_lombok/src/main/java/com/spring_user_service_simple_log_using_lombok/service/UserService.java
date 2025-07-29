@@ -1,8 +1,8 @@
-package com.user_service_simple_log_using_lombok.service;
+package com.spring_user_service_simple_log_using_lombok.service;
 
 import java.util.List;
 
-import com.user_service_simple_log_using_lombok.model.User;
+import com.spring_user_service_simple_log_using_lombok.model.User;
 
 public interface UserService {
 

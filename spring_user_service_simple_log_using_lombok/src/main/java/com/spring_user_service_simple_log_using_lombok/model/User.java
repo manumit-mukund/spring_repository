@@ -1,4 +1,4 @@
-package com.user_service_simple_log_using_lombok.model;
+package com.spring_user_service_simple_log_using_lombok.model;
 
 public class User {
 

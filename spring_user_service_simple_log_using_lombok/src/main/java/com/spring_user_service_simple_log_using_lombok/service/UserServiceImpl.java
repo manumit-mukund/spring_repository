@@ -1,11 +1,11 @@
-package com.user_service_simple_log_using_lombok.service;
+package com.spring_user_service_simple_log_using_lombok.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_simple_log_using_lombok.model.User;
+import com.spring_user_service_simple_log_using_lombok.model.User;
 
 import lombok.extern.slf4j.Slf4j;
 
