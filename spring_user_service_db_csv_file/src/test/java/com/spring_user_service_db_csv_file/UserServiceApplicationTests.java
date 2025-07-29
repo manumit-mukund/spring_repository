@@ -1,4 +1,4 @@
-package com.user_service_db_csv_file;
+package com.spring_user_service_db_csv_file;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

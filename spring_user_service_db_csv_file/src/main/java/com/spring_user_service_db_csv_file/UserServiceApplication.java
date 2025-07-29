@@ -1,4 +1,4 @@
-package com.user_service_db_csv_file;
+package com.spring_user_service_db_csv_file;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

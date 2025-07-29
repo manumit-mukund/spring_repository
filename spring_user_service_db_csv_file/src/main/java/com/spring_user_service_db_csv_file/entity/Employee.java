@@ -1,4 +1,4 @@
-package com.user_service_db_csv_file.entity;
+package com.spring_user_service_db_csv_file.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,10 +1,10 @@
-package com.user_service_db_csv_file.component;
+package com.spring_user_service_db_csv_file.component;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.user_service_db_csv_file.entity.Employee;
+import com.spring_user_service_db_csv_file.entity.Employee;
 
 @Component
 public class CsvGeneratorUtil {

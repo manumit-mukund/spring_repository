@@ -1,4 +1,4 @@
-package com.user_service_db_csv_file.controller;
+package com.spring_user_service_db_csv_file.controller;
 
 //import java.awt.PageAttributes.MediaType;
 //import java.net.http.HttpHeaders;
@@ -12,9 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user_service_db_csv_file.component.CsvGeneratorUtil;
-import com.user_service_db_csv_file.entity.Employee;
-import com.user_service_db_csv_file.repo.EmployeeRepository;
+import com.spring_user_service_db_csv_file.component.CsvGeneratorUtil;
+import com.spring_user_service_db_csv_file.entity.Employee;
+import com.spring_user_service_db_csv_file.repo.EmployeeRepository;
 
 @RestController
 public class EmployeeController {
