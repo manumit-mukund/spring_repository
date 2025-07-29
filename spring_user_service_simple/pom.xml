@@ -9,8 +9,8 @@
 		<version>3.3.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user_service_simple</groupId>
-	<artifactId>user_service_simple</artifactId>
+	<groupId>com.spring_user_service_simple</groupId>
+	<artifactId>spring_user_service_simple</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>
