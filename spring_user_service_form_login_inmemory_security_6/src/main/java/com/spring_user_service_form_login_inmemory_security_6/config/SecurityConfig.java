@@ -1,4 +1,4 @@
-package com.user_service_form_login_inmemory_security_6.config;
+package com.spring_user_service_form_login_inmemory_security_6.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,32 +31,25 @@ public class SecurityConfig {
 		.csrf()
 		.disable()
 		.authorizeHttpRequests((authorize) -> {
-			
+
 			authorize.requestMatchers("api/v1/**").permitAll();
 			authorize.anyRequest().authenticated();
+			
 		})
 		.httpBasic(Customizer.withDefaults());
-		
+
 		return http.build();
 	}
 
 	@Bean
 	public UserDetailsService userDetailsService() {
 
-		UserDetails john = User
-				.builder()
-				.username("user1")
-				.password(passwordEncoder().encode("user1"))
-				.roles("USER")
+		UserDetails user1 = User.builder().username("user1").password(passwordEncoder().encode("user1")).roles("USER")
 				.build();
 
-		UserDetails sam = User
-				.builder()
-				.username("admin1")
-				.password(passwordEncoder().encode("admin1"))
-				.roles("ADMIN")
-				.build();
+		UserDetails admin1 = User.builder().username("admin1").password(passwordEncoder().encode("admin1"))
+				.roles("ADMIN").build();
 
-		return new InMemoryUserDetailsManager(john, sam);
+		return new InMemoryUserDetailsManager(user1, admin1);
 	}
 }

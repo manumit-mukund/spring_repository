@@ -1,4 +1,4 @@
-package com.user_service_form_login_inmemory_security_6;
+package com.spring_user_service_form_login_inmemory_security_6;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
