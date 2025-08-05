@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch_put.exception;
+package com.spring_user_service_simple_http_patch_put.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

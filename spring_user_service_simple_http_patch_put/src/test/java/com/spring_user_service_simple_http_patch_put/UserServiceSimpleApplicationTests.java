@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch_put;
+package com.spring_user_service_simple_http_patch_put;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

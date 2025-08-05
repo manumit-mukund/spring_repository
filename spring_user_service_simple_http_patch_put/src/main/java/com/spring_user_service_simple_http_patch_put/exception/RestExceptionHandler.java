@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch_put.exception;
+package com.spring_user_service_simple_http_patch_put.exception;
 
 import java.util.HashMap;
 import java.util.Map;

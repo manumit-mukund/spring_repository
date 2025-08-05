@@ -8,8 +8,8 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user_service_simple_http_patch_put</groupId>
-	<artifactId>user_service_simple_http_patch_put</artifactId>
+	<groupId>com.spring_user_service_simple_http_patch_put</groupId>
+	<artifactId>spring_user_service_simple_http_patch_put</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>

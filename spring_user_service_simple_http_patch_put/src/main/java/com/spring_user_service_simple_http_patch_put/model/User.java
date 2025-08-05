@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch_put.model;
+package com.spring_user_service_simple_http_patch_put.model;
 
 public class User {
 

@@ -1,12 +1,12 @@
-package com.user_service_simple_http_patch_put.service;
+package com.spring_user_service_simple_http_patch_put.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_simple_http_patch_put.exception.ResourceNotFoundException;
-import com.user_service_simple_http_patch_put.model.User;
+import com.spring_user_service_simple_http_patch_put.exception.ResourceNotFoundException;
+import com.spring_user_service_simple_http_patch_put.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

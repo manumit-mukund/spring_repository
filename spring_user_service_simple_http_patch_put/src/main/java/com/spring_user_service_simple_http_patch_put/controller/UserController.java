@@ -1,4 +1,4 @@
-package com.user_service_simple_http_patch_put.controller;
+package com.spring_user_service_simple_http_patch_put.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user_service_simple_http_patch_put.model.User;
-import com.user_service_simple_http_patch_put.service.UserService;
+import com.spring_user_service_simple_http_patch_put.model.User;
+import com.spring_user_service_simple_http_patch_put.service.UserService;
 
 @RestController
 @RequestMapping("/users")

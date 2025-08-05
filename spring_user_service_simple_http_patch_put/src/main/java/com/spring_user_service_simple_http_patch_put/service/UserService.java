@@ -1,8 +1,8 @@
-package com.user_service_simple_http_patch_put.service;
+package com.spring_user_service_simple_http_patch_put.service;
 
 import java.util.List;
 
-import com.user_service_simple_http_patch_put.model.User;
+import com.spring_user_service_simple_http_patch_put.model.User;
 
 public interface UserService {
 
