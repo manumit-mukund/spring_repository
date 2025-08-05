@@ -9,8 +9,8 @@
 		<version>3.3.4</version>
 		<relativePath />
 	</parent>
-	<groupId>com.user_service_inmemory_no_password_encoder</groupId>
-	<artifactId>user_service_inmemory_no_password_encoder</artifactId>
+	<groupId>com.spring_user_service_inmemory_no_password_encoder</groupId>
+	<artifactId>spring_user_service_inmemory_no_password_encoder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service</name>
 	<description>Demo project for Spring Boot</description>

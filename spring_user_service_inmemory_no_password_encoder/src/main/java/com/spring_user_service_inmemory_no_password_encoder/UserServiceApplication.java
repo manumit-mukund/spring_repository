@@ -1,4 +1,4 @@
-package com.user_service_inmemory_no_password_encoder;
+package com.spring_user_service_inmemory_no_password_encoder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
