@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module zipkin_server {
-}
