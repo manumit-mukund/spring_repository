@@ -1,6 +1,5 @@
 package com.spring_boot_sleuth_zipkin_service.config;
 
-import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -12,12 +11,6 @@ public class CloudConfig {
 	public RestTemplate template() {
 
 		return new RestTemplate();
-	}
-
-	@Bean
-	public AlwaysSampler defaultSampler() {
-
-		return new AlwaysSampler();
 	}
 
 }
