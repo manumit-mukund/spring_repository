@@ -1,4 +1,4 @@
-package com.example.zipkin_service_1.config;
+package com.spring_boot_sleuth_zipkin_service.config;
 
 import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;

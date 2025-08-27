@@ -1,4 +1,4 @@
-package com.example.zipkin_service_1;
+package com.spring_boot_sleuth_zipkin_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

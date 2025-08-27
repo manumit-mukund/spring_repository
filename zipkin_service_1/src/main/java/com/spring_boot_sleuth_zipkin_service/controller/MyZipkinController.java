@@ -1,11 +1,11 @@
-package com.example.zipkin_service_1;
+package com.spring_boot_sleuth_zipkin_service.controller;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/zipkin")
@@ -20,18 +20,15 @@ public class MyZipkinController {
 	public String service_1() {
 
 		logger.info("service_1() called...");
-		
-		return restTemplate.getForObject("http://localhost:8081/zipkin/service_2", String.class);
 
-		//return "zipkin_service_1";
+		return restTemplate.getForObject("http://localhost:9001/zipkin/service_2", String.class);
+
 	}
 
 	@RequestMapping("/service_2")
 	public String service_2() {
 
 		logger.info("service_2() called...");
-
-		//return restTemplate.getForObject("http://localhost:8080/zipkin/service_1", String.class);
 
 		return "zipkin_service_2";
 	}
