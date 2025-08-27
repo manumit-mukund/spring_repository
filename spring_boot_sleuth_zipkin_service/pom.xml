@@ -31,19 +31,6 @@
 		<java.version>17</java.version>
 	</properties>
 
-	<!--	<dependencyManagement>-->
-	<!--		<dependencies>-->
-	<!--			<dependency>-->
-	<!--				<groupId>org.springframework.cloud</groupId>-->
-	<!--				<artifactId>spring-cloud-dependencies</artifactId>-->
-	<!--				 Provide the latest stable Spring Cloud release train-->
-	<!--				version (e.g. 2020.0.0) -->
-	<!--				<version>2020.0.0</version>-->
-	<!--				<type>pom</type>-->
-	<!--				<scope>import</scope>-->
-	<!--			</dependency>-->
-	<!--		</dependencies>-->
-	<!--	</dependencyManagement>-->
 
 	<dependencies>
 		<dependency>
@@ -54,6 +41,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-tracing-bridge-brave</artifactId>
@@ -92,6 +80,7 @@
 			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
 			<version>1.0.0.RELEASE</version>
 		</dependency>
+
 
 	</dependencies>
 
