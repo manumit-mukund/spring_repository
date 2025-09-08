@@ -13,6 +13,4 @@ public class CloudConfig {
 		return new RestTemplate();
 	}
 
-	
-
 }
