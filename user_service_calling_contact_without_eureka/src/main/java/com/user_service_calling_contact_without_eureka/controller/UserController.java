@@ -69,7 +69,9 @@ public class UserController {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
+			user.setContacts(listContact
+					.stream()
+					.filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
