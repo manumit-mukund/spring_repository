@@ -37,6 +37,17 @@ public class UserController {
 
 		return userUserService.addUser(user);
 
+//		Test url: http://localhost:9001/users/add
+//		Input data:
+//			
+//		{
+//
+//		    "username": "pqr" ,
+//		    "password": "pqr" ,
+//		    "email": "pqr@yahoo.com" 
+//
+//		}
+
 	}
 
 	@GetMapping("/hello")
