@@ -35,7 +35,7 @@ public class ContactServiceImpl implements ContactService {
 				.collect(Collectors.toList());
 
 	}
-	
+
 	@Override
 	public List<Contact> getAllContacts() {
 

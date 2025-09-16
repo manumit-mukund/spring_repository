@@ -22,12 +22,16 @@ public class ContactController {
 
 		return contactService.getContactsOfUser(userId);
 
+		// Test url: http://localhost:9002/contact/user/1311
+
 	}
-	
+
 	@GetMapping("/getall")
 	public List<Contact> getAllContacts() {
 
 		return contactService.getAllContacts();
+
+		// Test url: http://localhost:9002/contact/getall
 
 	}
 
