@@ -44,6 +44,7 @@ public class UserServiceImpl implements UserService {
 	public User addUser(User user) {
 
 		listUser.add(user);
+
 		return user;
 
 	}

@@ -39,6 +39,8 @@ public class UserController {
 
 		return user;
 
+		// Test url: http://localhost:9001/users/1311
+
 	}
 
 	@GetMapping("/getall")
@@ -49,14 +51,17 @@ public class UserController {
 		 * 
 		 * for(User user: userService.getAllUsers()) {
 		 * 
-		 * List<Contact> contacs = restTemplate.getForObject("http://localhost:9002/contact/user/" + user.getUserId(), List.class);
+		 * List<Contact> contacs =
+		 * restTemplate.getForObject("http://localhost:9002/contact/user/" +
+		 * user.getUserId(), List.class);
 		 * 
 		 * user.setContacts(contacs); }
 		 */
+
 		List<Contact> listContactResult = restTemplate.getForObject("http://localhost:9002/contact/getall", List.class);
 
 		ObjectMapper mapper = new ObjectMapper();
-		
+
 		List<Contact> listContact = mapper.convertValue(listContactResult, new TypeReference<List<Contact>>() {
 		});
 
@@ -64,14 +69,13 @@ public class UserController {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact
-					.stream()
-					.filter(contact -> contact.getUserId().equals(userId))
-					.collect(Collectors.toList())
-					);
+			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
+					.collect(Collectors.toList()));
 		}
 
 		return userService.getAllUsers();
+
+		// Test url: http://localhost:9001/users/getall
 	}
 
 	@PostMapping("/add")
