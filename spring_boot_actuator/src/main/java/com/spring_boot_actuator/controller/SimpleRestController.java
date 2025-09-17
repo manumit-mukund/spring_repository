@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/simple")
 public class SimpleRestController {
-	
+
 	@GetMapping("/hello")
 	public String hello() {
-		
+
 		return "Hello User !! " + LocalDateTime.now();
-		
+
+		// Test url: http://localhost:9001/simple/hello
+
+		// Actuator urls:
+		// http://localhost:9001/actuator
+		// http://localhost:9001/actuator/health
+
 	}
 }
