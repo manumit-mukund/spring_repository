@@ -35,6 +35,12 @@ public class UserController {
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
+		if (user.getUsername() == null || user.getUsername().isEmpty()) {
+
+			throw new IllegalArgumentException("Invalid username: " + user.getUsername());
+
+		}
+
 		return userUserService.addUser(user);
 
 //		Test url: http://localhost:9001/users/add
