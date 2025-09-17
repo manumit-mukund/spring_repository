@@ -67,6 +67,7 @@ public class SessionController {
 					     """;
 
 			output += cookieList.toString();
+
 		}
 
 		return output;
