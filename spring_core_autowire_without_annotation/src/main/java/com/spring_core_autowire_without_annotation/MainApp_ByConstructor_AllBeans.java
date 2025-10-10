@@ -19,14 +19,9 @@ public class MainApp_ByConstructor_AllBeans {
 			a.displayB(); // jjava.lang.NullPointerException: Cannot invoke
 							// "com.spring_core_autowire_without_annotation.model.B.hello()" because
 							// "this.b" is null
+			a.displayC();
 
-			a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml
-							// file
-
-			a.displayD(); // Sometimes it will work fine, and at other times it will show error:
-							// java.lang.NullPointerException: Cannot invoke
-							// "com.spring_core_autowire_without_annotation.model.D.hello()" because
-							// "this.d"
+			a.displayD();
 
 		} catch (Exception e) {
 

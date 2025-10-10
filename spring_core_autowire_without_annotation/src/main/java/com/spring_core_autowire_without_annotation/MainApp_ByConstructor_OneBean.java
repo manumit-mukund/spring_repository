@@ -15,11 +15,12 @@ public class MainApp_ByConstructor_OneBean {
 
 		a.displayB();
 
-		a.displayC(); // Exception in thread "main" java.lang.NullPointerException: Cannot invoke
-						// "com.spring_core_autowire_without_annotation.model.C.hello()" because
-						// "this.c" is null
+		// a.displayC(); // Exception in thread "main" java.lang.NullPointerException:
+		// Cannot invoke
+		// "com.spring_core_autowire_without_annotation.model.C.hello()" because
+		// "this.c" is null
 
-		a.displayD();
+		// a.displayD();
 
 	}
 }

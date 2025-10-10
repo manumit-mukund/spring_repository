@@ -16,13 +16,10 @@ public class MainApp_ByConstructor_TwoBeans {
 
 		try {
 
-			a.displayB(); // java.lang.NullPointerException: Cannot invoke
-							// "com.spring_core_autowire_without_annotation.model.B.hello()" because
-							// "this.b" is null
+			a.displayB();
 
 			a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml
 							// file
-
 			a.displayD();
 
 		} catch (Exception e) {
