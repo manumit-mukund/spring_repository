@@ -13,6 +13,7 @@ import com.spring_user_service_simple_log_using_slf4j_logger.model.User;
 public class UserServiceImpl implements UserService {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	private List<User> listUser;
 
 	public UserServiceImpl() {
@@ -34,7 +35,11 @@ public class UserServiceImpl implements UserService {
 
 		logger.info("Performing an action on getUser(String username)...");
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElse(null);
 
 	}
 

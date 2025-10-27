@@ -36,6 +36,17 @@ public class UserController {
 	public User addUser(@RequestBody User user) {
 
 		return userUserService.addUser(user);
+		
+		/*
+		 * Test url: http://localhost:9001/users/add 
+		 * {
+		 * 
+		 * "username": "pqr" , 
+		 * "password": "pqr" , 
+		 * "email": "pqr@yahoo.com"
+		 * 
+		 * }
+		 */
 
 	}
 
