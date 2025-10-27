@@ -36,7 +36,11 @@ public class UserServiceImpl implements UserService {
 
 		log.info("getUser(String username): info: Performing an action on ...");
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElse(null);
 
 	}
 
