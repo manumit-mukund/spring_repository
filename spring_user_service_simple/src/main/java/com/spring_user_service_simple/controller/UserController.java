@@ -24,6 +24,9 @@ public class UserController {
 	public User getUser(@PathVariable("username") String username) {
 
 		return userUserService.getUser(username);
+
+//		Test url (positive): http://localhost:9001/users/abc
+//		Test url (positive): http://localhost:9001/users/abc1
 	}
 
 	@GetMapping("/getall")

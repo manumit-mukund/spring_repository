@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.spring_user_service_simple.exception.ResourceNotFoundException;
 import com.spring_user_service_simple.model.User;
 
 @Service
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
 				.stream()
 				.filter(user -> user.getUsername().equals(username))
 				.findAny()
-				.orElse(null);
+				.orElseThrow(() -> new ResourceNotFoundException("user not found with that username : " + username));
 
 	}
 
