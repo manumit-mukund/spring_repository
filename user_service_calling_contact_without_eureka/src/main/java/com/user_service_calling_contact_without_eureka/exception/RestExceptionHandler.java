@@ -18,7 +18,7 @@ public class RestExceptionHandler {
 	public ResponseEntity<Map<String, String>> handleNoHandlerFoundException(NoHandlerFoundException ex) {
 
 		Map<String, String> error = new HashMap<>();
-		error.put("error", "Resource not found");
+		error.put("error", "No handler found");
 		error.put("message", "No handler found for " + ex.getHttpMethod() + " " + ex.getRequestURL());
 		
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
