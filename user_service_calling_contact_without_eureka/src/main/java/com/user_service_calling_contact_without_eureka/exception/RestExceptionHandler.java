@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 @ControllerAdvice
@@ -20,7 +21,7 @@ public class RestExceptionHandler {
 		Map<String, String> error = new HashMap<>();
 		error.put("error", "No handler found");
 		error.put("message", "No handler found for " + ex.getHttpMethod() + " " + ex.getRequestURL());
-		
+
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 
 	}
@@ -36,5 +37,12 @@ public class RestExceptionHandler {
 
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 
+	}
+
+	@ExceptionHandler(RestClientException.class)
+	public ResponseEntity<String> handleRestClientException(RestClientException ex) {
+
+		return new ResponseEntity<>("Error communicating with external service: " + ex.getMessage(),
+				HttpStatus.SERVICE_UNAVAILABLE);
 	}
 }
