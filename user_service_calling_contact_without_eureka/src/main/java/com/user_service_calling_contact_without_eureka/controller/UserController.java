@@ -86,5 +86,20 @@ public class UserController {
 		return userService.addUser(user);
 
 	}
+	
+	/*
+	 * Test url: http://localhost:9001/users/add
+	 * 
+	 * Postman data: 
+	 * 
+	 * {
+	 * 
+	 * "userId": "1314" , 
+	 * "username": "pqr1" , 
+	 * "phone": "126"
+	 * 
+	 * }
+	 * 
+	 */
 
 }
