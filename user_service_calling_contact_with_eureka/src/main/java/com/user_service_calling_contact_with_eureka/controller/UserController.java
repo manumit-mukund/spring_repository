@@ -45,17 +45,19 @@ public class UserController {
 
 		return user;
 
+		// Test url: http://localhost:9001/users/1311
+
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
-		
+
 		String serviceUri = discoveryClient.getInstances("contact_service_with_eureka").get(0).getUri().toString();
-		
+
 		List<Contact> listContactResult = restTemplate.getForObject(serviceUri + "/contact/getall", List.class);
 
 		ObjectMapper mapper = new ObjectMapper();
-		
+
 		List<Contact> listContact = mapper.convertValue(listContactResult, new TypeReference<List<Contact>>() {
 		});
 
@@ -66,17 +68,33 @@ public class UserController {
 			user.setContacts(listContact
 					.stream()
 					.filter(contact -> contact.getUserId().equals(userId))
-					.collect(Collectors.toList())
-					);
+					.collect(Collectors.toList()));
 		}
 
 		return userService.getAllUsers();
+
+		// Test url: http://localhost:9001/users/getall
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
 		return userService.addUser(user);
+
+		/*
+		 * Test url: http://localhost:9001/users/add
+		 * 
+		 * Postman data:
+		 * 
+		 * {
+		 * 
+		 * "userId": "1314" , 
+		 * "username": "pqr1" , 
+		 * "phone": "126"
+		 * 
+		 * }
+		 * 
+		 */
 
 	}
 

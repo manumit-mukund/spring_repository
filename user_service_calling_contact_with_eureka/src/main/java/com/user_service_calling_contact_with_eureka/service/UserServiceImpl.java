@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.user_service_calling_contact_with_eureka.exception.ResourceNotFoundException;
 import com.user_service_calling_contact_with_eureka.model.User;
 
 @Service
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
 				.stream()
 				.filter(user -> user.getUserId().equals(id))
 				.findAny()
-				.orElse(null);
+				.orElseThrow(() -> new ResourceNotFoundException("user not found with that userid : " + id));
 
 	}
 
