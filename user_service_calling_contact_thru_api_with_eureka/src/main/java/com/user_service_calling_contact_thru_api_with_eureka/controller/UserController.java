@@ -1,6 +1,8 @@
 package com.user_service_calling_contact_thru_api_with_eureka.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.user_service_calling_contact_thru_api_with_eureka.model.Contact;
 import com.user_service_calling_contact_thru_api_with_eureka.model.User;
 import com.user_service_calling_contact_thru_api_with_eureka.service.UserService;
@@ -25,7 +30,7 @@ public class UserController {
 	private RestTemplate restTemplate;
 
 	@Autowired
-	private DiscoveryClient discoveryClient;	
+	private DiscoveryClient discoveryClient;
 
 	@GetMapping("/{userId}")
 	public User getUser(@PathVariable("userId") Long userId) {
@@ -40,18 +45,54 @@ public class UserController {
 
 		return user;
 
+		// Test url: http://localhost:8765/users/1311
+
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
+		String serviceUri = discoveryClient.getInstances("api_gateway").get(0).getUri().toString();
+
+		List<Contact> listContactResult = restTemplate.getForObject(serviceUri + "/contact/getall", List.class);
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		List<Contact> listContact = mapper.convertValue(listContactResult, new TypeReference<List<Contact>>() {
+		});
+
+		for (User user : userService.getAllUsers()) {
+
+			Long userId = user.getUserId();
+
+			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
+					.collect(Collectors.toList()));
+		}
+
 		return userService.getAllUsers();
+
+		// Test url: http://localhost:8765/users/getall
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
 		return userService.addUser(user);
+
+		/*
+		 * Test url: http://localhost:8765/users/add
+		 * 
+		 * Test data:
+		 * 
+		 * {
+		 * 
+		 * "userId": "1314" , 
+		 * "username": "PQR1" , 
+		 * "phone": "PQR1@yahoo.com"
+		 * 
+		 * }
+		 * 
+		 */
 
 	}
 
