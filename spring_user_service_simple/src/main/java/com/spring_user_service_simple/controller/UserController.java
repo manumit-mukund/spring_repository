@@ -25,14 +25,17 @@ public class UserController {
 
 		return userUserService.getUser(username);
 
-//		Test url (positive): http://localhost:9001/users/abc
-//		Test url (positive): http://localhost:9001/users/abc1
+		// Test url (positive): http://localhost:9001/users/abc
+		// Test url (negative): http://localhost:9001/users/abc1
+
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
 		return userUserService.getAllUsers();
+
+		// Test url: http://localhost:9001/users/getall
 	}
 
 	@PostMapping("/add")
