@@ -85,7 +85,7 @@ public class SessionController {
 		String output = """
 				<html>
 				    <body>
-				        <p>username attribute accessed from the session</p>
+				        <p>username attribute accessed by the session</p>
 				        """;
 
 		output += "<p>sessionId = " + sessionId + "</p>";
