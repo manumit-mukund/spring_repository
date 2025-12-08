@@ -26,12 +26,16 @@ public class AdminController {
 	public User getUser(@PathVariable("username") String username) {
 
 		return userUserServiceImpl.getUser(username);
+		
+		//Test url: http://localhost:9001/admin/users/abc
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
 		return userUserServiceImpl.getAllUsers();
+		
+		//Test url: http://localhost:9001/admin/users/getall
 	}
 
 	@PostMapping("/add")

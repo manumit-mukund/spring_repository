@@ -14,6 +14,8 @@ public class CommonController {
 	public String methodUser() {
 
 		return "This method is for user.";
+		
+		//Tesr url: http://localhost:9001/common/user
 	}
 
 	@PreAuthorize("hasRole('ADMIN')")
@@ -21,6 +23,8 @@ public class CommonController {
 	public String methodAdmin() {
 
 		return "This method is for admin.";
+		
+		//Test url: http://localhost:9001/common/admin
 	}
 
 }

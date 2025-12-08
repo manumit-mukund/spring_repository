@@ -14,6 +14,8 @@ public class UserController {
 	public String hello() {
 
 		return "Hello World for user!";
+		
+		//Test url: http://localhost:9001/user/hello
 	}
 
 }
