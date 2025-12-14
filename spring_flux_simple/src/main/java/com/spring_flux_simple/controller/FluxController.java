@@ -20,7 +20,7 @@ public class FluxController {
 		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
 		// and introduces a delay of 1 second between each emission to simulate a
 		// stream.
-		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5").delayElements(Duration.ofSeconds(3)).log();
+		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5").delayElements(Duration.ofSeconds(2)).log();
 
 	}
 
