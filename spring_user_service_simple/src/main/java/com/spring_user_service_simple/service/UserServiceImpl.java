@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 				.stream()
 				.filter(user -> user.getUsername().equals(username))
 				.findAny()
-				.orElseThrow(() -> new ResourceNotFoundException("user not found with that username : " + username));
+				.orElseThrow(() -> new ResourceNotFoundException("user not found with the username : " + username));
 
 	}
 

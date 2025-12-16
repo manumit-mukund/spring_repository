@@ -33,7 +33,7 @@ public class SessionController {
 
 		} else {
 
-			sessionId = "Existing session accessed: " + session.getId();
+			sessionId = "Session already created: " + session.getId();
 
 			username1 = (String) session.getAttribute("username1");
 			username2 = (String) session.getAttribute("username2");
