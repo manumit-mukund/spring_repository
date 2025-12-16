@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.spring_user_service_form_login_inmemory_security.exception.ResourceNotFoundException;
 import com.spring_user_service_form_login_inmemory_security.model.User;
 
 @Service
@@ -23,7 +24,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String username) {
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElseThrow(() -> new ResourceNotFoundException("user not found with username : " + username));
 
 	}
 
@@ -37,6 +42,21 @@ public class UserServiceImpl implements UserService {
 	public User addUser(User user) {
 
 		listUser.add(user);
+		return user;
+
+	}
+
+	@Override
+	public User deleteUser(String username) {
+
+		User user = getUser(username);
+
+		if (user != null) {
+
+			listUser.remove(user);
+
+		}
+
 		return user;
 
 	}
