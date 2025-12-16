@@ -66,7 +66,7 @@ public class AdminController {
 
 		return ResponseEntity.ok(deleteddUser);
 
-		// Postman DELETE url: http://localhost:9001/users/delete/abc
+		// Postman DELETE url: http://localhost:9001/admin/users/delete/abc
 
 	}
 

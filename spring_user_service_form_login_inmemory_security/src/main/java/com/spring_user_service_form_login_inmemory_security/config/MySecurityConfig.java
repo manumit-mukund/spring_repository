@@ -25,7 +25,9 @@ public class MySecurityConfig {
 	
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		
         http
+        	.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(requests -> requests
                 // Define access rules
                 .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -33,7 +35,9 @@ public class MySecurityConfig {
                 .requestMatchers("/", "/login", "/access-denied-error").permitAll()
                 .anyRequest().authenticated()
             )
-            .formLogin((form) -> form.loginPage("/login").loginProcessingUrl("/doLogin")
+            .formLogin((form) -> form
+            		.loginPage("/login")
+            		.loginProcessingUrl("/doLogin")
 					.defaultSuccessUrl("/public/home")
             )
             .logout(logout -> logout
