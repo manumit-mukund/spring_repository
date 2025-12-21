@@ -1,9 +1,11 @@
 package com.spring_boot_circuit_breaker_with_hystrix.service;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import java.util.Random;
+
 import org.springframework.stereotype.Service;
 
-import java.util.Random;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.spring_boot_circuit_breaker_with_hystrix.exception.ServiceFailureException;
 
 @Service
 public class RemoteServiceSimulator implements RemoteService {
@@ -13,7 +15,7 @@ public class RemoteServiceSimulator implements RemoteService {
 
 		if (new Random().nextBoolean()) {
 
-			throw new RuntimeException("Service Failure!");
+			throw new ServiceFailureException("Service Failure!");
 
 		}
 
