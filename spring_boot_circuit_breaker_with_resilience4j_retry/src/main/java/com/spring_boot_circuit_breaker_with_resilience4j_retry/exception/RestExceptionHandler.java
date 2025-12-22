@@ -30,7 +30,7 @@ public class RestExceptionHandler {
 	public ResponseEntity<Map<String, String>> handleServiceFailureException(ServiceFailureException ex) {
 
 		Map<String, String> error = new HashMap<>();
-		error.put("error", "Service not found");
+		error.put("error", "Service not available");
 		error.put("message", ex.getMessage()); // Use exception message
 
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
