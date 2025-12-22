@@ -11,6 +11,9 @@ import com.spring_boot_circuit_breaker_with_hystrix.exception.ServiceFailureExce
 public class MyService {
 
 	@HystrixCommand(fallbackMethod = "fallbackHello")
+	// If we comment out the above line, the failure case will go to the
+	// @ExceptionHandler(ServiceFailureException.class) in the RestExceptionHandler
+	// class
 	public String sayHello() {
 
 		// Simulate a service call

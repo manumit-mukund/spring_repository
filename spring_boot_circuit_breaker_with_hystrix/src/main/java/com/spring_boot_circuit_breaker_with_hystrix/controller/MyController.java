@@ -17,5 +17,7 @@ public class MyController {
 
 		return myService.sayHello();
 
+		// Test url: http://localhost:9001/hello
+
 	}
 }
