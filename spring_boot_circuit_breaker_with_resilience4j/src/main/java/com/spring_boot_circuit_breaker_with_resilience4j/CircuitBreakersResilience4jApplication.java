@@ -1,7 +1,6 @@
 package com.spring_boot_circuit_breaker_with_resilience4j;
 
 import org.springframework.boot.SpringApplication;
-
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
