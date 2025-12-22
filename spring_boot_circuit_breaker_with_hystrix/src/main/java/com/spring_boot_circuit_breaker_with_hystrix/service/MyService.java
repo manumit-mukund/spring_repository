@@ -8,23 +8,24 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.spring_boot_circuit_breaker_with_hystrix.exception.ServiceFailureException;
 
 @Service
-public class RemoteServiceSimulator implements RemoteService {
+public class MyService {
 
-	@HystrixCommand(fallbackMethod = "reliable")
-	public String callService() throws InterruptedException {
+	@HystrixCommand(fallbackMethod = "fallbackHello")
+	public String sayHello() {
 
+		// Simulate a service call
 		if (new Random().nextBoolean()) {
 
-			throw new ServiceFailureException("Service Failure!");
+			throw new ServiceFailureException("Service call failed");
 
 		}
 
-		return "Successfully called service!";
+		return "Hello from service";
 	}
 
-	public String reliable() {
+	public String fallbackHello() {
 
-		return "Default Response";
+		return "Fallback: Hello from service";
 
 	}
 }
