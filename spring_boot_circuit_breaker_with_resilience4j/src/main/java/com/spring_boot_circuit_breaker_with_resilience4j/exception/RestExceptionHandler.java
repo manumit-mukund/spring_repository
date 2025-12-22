@@ -24,13 +24,13 @@ public class RestExceptionHandler {
 
 	}
 
-	// Example of handling a custom ResourceNotFoundException
-	@ExceptionHandler(ResourceNotFoundException.class)
+	// Example of handling a custom ServiceFailureException
+	@ExceptionHandler(ServiceFailureException.class)
 	// @ResponseStatus(HttpStatus.NOT_FOUND) //Optional
-	public ResponseEntity<Map<String, String>> handleResourceNotFoundException(ResourceNotFoundException ex) {
+	public ResponseEntity<Map<String, String>> handleServiceFailureException(ServiceFailureException ex) {
 
 		Map<String, String> error = new HashMap<>();
-		error.put("error", "Resource not found");
+		error.put("error", "Service not found");
 		error.put("message", ex.getMessage()); // Use exception message
 
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
