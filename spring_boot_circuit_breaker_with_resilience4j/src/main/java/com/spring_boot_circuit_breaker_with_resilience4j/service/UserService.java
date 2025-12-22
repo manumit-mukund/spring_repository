@@ -29,4 +29,5 @@ public class UserService {
 		return "Fallback response: Service is temporarily unavailable";
 
 	}
+
 }
