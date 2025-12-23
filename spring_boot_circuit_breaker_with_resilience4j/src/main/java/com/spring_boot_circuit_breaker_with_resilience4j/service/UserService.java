@@ -5,13 +5,11 @@ import org.springframework.stereotype.Service;
 import com.spring_boot_circuit_breaker_with_resilience4j.exception.ServiceFailureException;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import io.github.resilience4j.retry.annotation.Retry;
 
 @Service
 public class UserService {
 
 	@CircuitBreaker(name = "userService", fallbackMethod = "fallback")
-	@Retry(name = "userService")
 	public String getUser() {
 
 		// Simulate failure
