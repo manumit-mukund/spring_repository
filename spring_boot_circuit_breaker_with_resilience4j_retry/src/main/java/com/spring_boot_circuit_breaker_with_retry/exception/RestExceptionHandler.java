@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j_retry.exception;
+package com.spring_boot_circuit_breaker_with_retry.exception;
 
 import java.util.HashMap;
 import java.util.Map;

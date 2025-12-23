@@ -9,8 +9,8 @@
 		<version>3.3.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring_boot_circuit_breaker_with_resilience4j_retry</groupId>
-	<artifactId>spring_boot_circuit_breaker_with_resilience4j_retry</artifactId>
+	<groupId>com.spring_boot_circuit_breaker_with_retry</groupId>
+	<artifactId>spring_boot_circuit_breaker_with_retry</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>

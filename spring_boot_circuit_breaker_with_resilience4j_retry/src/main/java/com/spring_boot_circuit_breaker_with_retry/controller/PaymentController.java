@@ -1,9 +1,9 @@
-package com.spring_boot_circuit_breaker_with_resilience4j_retry.controller;
+package com.spring_boot_circuit_breaker_with_retry.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring_boot_circuit_breaker_with_resilience4j_retry.service.PaymentService;
+import com.spring_boot_circuit_breaker_with_retry.service.PaymentService;
 
 @RestController
 public class PaymentController {

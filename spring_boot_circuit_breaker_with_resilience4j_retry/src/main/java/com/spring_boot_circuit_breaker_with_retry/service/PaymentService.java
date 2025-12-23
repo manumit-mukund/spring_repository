@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j_retry.service;
+package com.spring_boot_circuit_breaker_with_retry.service;
 
 import java.util.Random;
 
@@ -7,7 +7,7 @@ import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
-import com.spring_boot_circuit_breaker_with_resilience4j_retry.exception.ServiceFailureException;
+import com.spring_boot_circuit_breaker_with_retry.exception.ServiceFailureException;
 
 @Service
 public class PaymentService {
@@ -16,13 +16,13 @@ public class PaymentService {
 
 	@Retryable(
 			value = ServiceFailureException.class, 
-			maxAttempts = 3, 
+			maxAttempts = 2, 
 			backoff = @Backoff(delay = 2000))
 	public String processPayment() {
 
 		if (new Random().nextBoolean()) {
-			
-			if (attempt==3)
+
+			if (attempt==2)
 				attempt=0;
 
 			attempt++;
@@ -33,6 +33,8 @@ public class PaymentService {
 
 		}
 
+		attempt=0;
+		
 		return "Hello from Payment service";
 	}
 

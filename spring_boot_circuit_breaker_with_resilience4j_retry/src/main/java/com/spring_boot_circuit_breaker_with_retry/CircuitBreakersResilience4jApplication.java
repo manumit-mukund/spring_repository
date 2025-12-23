@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j_retry;
+package com.spring_boot_circuit_breaker_with_retry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

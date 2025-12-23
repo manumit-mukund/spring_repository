@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j_retry.exception;
+package com.spring_boot_circuit_breaker_with_retry.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
