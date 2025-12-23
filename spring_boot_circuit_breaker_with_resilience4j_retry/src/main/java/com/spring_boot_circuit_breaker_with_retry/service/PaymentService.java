@@ -27,7 +27,7 @@ public class PaymentService {
 
 			attempt++;
 
-			System.out.println("Attempt: " + attempt);
+			System.out.println("Attempt: " + attempt + "\n");
 
 			throw new ServiceFailureException("Temporary failure");
 
