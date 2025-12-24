@@ -28,7 +28,7 @@ public class MyService {
 
 	public String fallbackHello() {
 
-		return "Fallback: Hello from service";
+		return "Fallback: fallbackHello() called";
 
 	}
 }
