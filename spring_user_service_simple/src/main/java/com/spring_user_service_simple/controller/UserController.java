@@ -27,6 +27,8 @@ public class UserController {
 
 		// Test url (positive): http://localhost:9001/users/abc
 		// Test url (negative): http://localhost:9001/users/abc1
+		// Test url for war file on external Tomcat:
+		// http://localhost:8082/spring_user_service_simple-0.0.1-SNAPSHOT/users/abc
 
 	}
 
@@ -36,6 +38,8 @@ public class UserController {
 		return userUserService.getAllUsers();
 
 		// Test url: http://localhost:9001/users/getall
+		// Test url for war file on external Tomcat:
+		// http://localhost:8082/spring_user_service_simple-0.0.1-SNAPSHOT/users/getall
 	}
 
 	@PostMapping("/add")
