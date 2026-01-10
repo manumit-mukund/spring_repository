@@ -48,6 +48,36 @@ public class MySecurityConfig {
         return http.build();
     }
 
+	@Bean
+	public static BCryptPasswordEncoder passwordEncoder() {
+
+		return new BCryptPasswordEncoder(10);
+
+	}
+
+	@Bean
+	public UserDetailsService userDetailsService(BCryptPasswordEncoder bCryptPasswordEncoder) {
+
+		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+
+		manager.createUser(
+				User
+				.withUsername("user1")
+				.password(bCryptPasswordEncoder.encode("user1"))
+				.roles("USER")
+				.build()
+				);
+
+		manager
+		.createUser(
+				User.withUsername("admin1")
+				.password(bCryptPasswordEncoder.encode("admin1"))
+				.roles("USER", "ADMIN")
+				.build());
+
+		return manager;
+	}
+	
 //	@Bean
 //	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //
@@ -70,26 +100,5 @@ public class MySecurityConfig {
 //		return http.build();
 //
 //	}
-
-	@Bean
-	public static BCryptPasswordEncoder passwordEncoder() {
-
-		return new BCryptPasswordEncoder(10);
-
-	}
-
-	@Bean
-	public UserDetailsService userDetailsService(BCryptPasswordEncoder bCryptPasswordEncoder) {
-
-		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-
-		manager.createUser(
-				User.withUsername("user1").password(bCryptPasswordEncoder.encode("user1")).roles("USER").build());
-
-		manager.createUser(User.withUsername("admin1").password(bCryptPasswordEncoder.encode("admin1"))
-				.roles("USER", "ADMIN").build());
-
-		return manager;
-	}
 
 }
