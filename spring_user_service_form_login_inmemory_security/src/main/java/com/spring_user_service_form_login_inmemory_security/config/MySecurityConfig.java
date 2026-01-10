@@ -45,6 +45,7 @@ public class MySecurityConfig {
                 // Register the custom access denied handler
                 .accessDeniedHandler(customAccessDeniedHandler)
             );
+        
         return http.build();
     }
 
