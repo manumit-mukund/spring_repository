@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.spring_user_service_form_login_db_security.exception.CustomAccessDeniedHandler;
 import com.spring_user_service_form_login_db_security.service.CustomUserDetailService;
 
 @Configuration
@@ -20,18 +21,32 @@ public class MySecurityConfig {
 
 	@Autowired
 	private CustomUserDetailService customUserDetailService;
+	
+	@Autowired
+	private CustomAccessDeniedHandler customAccessDeniedHandler;
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.csrf(AbstractHttpConfigurer::disable)
-				.authorizeHttpRequests(
+			.authorizeHttpRequests(
 						authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
 								.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
-								.requestMatchers("/public/**", "/login/**").permitAll()
+								.requestMatchers("/public/**", "/login/**", "/access-denied-error").permitAll()
 								.anyRequest().authenticated())
-				.httpBasic(Customizer.withDefaults())
-				.formLogin((form) -> form.loginPage("/login").loginProcessingUrl("/doLogin").defaultSuccessUrl("/public/home"));
+			.httpBasic(Customizer.withDefaults())
+			.formLogin(form -> form
+						.loginPage("/login")
+						.loginProcessingUrl("/doLogin")
+						.defaultSuccessUrl("/public/home")
+				)
+			.logout(logout -> logout
+		                .permitAll()
+		          )
+		     .exceptionHandling(exception -> exception
+		                // Register the custom access denied handler
+		                .accessDeniedHandler(customAccessDeniedHandler)
+		          );
 
 		return http.build();
 

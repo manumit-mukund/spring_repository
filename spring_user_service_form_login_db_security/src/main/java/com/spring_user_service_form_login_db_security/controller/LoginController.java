@@ -13,4 +13,11 @@ public class LoginController {
 
 	}
 
+	@GetMapping("/access-denied-error")
+	public String accessDenied() {
+
+		return "access-denied"; // Name of your HTML/JSP template
+
+	}
+
 }
