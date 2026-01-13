@@ -45,6 +45,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
+		
+		logger.info("Performing an action on  getAllUsers()...");
 
 		return listUser;
 	}
