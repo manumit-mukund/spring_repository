@@ -23,12 +23,6 @@ public class UserController {
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		if (username.equals("null")) {
-
-			throw new IllegalArgumentException("Invalid username: " + username);
-
-		}
-
 		return userUserServiceImpl.getUser(username);
 	}
 
