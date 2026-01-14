@@ -32,6 +32,31 @@ public class FluxController {
 
 	}
 
+	@GetMapping(value = "/stream-items_1", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Flux<String> streamItems_Without_Data_Prefix_1() {
+
+		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
+		// and introduces a delay of 1 second between each emission to simulate a
+		// stream.
+		return Flux
+				.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+				.delayElements(Duration.ofSeconds(2))
+				.log();
+
+	}
+
+	@GetMapping(value = "/stream-items_2", produces = MediaType.TEXT_PLAIN_VALUE)
+	public Flux<String> streamItems_Without_Data_Prefix_2() {
+
+		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
+		// and introduces a delay of 1 second between each emission to simulate a
+		// stream.
+		return Flux
+				.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+				.delayElements(Duration.ofSeconds(2)).log();
+
+	}
+
 	@GetMapping(value = "/delayed-items", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<String> getDelayedItems() {
 
@@ -42,7 +67,9 @@ public class FluxController {
 		return Flux
 				.fromIterable(items)
 				.delayElements(Duration.ofSeconds(3))
-				.log(); // The .log() operator provides helpful logs to observe the emissions
+				.log(); // The .log() operator provides
+																					// helpful logs to observe the
+																					// emissions
 
 	}
 
