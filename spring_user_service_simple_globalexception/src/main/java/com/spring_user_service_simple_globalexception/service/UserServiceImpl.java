@@ -43,16 +43,19 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User addUser(User user) {
 
-		if (user.getUsername() != null && user.getUsername().trim().length() != 0) {
+		if (user != null && (user.getUsername() != null && user.getUsername().trim().length() != 0)) {
 
 			listUser.add(user);
 
-			return user;
+		}
 
-		} else {
+		else {
 
 			throw new InvalidUserException("Invalid username");
+
 		}
+
+		return user;
 
 	}
 
