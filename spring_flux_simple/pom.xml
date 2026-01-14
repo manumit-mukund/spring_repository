@@ -9,8 +9,8 @@
 		<version>3.3.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring_flux_simple</groupId>
-	<artifactId>spring_flux_simple</artifactId>
+	<groupId>com.spring_boot_flux_simple</groupId>
+	<artifactId>spring_boot_flux_simple</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring_flux_simple</name>
 	<description>Demo project for Spring Boot</description>
