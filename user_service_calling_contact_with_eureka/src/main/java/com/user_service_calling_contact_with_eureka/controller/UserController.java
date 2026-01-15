@@ -39,6 +39,8 @@ public class UserController {
 
 		String serviceUri = discoveryClient.getInstances("contact_service_with_eureka").get(0).getUri().toString();
 
+		System.out.println("serviceUri = " + serviceUri);
+
 		List<Contact> contacs = restTemplate.getForObject(serviceUri + "/contact/user/" + userId, List.class);
 
 		user.setContacts(contacs);
@@ -53,6 +55,8 @@ public class UserController {
 	public List<User> getAllUsers() {
 
 		String serviceUri = discoveryClient.getInstances("contact_service_with_eureka").get(0).getUri().toString();
+
+		System.out.println("serviceUri = " + serviceUri);
 
 		List<Contact> listContactResult = restTemplate.getForObject(serviceUri + "/contact/getall", List.class);
 
@@ -88,9 +92,7 @@ public class UserController {
 		 * 
 		 * {
 		 * 
-		 * "userId": "1314" , 
-		 * "username": "pqr1" , 
-		 * "phone": "126"
+		 * "userId": "1314" , "username": "pqr1" , "phone": "126"
 		 * 
 		 * }
 		 * 
