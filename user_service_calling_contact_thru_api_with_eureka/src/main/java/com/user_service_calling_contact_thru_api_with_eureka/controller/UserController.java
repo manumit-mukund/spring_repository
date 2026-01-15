@@ -39,6 +39,8 @@ public class UserController {
 
 		String serviceUri = discoveryClient.getInstances("api_gateway").get(0).getUri().toString();
 
+		System.out.println("serviceUri = " + serviceUri);
+
 		List<Contact> contacs = restTemplate.getForObject(serviceUri + "/contact/user/" + userId, List.class);
 
 		user.setContacts(contacs);
@@ -65,7 +67,9 @@ public class UserController {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
+			user.setContacts(listContact
+					.stream()
+					.filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
@@ -86,9 +90,7 @@ public class UserController {
 		 * 
 		 * {
 		 * 
-		 * "userId": "1314" , 
-		 * "username": "PQR1" , 
-		 * "phone": "PQR1@yahoo.com"
+		 * "userId": "1314" , "username": "PQR1" , "phone": "PQR1@yahoo.com"
 		 * 
 		 * }
 		 * 
