@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -24,6 +25,19 @@ public class RestExceptionHandler {
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 
 	}
+	
+	// Example of handling a custom ResourceNotFoundException
+		@ExceptionHandler(UsernameNotFoundException.class)
+		@ResponseStatus(HttpStatus.NOT_FOUND)
+		public ResponseEntity<Map<String, String>> handleUsernameNotFoundException(UsernameNotFoundException ex) {
+
+			Map<String, String> error = new HashMap<>();
+			error.put("error", "User not found");
+			error.put("message", ex.getMessage()); // Use exception message
+
+			return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+
+		}
 
 	// Example of handling a custom ResourceNotFoundException
 	@ExceptionHandler(ResourceNotFoundException.class)
