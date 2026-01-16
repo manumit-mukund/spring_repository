@@ -15,9 +15,6 @@ public class UserServiceImpl implements UserService {
 
 	private List<User> listUser;
 
-	@Autowired
-	private RestTemplate restTemplate;
-
 	public UserServiceImpl() {
 
 		super();
