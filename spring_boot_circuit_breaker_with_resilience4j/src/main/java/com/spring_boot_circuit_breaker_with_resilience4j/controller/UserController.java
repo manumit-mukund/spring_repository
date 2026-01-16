@@ -22,8 +22,8 @@ public class UserController {
 		return userService.getUser();
 
 	}
-	
-	//Test url: http://localhost:9001/user
-	
-	//Actuator url: http://localhost:9001/actuator/health
+
+	// Test url: http://localhost:9001/user
+
+	// Actuator url: http://localhost:9001/actuator/health
 }
