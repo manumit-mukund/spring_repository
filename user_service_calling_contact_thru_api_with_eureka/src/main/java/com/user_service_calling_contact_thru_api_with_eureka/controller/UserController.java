@@ -55,6 +55,8 @@ public class UserController {
 	public List<User> getAllUsers() {
 
 		String serviceUri = discoveryClient.getInstances("api_gateway").get(0).getUri().toString();
+		
+		System.out.println("serviceUri = " + serviceUri);
 
 		List<Contact> listContactResult = restTemplate.getForObject(serviceUri + "/contact/getall", List.class);
 
