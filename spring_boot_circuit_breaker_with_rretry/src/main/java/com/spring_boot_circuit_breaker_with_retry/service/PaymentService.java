@@ -14,16 +14,15 @@ public class PaymentService {
 
 	private int attempt = 0;
 
-	@Retryable(
-			value = ServiceFailureException.class, 
+	@Retryable(retryFor = { ServiceFailureException.class }, 
 			maxAttempts = 2, 
 			backoff = @Backoff(delay = 2000))
 	public String processPayment() {
 
 		if (new Random().nextBoolean()) {
 
-			if (attempt==2)
-				attempt=0;
+			if (attempt == 2)
+				attempt = 0;
 
 			attempt++;
 
@@ -33,8 +32,8 @@ public class PaymentService {
 
 		}
 
-		attempt=0;
-		
+		attempt = 0;
+
 		return "Hello from Payment service";
 	}
 
