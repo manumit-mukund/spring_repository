@@ -16,7 +16,7 @@ public class PaymentService {
 
 	@Retryable(retryFor = { ServiceFailureException.class }, 
 			maxAttempts = 2, 
-			backoff = @Backoff(delay = 2000))
+			backoff = @Backoff(delay = 3000))
 	public String processPayment() {
 
 		if (new Random().nextBoolean()) {
@@ -38,9 +38,9 @@ public class PaymentService {
 	}
 
 	@Recover
-	public String recover(RuntimeException ex) {
+	public String recover(ServiceFailureException ex) {
 
-		System.out.println("Recovery method called");
+		System.out.println("Recovery method called....\n");
 
 		return "Payment service is currently unavailable";
 
