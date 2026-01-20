@@ -20,6 +20,8 @@ public class PaymentController {
 	public String pay() {
 
 		return paymentService.processPayment();
+		
+		//Test url: http://localhost:9001/pay
 
 	}
 }
