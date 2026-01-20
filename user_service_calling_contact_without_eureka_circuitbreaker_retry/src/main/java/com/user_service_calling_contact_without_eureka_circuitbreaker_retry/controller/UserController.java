@@ -32,9 +32,9 @@ public class UserController {
 	public User getUser(@PathVariable("userId") Long userId) {
 
 		User user = userService.getUser(userId);
-		
+
 		List<Contact> listContact = userService.getContactsOfUser(userId);
-		
+
 		user.setContacts(listContact);
 
 		return user;

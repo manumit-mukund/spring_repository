@@ -12,9 +12,9 @@ public interface UserService {
 	public List<User> getAllUsers();
 
 	public User addUser(User user);
-	
+
 	public List<Contact> getContactsOfUser(Long userId);
 
-	//public List<Contact> getAllContacts();
+	// public List<Contact> getAllContacts();
 
 }

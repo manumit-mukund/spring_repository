@@ -2,11 +2,9 @@ package com.user_service_calling_contact_without_eureka_circuitbreaker_retry.ser
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
-import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -46,7 +44,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(Long id) {
 
-		return listUser.stream().filter(user -> user.getUserId().equals(id)).findAny()
+		return listUser
+				.stream()
+				.filter(user -> user.getUserId().equals(id)).findAny()
 				.orElseThrow(() -> new ResourceNotFoundException("user not found with that userid : " + id));
 
 	}
@@ -81,16 +81,6 @@ public class UserServiceImpl implements UserService {
 		return listCcontacs;
 
 	}
-
-//	@Recover
-//	public String retryFallback(Throwable t) {
-//
-//		System.out.println("All retries failed. Executing retry fallback logic. Exception: " + t.getMessage());
-//
-//		attempt = 0;
-//
-//		return "retry Fallback response after all retries";
-//	}
 
 	public List<Contact> getUserFallback(Long userId, Throwable t) {
 
