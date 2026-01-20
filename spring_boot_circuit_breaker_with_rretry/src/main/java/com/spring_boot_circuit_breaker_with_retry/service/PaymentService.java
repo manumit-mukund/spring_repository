@@ -21,19 +21,19 @@ public class PaymentService {
 
 		if (new Random().nextBoolean()) {
 
-			if (attempt == 2)
-				attempt = 0;
+//			if (attempt == 2)
+//				attempt = 0;
+//
+//			attempt++;
 
-			attempt++;
-
-			System.out.println("Attempt: " + attempt + "\n");
+			System.out.println("Attempt: " + ++attempt + "\n");
 
 			throw new ServiceFailureException("Temporary failure");
 
 		}
 
 		attempt = 0;
-
+		
 		return "Hello from Payment service";
 	}
 
@@ -41,6 +41,8 @@ public class PaymentService {
 	public String recover(ServiceFailureException ex) {
 
 		System.out.println("Recovery method called....\n");
+
+		attempt = 0;
 
 		return "Payment service is currently unavailable";
 
