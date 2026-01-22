@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j.exception;
+package com.spring_boot_circuit_breaker_with_resilience4j_fallback.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

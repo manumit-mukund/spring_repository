@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_resilience4j;
+package com.spring_boot_circuit_breaker_with_resilience4j_fallback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
