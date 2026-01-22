@@ -51,7 +51,7 @@ public class UserController {
 		User user = userService.getUser(userId);
 
 		// Log the error or handle it gracefully
-		System.err.println("Fallback triggered for getUserFallback: " + t.getMessage() + "Long userId = " + userId);
+		System.err.println("Fallback triggered for getUserFallback: " + t.getMessage() + ", Long userId = " + userId);
 
 		return user;
 	}
