@@ -21,11 +21,6 @@ public class PaymentService {
 
 		if (new Random().nextBoolean()) {
 
-//			if (attempt == 2)
-//				attempt = 0;
-//
-//			attempt++;
-
 			System.out.println("Attempt: " + ++attempt + "\n");
 
 			throw new ServiceFailureException("Temporary failure");
@@ -33,7 +28,7 @@ public class PaymentService {
 		}
 
 		attempt = 0;
-		
+
 		return "Hello from Payment service";
 	}
 
