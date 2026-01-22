@@ -39,7 +39,7 @@ public class PaymentService {
 
 		attempt = 0;
 
-		return "Payment service is currently unavailable";
+		return "Payment service is currently unavailable:" + ex.getMessage();
 
 	}
 }
