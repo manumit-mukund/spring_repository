@@ -28,4 +28,15 @@ public class UserService {
 
 	}
 
+	// If we use this method, we'll get java.lang.NoSuchMethodException: class
+	// java.lang.String class
+	// com.spring_boot_circuit_breaker_with_resilience4j_fallback.service.UserService.fallback(,class
+	// java.lang.Throwable) on the Console.
+	// Also, the message in the browser will be displayed from the ControllerAdvice
+	public String fallback() {
+
+		return "Fallback response: fallback() called";
+
+	}
+
 }
