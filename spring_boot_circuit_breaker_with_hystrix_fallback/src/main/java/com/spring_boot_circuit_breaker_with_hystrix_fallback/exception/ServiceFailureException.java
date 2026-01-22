@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_hystrix.exception_fallback;
+package com.spring_boot_circuit_breaker_with_hystrix_fallback.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

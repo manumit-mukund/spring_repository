@@ -1,11 +1,11 @@
-package com.spring_boot_circuit_breaker_with_hystrix.service_fallback;
+package com.spring_boot_circuit_breaker_with_hystrix_fallback.service;
 
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.spring_boot_circuit_breaker_with_hystrix.exception_fallback.ServiceFailureException;
+import com.spring_boot_circuit_breaker_with_hystrix_fallback.exception.ServiceFailureException;
 
 @Service
 public class MyService {

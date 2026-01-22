@@ -1,4 +1,4 @@
-package com.spring_boot_circuit_breaker_with_hystrix.exception_fallback;
+package com.spring_boot_circuit_breaker_with_hystrix_fallback.exception;
 
 import java.util.HashMap;
 import java.util.Map;
