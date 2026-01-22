@@ -24,7 +24,7 @@ public class UserService {
 
 	public String fallback(Exception ex) {
 
-		return "Fallback response: Service is temporarily unavailable";
+		return "Fallback response:" + ex.getMessage();
 
 	}
 
