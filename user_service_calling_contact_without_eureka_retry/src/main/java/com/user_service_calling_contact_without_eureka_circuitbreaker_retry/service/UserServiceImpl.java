@@ -41,7 +41,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(Long id) {
 
-		return listUser.stream().filter(user -> user.getUserId().equals(id)).findAny()
+		return listUser
+				.stream()
+				.filter(user -> user.getUserId().equals(id)).findAny()
 				.orElseThrow(() -> new ResourceNotFoundException("user not found with that userid : " + id));
 
 	}
@@ -62,7 +64,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	@Retryable(retryFor = { Exception.class }, maxAttempts = 3, backoff = @Backoff(delay = 10000))
+	@Retryable(
+			retryFor = { Exception.class }, 
+			maxAttempts = 3, 
+			backoff = @Backoff(delay = 10000))
 	public List<Contact> getContactsOfUser(Long userId) {
 
 		System.out.println("Calling external API. Attempt: " + ++attempt);
