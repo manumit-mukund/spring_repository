@@ -67,9 +67,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	@Retryable(retryFor = { Exception.class }, 
-	maxAttempts = 3, 
-	backoff = @Backoff(delay = 10000))
+	@Retryable(
+			retryFor = { Exception.class }, 
+			maxAttempts = 3, 
+			backoff = @Backoff(delay = 10000))
 	@CircuitBreaker(name = EXTERNAL_SERVICE, fallbackMethod = "getUserFallback") // Apply circuit breaker logic
 	public List<Contact> getContactsOfUser(Long userId) {
 
