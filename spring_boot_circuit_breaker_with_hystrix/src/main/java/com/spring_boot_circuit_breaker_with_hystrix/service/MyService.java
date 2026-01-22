@@ -26,9 +26,16 @@ public class MyService {
 		return "Hello from service";
 	}
 
+//	Ths syntax will not work well. It will show exception on the console, not on the browser
+//	public String fallbackHello(Exception ex) {
+//
+//		return "Fallback response:" + ex.getMessage();
+//
+//	}
+
 	public String fallbackHello() {
 
-		return "Fallback: fallbackHello() called";
+		return "Fallback response: fallbackHello() called";
 
 	}
 }
