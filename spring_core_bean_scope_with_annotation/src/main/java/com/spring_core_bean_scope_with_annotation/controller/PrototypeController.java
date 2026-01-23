@@ -20,7 +20,7 @@ public class PrototypeController {
 
 		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
 
-		System.out.println("\nsingletonBean1.getState()  = " + prototypeBean1.getState());
+		System.out.println("\nprototypeBean1.getState()  = " + prototypeBean1.getState());
 
 		prototypeBean1.setState("Updated State at " + new Date());
 
@@ -31,6 +31,8 @@ public class PrototypeController {
 		System.out.println("\nprototypeBean2.getState()  = " + prototypeBean2.getState());
 
 		return "returned prototypeBean2.getState() =" + prototypeBean2.getState();
+
+		// Test url: http://localhost:9001/prototype
 
 	}
 }

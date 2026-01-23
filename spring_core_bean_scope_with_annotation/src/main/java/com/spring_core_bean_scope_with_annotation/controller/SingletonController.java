@@ -16,7 +16,7 @@ public class SingletonController {
 	private ApplicationContext context;
 
 	@GetMapping("/singleton")
-	public String usePrototype() {
+	public String useSignleton() {
 
 		SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
 
@@ -31,6 +31,8 @@ public class SingletonController {
 		System.out.println("\nsingletonBean2.getState()  = " + singletonBean2.getState());
 
 		return "returned singletonBean2.getState() =" + singletonBean2.getState();
+
+		// Test url: http://localhost:9001/singleton
 
 	}
 }
