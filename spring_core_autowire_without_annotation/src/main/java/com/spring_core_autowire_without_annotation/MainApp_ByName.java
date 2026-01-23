@@ -15,9 +15,9 @@ public class MainApp_ByName {
 
 		a.displayB();
 
-		//a.displayC(); // java.lang.NullPointerException
+		// a.displayC(); // java.lang.NullPointerException
 
-		//a.displayD(); // java.lang.NullPointerException
+		// a.displayD(); // java.lang.NullPointerException
 
 	}
 }
