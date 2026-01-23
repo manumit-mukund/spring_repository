@@ -11,6 +11,7 @@ public class CarService {
 	@Autowired
 	Car car;
 
+	//Even if we comment it out, it will work fine
 	public void setCar(Car car) {
 
 		this.car = car;
