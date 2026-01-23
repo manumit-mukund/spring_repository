@@ -10,7 +10,7 @@ public class MainApp_Singleton {
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans_singleton.xml");
-		
+
 		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 		objA.setMessage("I'm object A");
 		objA.getMessage();
