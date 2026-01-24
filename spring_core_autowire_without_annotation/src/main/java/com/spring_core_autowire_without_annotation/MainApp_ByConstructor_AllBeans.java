@@ -18,7 +18,9 @@ public class MainApp_ByConstructor_AllBeans {
 
 			a.displayB(); // jjava.lang.NullPointerException: Cannot invoke
 							// "com.spring_core_autowire_without_annotation.model.B.hello()" because
-							// "this.b" is null
+							// "this.b" is null. Note: Only one parameterized constructor of A will be
+							// called as two
+			// constructors cannot be called together.
 			a.displayC();
 
 			a.displayD();

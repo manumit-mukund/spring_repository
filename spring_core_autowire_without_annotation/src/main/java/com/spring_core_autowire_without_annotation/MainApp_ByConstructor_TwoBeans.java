@@ -19,7 +19,8 @@ public class MainApp_ByConstructor_TwoBeans {
 			a.displayB();
 
 			a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml
-							// file
+							// file. Note: Only one parameterized constructor of A will be called as two
+							// constructors cannot be called together.
 			a.displayD();
 
 		} catch (Exception e) {
