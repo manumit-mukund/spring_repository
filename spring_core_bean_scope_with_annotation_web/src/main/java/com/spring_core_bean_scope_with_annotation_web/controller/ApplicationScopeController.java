@@ -15,7 +15,7 @@ public class ApplicationScopeController {
 	@GetMapping("/application-scope")
 	public String getApplicationScope() {
 
-		System.out.println("\n" + this);
+		System.out.println("\n" + this); // default scope of this controller is singleton
 
 		return "Application Scoped Data: " + applicationScopedBean.getAppData();
 
