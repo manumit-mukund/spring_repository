@@ -8,8 +8,8 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring_core_bean_scope_with_annotation</groupId>
-	<artifactId>spring_core_bean_scope_with_annotatione</artifactId>
+	<groupId>com.spring_core_bean_scope_with_annotation_singleton_prototype_web</groupId>
+	<artifactId>spring_core_bean_scope_with_annotation_singleton_prototype_web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>

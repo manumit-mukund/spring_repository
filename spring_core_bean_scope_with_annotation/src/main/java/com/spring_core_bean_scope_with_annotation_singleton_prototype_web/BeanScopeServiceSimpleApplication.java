@@ -1,4 +1,4 @@
-package com.spring_core_bean_scope_with_annotation;
+package com.spring_core_bean_scope_with_annotation_singleton_prototype_web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

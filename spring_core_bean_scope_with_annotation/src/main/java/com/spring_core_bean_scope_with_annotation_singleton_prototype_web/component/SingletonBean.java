@@ -1,15 +1,15 @@
-package com.spring_core_bean_scope_with_annotation.component;
+package com.spring_core_bean_scope_with_annotation_singleton_prototype_web.component;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
-public class PrototypeBean {
+@Scope("singleton")
+public class SingletonBean {
 
 	private String state;
 
-	public PrototypeBean() {
+	public SingletonBean() {
 
 		this.state = "Initial State";
 
