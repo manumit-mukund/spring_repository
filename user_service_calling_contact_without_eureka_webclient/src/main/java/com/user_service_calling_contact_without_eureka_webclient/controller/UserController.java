@@ -17,7 +17,6 @@ import com.user_service_calling_contact_without_eureka_webclient.model.User;
 import com.user_service_calling_contact_without_eureka_webclient.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/users")
@@ -28,60 +27,74 @@ public class UserController {
 
 	@GetMapping("/{userId}")
 	@CircuitBreaker(name = "userService", fallbackMethod = "getUserFallback")
-	public Mono<User> getUser(@PathVariable("userId") Long userId) {
+	public User getUser(@PathVariable("userId") Long userId) {
 
 		User user = userService.getUser(userId);
 
 		WebClient webClient = WebClient.create("http://localhost:9002");
 
 		List<Contact> listContact = webClient
-				.get().uri("/contact/user/" + userId)
-				.retrieve().bodyToFlux(Contact.class)
+				.get()
+				.uri("/contact/user/" + userId)
+				.retrieve()
+				.bodyToFlux(Contact.class)
 				.collectList().block();
 
 		user.setContacts(listContact);
 
-		Mono<User> userMono = Mono.just(user);
+		// Mono<User> userMono = Mono.just(user);
 
-		return userMono;
+		return user;
 
 		// Test url: http://localhost:9001/users/1311
 
 	}
 
-	public Mono<User> getUserFallback(Long userId, Throwable t) {
+	public User getUserFallback(Long userId, Throwable t) {
 
 		User user = userService.getUser(userId);
 
-		Mono<User> userMono = Mono.just(user);
+		// Mono<User> userMono = Mono.just(user);
 
 		// Log the error or handle it gracefully
 		System.err.println("Fallback triggered for getUserFallback: " + t.getMessage() + ", Long userId = " + userId);
 
-		return userMono;
+		return user;
 	}
 
 	@GetMapping("/getall")
+	@CircuitBreaker(name = "userService", fallbackMethod = "getAllUsersFallback")
 	public List<User> getAllUsers() {
 
 		WebClient webClient = WebClient.create("http://localhost:9002");
 
 		List<Contact> listContact = webClient
 				.get().uri("/contact/getall")
-				.retrieve().bodyToFlux(Contact.class)
+				.retrieve()
+				.bodyToFlux(Contact.class)
 				.collectList().block();
 
 		for (User user : userService.getAllUsers()) {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
+			user.setContacts(listContact
+					.stream()
+					.filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
 		return userService.getAllUsers();
 
 		// Test url: http://localhost:9001/users/getall
+	}
+
+	public List<User> getAllUsersFallback(Throwable t) {
+
+		// Log the error or handle it gracefully
+		System.err.println("Fallback triggered for getAllUsersFallback: " + t.getMessage());
+
+		return userService.getAllUsers();
 	}
 
 	@PostMapping("/add")
