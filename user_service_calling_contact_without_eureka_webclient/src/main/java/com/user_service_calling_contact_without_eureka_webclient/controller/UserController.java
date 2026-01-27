@@ -16,6 +16,7 @@ import com.user_service_calling_contact_without_eureka_webclient.model.Contact;
 import com.user_service_calling_contact_without_eureka_webclient.model.User;
 import com.user_service_calling_contact_without_eureka_webclient.service.UserService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -26,27 +27,38 @@ public class UserController {
 	private UserService userService;
 
 	@GetMapping("/{userId}")
-	public User getUser(@PathVariable("userId") Long userId) {
+	@CircuitBreaker(name = "userService", fallbackMethod = "getUserFallback")
+	public Mono<User> getUser(@PathVariable("userId") Long userId) {
 
 		User user = userService.getUser(userId);
 
 		WebClient webClient = WebClient.create("http://localhost:9002");
 
-		Mono<List<Contact>> monoListContact = webClient
-				.get()
-				.uri("/contact/user/" + userId)
-				.retrieve()
-				.bodyToFlux(Contact.class)
-				.collectList();
-
-		List<Contact> listContact = monoListContact.block();
+		List<Contact> listContact = webClient
+				.get().uri("/contact/user/" + userId)
+				.retrieve().bodyToFlux(Contact.class)
+				.collectList().block();
 
 		user.setContacts(listContact);
 
-		return user;
+		Mono<User> userMono = Mono.just(user);
+
+		return userMono;
 
 		// Test url: http://localhost:9001/users/1311
 
+	}
+
+	public Mono<User> getUserFallback(Long userId, Throwable t) {
+
+		User user = userService.getUser(userId);
+
+		Mono<User> userMono = Mono.just(user);
+
+		// Log the error or handle it gracefully
+		System.err.println("Fallback triggered for getUserFallback: " + t.getMessage() + ", Long userId = " + userId);
+
+		return userMono;
 	}
 
 	@GetMapping("/getall")
@@ -54,22 +66,16 @@ public class UserController {
 
 		WebClient webClient = WebClient.create("http://localhost:9002");
 
-		Mono<List<Contact>> monoListContact = webClient
-				.get()
-				.uri("/contact/getall")
-				.retrieve()
-				.bodyToFlux(Contact.class)
-				.collectList();
-
-		List<Contact> listContact = monoListContact.block();
+		List<Contact> listContact = webClient
+				.get().uri("/contact/getall")
+				.retrieve().bodyToFlux(Contact.class)
+				.collectList().block();
 
 		for (User user : userService.getAllUsers()) {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact
-					.stream()
-					.filter(contact -> contact.getUserId().equals(userId))
+			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
