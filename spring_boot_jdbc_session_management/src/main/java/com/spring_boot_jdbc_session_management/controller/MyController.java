@@ -13,15 +13,27 @@ public class MyController {
 	@GetMapping("/set")
 	public String setSession(HttpSession session) {
 
-		session.setAttribute("myAttribute", "Manu");
+		session.setAttribute("myAttribute1", "Manu1");
+		session.setAttribute("myAttribute2", "Manu2");
+		session.setAttribute("myAttribute3", "Manu3");
 
 		return "Session attribute set";
+
+		// Test url: http://localhost:9001/jdbc/set
 	}
 
 	@GetMapping("/get")
 	public String getSession(HttpSession session) {
 
-		return (String) session.getAttribute("myAttribute");
+		String attributes = "";
+
+		attributes += session.getAttribute("myAttribute1");
+		attributes += ", " + session.getAttribute("myAttribute2");
+		attributes += ", " + session.getAttribute("myAttribute3");
+
+		return attributes;
+
+		// Test url: http://localhost:9001/jdbc/get
 
 	}
 }

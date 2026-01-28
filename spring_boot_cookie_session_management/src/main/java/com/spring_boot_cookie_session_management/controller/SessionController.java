@@ -16,7 +16,15 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SessionController {
 
 	@GetMapping("/create")
-	public String createSession(HttpServletResponse response) {
+	public String createSession(HttpServletRequest request, HttpServletResponse response) {
+
+		Cookie[] cookies = request.getCookies();
+
+		if (cookies != null) {
+
+			return "Cookie session already created";
+
+		}
 
 		Cookie sessionCookie1 = new Cookie("sessionId1", "123456");
 		Cookie sessionCookie2 = new Cookie("sessionId2", "1234566");
