@@ -38,7 +38,8 @@ public class UserController {
 				.uri("/contact/user/" + userId)
 				.retrieve()
 				.bodyToFlux(Contact.class)
-				.collectList().block();
+				.collectList()
+				.block();
 
 		user.setContacts(listContact);
 
@@ -53,8 +54,6 @@ public class UserController {
 	public User getUserFallback(Long userId, Throwable t) {
 
 		User user = userService.getUser(userId);
-
-		// Mono<User> userMono = Mono.just(user);
 
 		// Log the error or handle it gracefully
 		System.err.println("Fallback triggered for getUserFallback: " + t.getMessage() + ", Long userId = " + userId);
@@ -72,15 +71,15 @@ public class UserController {
 				.get().uri("/contact/getall")
 				.retrieve()
 				.bodyToFlux(Contact.class)
-				.collectList().block();
+				.collectList()
+				.block();
 
 		for (User user : userService.getAllUsers()) {
 
 			Long userId = user.getUserId();
 
 			user.setContacts(listContact
-					.stream()
-					.filter(contact -> contact.getUserId().equals(userId))
+					.stream().filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
