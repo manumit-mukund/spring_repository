@@ -25,5 +25,11 @@ public class Controller {
 
 		return new ResponseEntity<Employee>(employeeSavedToDB, HttpStatus.CREATED);
 
+//		Test url: http://localhost:9090/api/employee/add
+//		Postman data: 
+//		{
+//		    "name": "E1" 
+//		}
+
 	}
 }
