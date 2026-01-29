@@ -29,7 +29,11 @@ public class SagaOrchestrator {
 			ResponseEntity<String> paymentResponse = restTemplate.postForEntity("http://localhost:9001/payment/process",
 					paymentRequest, String.class);
 
+			System.out.println("paymentResponse = " + paymentResponse);
+
 			if (!paymentResponse.getStatusCode().is2xxSuccessful()) {
+
+				System.out.println("paymentResponse = " + paymentResponse);
 
 				throw new RuntimeException("Payment failed");
 
@@ -45,7 +49,11 @@ public class SagaOrchestrator {
 			ResponseEntity<String> shippingResponse = restTemplate.postForEntity("http://localhost:9001/shipping/ship",
 					shippingRequest, String.class);
 
+			System.out.println("shippingResponse = " + shippingResponse);
+
 			if (!shippingResponse.getStatusCode().is2xxSuccessful()) {
+
+				System.out.println("shippingResponse = " + shippingResponse);
 
 				throw new RuntimeException("Shipping failed");
 
