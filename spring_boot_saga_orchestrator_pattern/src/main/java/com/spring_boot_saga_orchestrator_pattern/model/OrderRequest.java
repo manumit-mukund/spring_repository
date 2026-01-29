@@ -1,4 +1,4 @@
-package com.saga_orchestrator_pattern.model;
+package com.spring_boot_saga_orchestrator_pattern.model;
 
 public class OrderRequest {
 

@@ -1,4 +1,4 @@
-package com.saga_orchestrator_pattern.controller;
+package com.spring_boot_saga_orchestrator_pattern.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.saga_orchestrator_pattern.model.ShippingRequest;
+import com.spring_boot_saga_orchestrator_pattern.model.ShippingRequest;
 
 @RestController
 @RequestMapping("/shipping")

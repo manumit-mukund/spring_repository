@@ -1,12 +1,12 @@
-package com.saga_orchestrator_pattern.service;
+package com.spring_boot_saga_orchestrator_pattern.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.saga_orchestrator_pattern.model.OrderRequest;
-import com.saga_orchestrator_pattern.model.PaymentRequest;
-import com.saga_orchestrator_pattern.model.ShippingRequest;
+import com.spring_boot_saga_orchestrator_pattern.model.OrderRequest;
+import com.spring_boot_saga_orchestrator_pattern.model.PaymentRequest;
+import com.spring_boot_saga_orchestrator_pattern.model.ShippingRequest;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.saga_orchestrator_pattern;
+package com.spring_boot_saga_orchestrator_pattern;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

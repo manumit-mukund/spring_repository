@@ -1,8 +1,8 @@
-package com.saga_orchestrator_pattern.service;
+package com.spring_boot_saga_orchestrator_pattern.service;
 
 import org.springframework.stereotype.Service;
 
-import com.saga_orchestrator_pattern.model.OrderRequest;
+import com.spring_boot_saga_orchestrator_pattern.model.OrderRequest;
 
 @Service
 public class OrderService {

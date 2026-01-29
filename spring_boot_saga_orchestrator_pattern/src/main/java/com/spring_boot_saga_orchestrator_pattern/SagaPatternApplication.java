@@ -1,4 +1,4 @@
-package com.saga_orchestrator_pattern;
+package com.spring_boot_saga_orchestrator_pattern;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
