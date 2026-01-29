@@ -1,4 +1,4 @@
-package com.spring_boot_redis_session_management.controller;
+package com.spring_boot_redis_session_management_1.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

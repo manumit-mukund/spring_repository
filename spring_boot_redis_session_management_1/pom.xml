@@ -9,8 +9,8 @@
 		<version>3.3.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring_boot_redis_session_management</groupId>
-	<artifactId>spring_boot_redis_session_management</artifactId>
+	<groupId>com.spring_boot_redis_session_management_1</groupId>
+	<artifactId>spring_boot_redis_session_management_1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring_boot_redis_session_management</name>
 	<description>Demo project for Spring Boot</description>

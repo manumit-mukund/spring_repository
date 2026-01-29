@@ -1,4 +1,4 @@
-package com.spring_boot_redis_session_management;
+package com.spring_boot_redis_session_management_1;
 
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.boot.SpringApplication;
