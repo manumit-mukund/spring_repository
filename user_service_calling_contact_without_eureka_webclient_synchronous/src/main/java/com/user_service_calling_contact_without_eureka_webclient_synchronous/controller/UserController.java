@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.Contact;
 import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.User;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.service.ContactService;
 import com.user_service_calling_contact_without_eureka_webclient_synchronous.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -25,25 +25,18 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private ContactService contactService;
+
 	@GetMapping("/{userId}")
 	@CircuitBreaker(name = "userService", fallbackMethod = "getUserFallback")
 	public User getUser(@PathVariable("userId") Long userId) {
 
 		User user = userService.getUser(userId);
 
-		WebClient webClient = WebClient.create("http://localhost:9002");
-
-		List<Contact> listContact = webClient
-				.get()
-				.uri("/contact/user/" + userId)
-				.retrieve()
-				.bodyToFlux(Contact.class)
-				.collectList()
-				.block();
+		List<Contact> listContact = contactService.getContactsOfUser(userId);
 
 		user.setContacts(listContact);
-
-		// Mono<User> userMono = Mono.just(user);
 
 		return user;
 
@@ -65,21 +58,15 @@ public class UserController {
 	@CircuitBreaker(name = "userService", fallbackMethod = "getAllUsersFallback")
 	public List<User> getAllUsers() {
 
-		WebClient webClient = WebClient.create("http://localhost:9002");
-
-		List<Contact> listContact = webClient
-				.get().uri("/contact/getall")
-				.retrieve()
-				.bodyToFlux(Contact.class)
-				.collectList()
-				.block();
+		List<Contact> listContact = contactService.getAllContacts();
 
 		for (User user : userService.getAllUsers()) {
 
 			Long userId = user.getUserId();
 
 			user.setContacts(listContact
-					.stream().filter(contact -> contact.getUserId().equals(userId))
+					.stream()
+					.filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
