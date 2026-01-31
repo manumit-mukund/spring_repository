@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_webclient.exception;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous.exception;
 
 import java.util.HashMap;
 import java.util.Map;

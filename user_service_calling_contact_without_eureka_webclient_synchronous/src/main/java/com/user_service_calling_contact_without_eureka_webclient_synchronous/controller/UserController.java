@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_webclient.controller;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.user_service_calling_contact_without_eureka_webclient.model.Contact;
-import com.user_service_calling_contact_without_eureka_webclient.model.User;
-import com.user_service_calling_contact_without_eureka_webclient.service.UserService;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.Contact;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.User;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 

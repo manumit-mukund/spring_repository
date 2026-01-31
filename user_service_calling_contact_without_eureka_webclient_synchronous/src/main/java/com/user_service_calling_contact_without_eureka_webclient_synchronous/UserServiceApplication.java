@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_webclient;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

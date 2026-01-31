@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_webclient.exception;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_webclient.model;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous.model;
 
 import java.util.ArrayList;
 import java.util.List;

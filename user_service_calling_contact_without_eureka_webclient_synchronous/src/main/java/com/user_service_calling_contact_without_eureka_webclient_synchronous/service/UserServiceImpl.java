@@ -1,12 +1,12 @@
-package com.user_service_calling_contact_without_eureka_webclient.service;
+package com.user_service_calling_contact_without_eureka_webclient_synchronous.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_calling_contact_without_eureka_webclient.exception.ResourceNotFoundException;
-import com.user_service_calling_contact_without_eureka_webclient.model.User;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.exception.ResourceNotFoundException;
+import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

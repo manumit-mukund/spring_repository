@@ -9,8 +9,8 @@
 		<version>3.2.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user_service_calling_contact_without_eureka_webclient</groupId>
-	<artifactId>user_service_calling_contact_without_eureka_webclient</artifactId>
+	<groupId>com.user_service_calling_contact_without_eureka_webclient_synchronous</groupId>
+	<artifactId>user_service_calling_contact_without_eureka_webclient_synchronous</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service</name>
 	<description>Demo project for Spring Boot</description>
