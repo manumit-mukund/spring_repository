@@ -33,9 +33,27 @@ public class UserController {
 
 		User user = userService.getUser(userId);
 
-		List<Contact> contacs = restTemplate.getForObject("http://localhost:9002/contact/user/" + userId, List.class);
+		long startTime = System.currentTimeMillis();
 
-		user.setContacts(contacs);
+		System.out.println("Calling API 1...");
+		List<Contact> listContact1 = restTemplate.getForObject("http://localhost:9002/contact/user/" + userId,
+				List.class);
+		System.out.println("API 1 Response: " + listContact1);
+
+		System.out.println("\nCalling API 2...");
+		List<Contact> listContact2 = restTemplate.getForObject("http://localhost:9002/contact/user/" + userId,
+				List.class);
+		System.out.println("API 2 Response: " + listContact2);
+
+		System.out.println("\nCalling API 3...");
+		List<Contact> listContact3 = restTemplate.getForObject("http://localhost:9002/contact/user/" + userId,
+				List.class);
+		System.out.println("API 3 Response: " + listContact3);
+
+		long endTime = System.currentTimeMillis();
+		System.out.println("Total execution time: " + (endTime - startTime) + " ms");
+
+		user.setContacts(listContact1);
 
 		return user;
 
@@ -69,9 +87,7 @@ public class UserController {
 
 			Long userId = user.getUserId();
 
-			user.setContacts(listContact
-					.stream()
-					.filter(contact -> contact.getUserId().equals(userId))
+			user.setContacts(listContact.stream().filter(contact -> contact.getUserId().equals(userId))
 					.collect(Collectors.toList()));
 		}
 
@@ -86,17 +102,15 @@ public class UserController {
 		return userService.addUser(user);
 
 	}
-	
+
 	/*
 	 * Test url: http://localhost:9001/users/add
 	 * 
-	 * Postman data: 
+	 * Postman data:
 	 * 
 	 * {
 	 * 
-	 * "userId": "1314" , 
-	 * "username": "pqr1" , 
-	 * "phone": "126"
+	 * "userId": "1314" , "username": "pqr1" , "phone": "126"
 	 * 
 	 * }
 	 * 
