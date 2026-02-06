@@ -18,7 +18,7 @@ public class RateLimitService {
 	public Bucket resolveBucket(String clientIp) {
 
 		// Defines limit: 10 requests per minute
-		Bandwidth limit = Bandwidth.classic(6, Refill.intervally(6, Duration.ofSeconds(1)));
+		Bandwidth limit = Bandwidth.classic(5, Refill.intervally(5, Duration.ofSeconds(1)));
 
 		return buckets.computeIfAbsent(clientIp, ip -> Bucket.builder().addLimit(limit).build());
 	}
