@@ -14,13 +14,17 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Autowired
 	public MvcConfig(RateLimitInterceptor rateLimitInterceptor) {
+
 		this.rateLimitInterceptor = rateLimitInterceptor;
+
 	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+
 		// Register the interceptor and apply it to specific path patterns
+
 		registry.addInterceptor(rateLimitInterceptor).addPathPatterns("/users/**"); // Apply rate limiting to all paths
-																					// under /api/
+																					// under /users/
 	}
 }

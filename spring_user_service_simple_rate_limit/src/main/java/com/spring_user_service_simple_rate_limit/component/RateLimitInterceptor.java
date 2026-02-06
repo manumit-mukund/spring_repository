@@ -18,7 +18,6 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 		this.rateLimitService = rateLimitService;
 	}
 
-	// ... constructor injection
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
@@ -31,4 +30,3 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 		return false;
 	}
 }
-// Register in a @Configuration class implementing WebMvcConfigurer
