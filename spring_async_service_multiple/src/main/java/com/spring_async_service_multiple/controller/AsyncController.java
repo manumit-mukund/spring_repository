@@ -29,5 +29,7 @@ public class AsyncController {
 		return CompletableFuture.allOf(task1, task2, task3)
 				.thenApply(v -> String.join(" | ", task1.join(), task2.join(), task3.join()));
 
+		// Test url: http://localhost:9001/multi-async
+
 	}
 }

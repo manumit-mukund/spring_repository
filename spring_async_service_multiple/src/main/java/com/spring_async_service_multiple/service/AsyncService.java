@@ -13,7 +13,7 @@ public class AsyncService {
 
 		try {
 
-			Thread.sleep(2000); // simulate delay
+			Thread.sleep(1000); // simulate delay
 
 		} catch (InterruptedException e) {
 
@@ -29,7 +29,7 @@ public class AsyncService {
 
 		try {
 
-			Thread.sleep(3000); // simulate delay
+			Thread.sleep(2000); // simulate delay
 
 		} catch (InterruptedException e) {
 
@@ -45,7 +45,7 @@ public class AsyncService {
 
 		try {
 
-			Thread.sleep(1000); // simulate delay
+			Thread.sleep(3000); // simulate delay
 
 		} catch (InterruptedException e) {
 
