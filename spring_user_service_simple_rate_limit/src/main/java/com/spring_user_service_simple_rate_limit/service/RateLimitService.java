@@ -13,13 +13,13 @@ import io.github.bucket4j.Refill;
 @Service
 public class RateLimitService {
 
-	private final Map<String, Bucket> buckets = new ConcurrentHashMap<>();
+	private final Map<String, Bucket> bucketMap = new ConcurrentHashMap<>();
 
 	public Bucket resolveBucket(String clientIp) {
 
 		// Defines limit: 6 requests per second
 		Bandwidth limit = Bandwidth.classic(6, Refill.intervally(6, Duration.ofSeconds(1)));
 
-		return buckets.computeIfAbsent(clientIp, ip -> Bucket.builder().addLimit(limit).build());
+		return bucketMap.computeIfAbsent(clientIp, ip -> Bucket.builder().addLimit(limit).build());
 	}
 }
