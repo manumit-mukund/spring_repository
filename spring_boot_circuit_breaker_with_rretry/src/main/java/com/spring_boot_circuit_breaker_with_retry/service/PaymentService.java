@@ -35,7 +35,7 @@ public class PaymentService {
 	@Recover
 	public String recover(ServiceFailureException ex) {
 
-		System.out.println("Recovery method called....\n");
+		System.err.println("Recovery method called....\n");
 
 		attempt = 0;
 
