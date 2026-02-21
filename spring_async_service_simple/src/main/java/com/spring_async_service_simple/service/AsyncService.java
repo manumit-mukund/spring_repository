@@ -12,8 +12,12 @@ public class AsyncService {
 	public CompletableFuture<String> asyncMethod() {
 
 		try {
+			
+			System.out.println("Thread is sleeping...");
 
 			Thread.sleep(3000); // simulate long-running task
+			
+			System.out.println("Thread is awake...");
 
 		} catch (InterruptedException e) {
 
