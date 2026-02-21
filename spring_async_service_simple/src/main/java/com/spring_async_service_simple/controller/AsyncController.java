@@ -23,5 +23,7 @@ public class AsyncController {
 
 		return asyncService.asyncMethod();
 
+		// Test url: http://localhost:9001/async-call
+
 	}
 }
