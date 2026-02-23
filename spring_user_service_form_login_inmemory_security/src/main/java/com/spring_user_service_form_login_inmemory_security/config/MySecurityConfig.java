@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.spring_user_service_form_login_inmemory_security.component.CustomAuthenticationSuccessHandler;
 import com.spring_user_service_form_login_inmemory_security.exception.CustomAccessDeniedHandler;
 
 @Configuration
@@ -20,6 +21,9 @@ public class MySecurityConfig {
 
 	@Autowired
 	private CustomAccessDeniedHandler customAccessDeniedHandler;
+	
+	@Autowired
+    private CustomAuthenticationSuccessHandler customSuccessHandler;
 	
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -36,7 +40,8 @@ public class MySecurityConfig {
             .formLogin((form) -> form
             		.loginPage("/login")
             		.loginProcessingUrl("/doLogin")
-					.defaultSuccessUrl("/public/home")
+            		.successHandler(customSuccessHandler)
+					//.defaultSuccessUrl("/public/home")
             )
             .logout(logout -> logout
                 .permitAll()
