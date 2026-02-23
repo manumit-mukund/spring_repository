@@ -83,6 +83,13 @@ public class MySecurityConfig {
 				.password(bCryptPasswordEncoder.encode("admin1"))
 				.roles("USER", "ADMIN")
 				.build());
+		
+		inMemoryUserDetailsManager
+		.createUser(
+				User.withUsername("guest")
+				.password(bCryptPasswordEncoder.encode("guest"))
+				.roles("GUEST")
+				.build());
 
 		return inMemoryUserDetailsManager;
 	}

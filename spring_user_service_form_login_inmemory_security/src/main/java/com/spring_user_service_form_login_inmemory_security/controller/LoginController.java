@@ -33,5 +33,12 @@ public class LoginController {
 		return "admin-dashboard"; // Name of your HTML/JSP template
 
 	}
+	
+	@GetMapping("/guest-dashboard")
+	public String guestDashboard() {
+
+		return "guest-dashboard"; // Name of your HTML/JSP template
+
+	}
 
 }

@@ -35,7 +35,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 			} else if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
 
-				targetUrl = "/user-dashboard"; // Admin specific URL
+				targetUrl = "/user-dashboard"; // User specific URL
+				break;
+
+			} else if (grantedAuthority.getAuthority().equals("ROLE_GUEST")) {
+
+				targetUrl = "/guest-dashboard"; // Guest specific URL
 				break;
 
 			}
