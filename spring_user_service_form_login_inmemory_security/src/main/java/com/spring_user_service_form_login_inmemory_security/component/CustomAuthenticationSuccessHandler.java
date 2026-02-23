@@ -24,12 +24,20 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 			Authentication authentication) throws IOException, ServletException {
 
 		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-		String targetUrl = "/user-dashboard"; // Default URL
+		String targetUrl = "/login"; // Default URL
 
 		for (GrantedAuthority grantedAuthority : authorities) {
+
 			if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
+
 				targetUrl = "/admin-dashboard"; // Admin specific URL
 				break;
+
+			} else if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
+
+				targetUrl = "/user-dashboard"; // Admin specific URL
+				break;
+
 			}
 		}
 

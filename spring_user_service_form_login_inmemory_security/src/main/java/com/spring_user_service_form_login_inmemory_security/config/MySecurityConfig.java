@@ -44,7 +44,10 @@ public class MySecurityConfig {
 					//.defaultSuccessUrl("/public/home")
             )
             .logout(logout -> logout
-                .permitAll()
+            		   .logoutSuccessUrl("/login") // Redirect to login page with a logout message
+                       .invalidateHttpSession(true) // Invalidate HTTP session
+                       .deleteCookies("JSESSIONID") // Delete cookies
+                       .permitAll()
             )
             .exceptionHandling(exception -> exception
                 // Register the custom access denied handler
