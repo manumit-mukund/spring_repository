@@ -59,9 +59,9 @@ public class MySecurityConfig {
 	@Bean
 	public UserDetailsService userDetailsService(BCryptPasswordEncoder bCryptPasswordEncoder) {
 
-		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+		InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
 
-		manager.createUser(
+		inMemoryUserDetailsManager.createUser(
 				User
 				.withUsername("user1")
 				.password(bCryptPasswordEncoder.encode("user1"))
@@ -69,14 +69,14 @@ public class MySecurityConfig {
 				.build()
 				);
 
-		manager
+		inMemoryUserDetailsManager
 		.createUser(
 				User.withUsername("admin1")
 				.password(bCryptPasswordEncoder.encode("admin1"))
 				.roles("USER", "ADMIN")
 				.build());
 
-		return manager;
+		return inMemoryUserDetailsManager;
 	}
 	
 //	@Bean
