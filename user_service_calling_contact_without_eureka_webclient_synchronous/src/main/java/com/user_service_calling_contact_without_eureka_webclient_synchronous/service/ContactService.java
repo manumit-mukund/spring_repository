@@ -24,7 +24,8 @@ public class ContactService {
 	public List<Contact> getContactsOfUser(Long userId) {
 
 		List<Contact> listContact = webClient
-				.get().uri("/contact/user/" + userId)
+				.get()
+				.uri("/contact/user/" + userId)
 				.retrieve()
 				.bodyToFlux(Contact.class)
 				.collectList()
@@ -36,8 +37,9 @@ public class ContactService {
 	public List<Contact> getAllContacts() {
 
 		List<Contact> listContact = webClient
-				.get().uri("/contact/getall").
-				retrieve()
+				.get()
+				.uri("/contact/getall")
+				.retrieve()
 				.bodyToFlux(Contact.class)
 				.collectList()
 				.block();
