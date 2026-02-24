@@ -34,7 +34,7 @@ public class MySecurityConfig {
                 // Define access rules
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/", "/login", "/access-denied-error").permitAll()
+                .requestMatchers("/public/**", "/login", "/access-denied-error").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin((form) -> form

@@ -13,6 +13,8 @@ public class HomeController {
 
 		return "This is a home page.";
 
+		// Test url: http://localhost:9001/public/home
+
 	}
 
 	@GetMapping("/register")
