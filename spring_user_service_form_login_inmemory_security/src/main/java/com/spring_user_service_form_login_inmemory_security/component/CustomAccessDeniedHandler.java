@@ -1,4 +1,4 @@
-package com.spring_user_service_form_login_inmemory_security.exception;
+package com.spring_user_service_form_login_inmemory_security.component;
 
 import java.io.IOException;
 

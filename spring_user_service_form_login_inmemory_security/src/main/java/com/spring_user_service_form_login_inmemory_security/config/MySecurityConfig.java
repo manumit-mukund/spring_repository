@@ -12,8 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.spring_user_service_form_login_inmemory_security.component.CustomAccessDeniedHandler;
 import com.spring_user_service_form_login_inmemory_security.component.CustomAuthenticationSuccessHandler;
-import com.spring_user_service_form_login_inmemory_security.exception.CustomAccessDeniedHandler;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
