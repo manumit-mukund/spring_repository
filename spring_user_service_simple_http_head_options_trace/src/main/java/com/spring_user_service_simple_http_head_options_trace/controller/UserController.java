@@ -3,7 +3,6 @@ package com.spring_user_service_simple_http_head_options_trace.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring_user_service_simple_http_head_options_trace.model.User;
 import com.spring_user_service_simple_http_head_options_trace.service.UserService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/users")
@@ -68,6 +69,31 @@ public class UserController {
         
      // Postman OPTIONS url: http://localhost:9001/users/resource/options
     }
+	
+	 @RequestMapping(value = "/resource/trace", method = RequestMethod.TRACE)
+	    public ResponseEntity<String> handleTrace(HttpServletRequest request) {
+
+	        StringBuilder builder = new StringBuilder();
+	        
+	        builder.append(request.getMethod())
+	               .append("getMethod : ")
+	               .append(request.getRequestURI())
+	               .append("getRequestURI : ")
+	               .append(request.getProtocol())
+	               .append("\n");
+
+	        request.getHeaderNames().asIterator()
+	                .forEachRemaining(header ->
+	                        builder.append(header)
+	                               .append(" : ")
+	                               .append(request.getHeader(header))
+	                               .append("\n")
+	                );
+
+	        return ResponseEntity.ok(builder.toString());
+	        
+	        //Postman TRACE url: http://localhost:9001/users/resource/trace
+	    }
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
