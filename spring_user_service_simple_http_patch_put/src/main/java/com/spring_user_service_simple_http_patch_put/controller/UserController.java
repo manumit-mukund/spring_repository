@@ -28,12 +28,16 @@ public class UserController {
 	public User getUser(@PathVariable("username") String username) {
 
 		return userService.getUser(username);
+
+		// Test ur: http://localhost:9001/users/abc
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
 		return userService.getAllUsers();
+
+		// Test url: http://localhost:9001/users/getall
 	}
 
 	@PostMapping("/add")
@@ -56,7 +60,7 @@ public class UserController {
 
 	}
 
-	@PutMapping("/update/{username}")
+	@PutMapping("/put/{username}")
 	public ResponseEntity<User> updateUser(@PathVariable("username") String username, @RequestBody User user) {
 
 		User updatedUser = userService.updateUser(username, user);
@@ -64,7 +68,7 @@ public class UserController {
 		return ResponseEntity.ok(updatedUser);
 
 		/*
-		 * Postman PUT url: http://localhost:9001/users/update/abc
+		 * Postman PUT url: http://localhost:9001/users/put/abc
 		 * 
 		 * Postman Body:
 		 * 
@@ -76,14 +80,14 @@ public class UserController {
 
 	}
 
-	@PatchMapping("/update/{username}")
+	@PatchMapping("/patch/{username}")
 	public ResponseEntity<User> updateUserEmail(@PathVariable("username") String username, @RequestBody String email) {
 
 		User updatedUser = userService.updateUserEmail(username, email);
 
 		return ResponseEntity.ok(updatedUser);
 
-		// Postman PATCH url: http://localhost:9001/users/update/abc
+		// Postman PATCH url: http://localhost:9001/users/patch/abc
 		// Postman Body: abc1@yahoo.com
 
 	}
