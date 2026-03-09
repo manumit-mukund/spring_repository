@@ -2,7 +2,9 @@ package com.contact_service_without_eureka.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
+
 import com.contact_service_without_eureka.model.Contact;
 
 @Service
