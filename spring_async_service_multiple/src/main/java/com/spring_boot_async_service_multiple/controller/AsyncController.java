@@ -1,4 +1,4 @@
-package com.spring_async_service_multiple.controller;
+package com.spring_boot_async_service_multiple.controller;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -7,7 +7,7 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring_async_service_multiple.service.AsyncService;
+import com.spring_boot_async_service_multiple.service.AsyncService;
 
 @RestController
 public class AsyncController {

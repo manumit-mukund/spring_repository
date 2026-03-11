@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<packaging>war</packaging>
-	<groupId>com.spring_async_service_multiple</groupId>
-	<artifactId>spring_async_service_multiple</artifactId>
+	<groupId>com.spring_boot_async_service_multiple</groupId>
+	<artifactId>spring_boot_async_service_multiple</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>

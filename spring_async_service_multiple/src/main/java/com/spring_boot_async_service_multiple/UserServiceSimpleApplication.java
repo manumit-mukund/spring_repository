@@ -1,4 +1,4 @@
-package com.spring_async_service_multiple;
+package com.spring_boot_async_service_multiple;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
