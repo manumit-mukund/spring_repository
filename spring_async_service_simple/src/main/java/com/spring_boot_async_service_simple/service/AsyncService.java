@@ -1,4 +1,4 @@
-package com.spring_async_service_simple.service;
+package com.spring_boot_async_service_simple.service;
 
 import java.util.concurrent.CompletableFuture;
 

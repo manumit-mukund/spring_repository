@@ -1,11 +1,11 @@
-package com.spring_async_service_simple.controller;
+package com.spring_boot_async_service_simple.controller;
 
 import java.util.concurrent.CompletableFuture;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring_async_service_simple.service.AsyncService;
+import com.spring_boot_async_service_simple.service.AsyncService;
 
 @RestController
 public class AsyncController {

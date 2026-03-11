@@ -1,4 +1,4 @@
-package com.spring_async_service_simple;
+package com.spring_boot_async_service_simple;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
