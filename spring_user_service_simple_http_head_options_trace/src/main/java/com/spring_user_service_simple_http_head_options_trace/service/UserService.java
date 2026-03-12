@@ -10,12 +10,4 @@ public interface UserService {
 
 	public List<User> getAllUsers();
 
-	public User addUser(User user);
-	
-	public User updateUserEmail(String username, String email);
-	
-	public User updateUser(String username, User user);
-	
-	public User deleteUser(String username);
-
 }
