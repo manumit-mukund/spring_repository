@@ -14,6 +14,7 @@ public class UserController {
 		return "Users API Version 1";
 
 		// test url: http://localhost:9001/api/v1/users
+
 	}
 
 	@GetMapping("/v2/users")
@@ -22,5 +23,6 @@ public class UserController {
 		return "Users API Version 2";
 
 		// Test url: http://localhost:9001/api/v2/users
+
 	}
 }
