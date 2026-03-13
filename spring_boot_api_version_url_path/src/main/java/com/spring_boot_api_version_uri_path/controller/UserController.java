@@ -1,4 +1,4 @@
-package com.spring_boot_api_version_url_path.controller;
+package com.spring_boot_api_version_uri_path.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<packaging>war</packaging>
-	<groupId>com.spring_boot_api_version_url_path</groupId>
-	<artifactId>spring_boot_api_version_url_path</artifactId>
+	<groupId>com.spring_boot_api_version_uri_path</groupId>
+	<artifactId>spring_boot_api_version_uri_path</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service_simple</name>
 	<description>Demo project for Spring Boot</description>
