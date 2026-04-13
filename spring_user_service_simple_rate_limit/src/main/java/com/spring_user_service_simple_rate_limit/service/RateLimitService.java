@@ -20,6 +20,8 @@ public class RateLimitService {
 		// Defines limit: 6 requests per second
 		Bandwidth limit = Bandwidth.classic(6, Refill.intervally(6, Duration.ofSeconds(1)));
 
+		System.out.println("clientIp = " + clientIp);
+
 		return bucketMap.computeIfAbsent(clientIp, ip -> Bucket.builder().addLimit(limit).build());
 	}
 }

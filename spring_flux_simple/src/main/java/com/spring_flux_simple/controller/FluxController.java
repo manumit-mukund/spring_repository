@@ -25,10 +25,9 @@ public class FluxController {
 		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
 		// and introduces a delay of 1 second between each emission to simulate a
 		// stream.
-		return Flux
-				.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-				.delayElements(Duration.ofSeconds(2))
-				.log();
+		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5").delayElements(Duration.ofSeconds(2)).log();
+
+		// Test url: http://localhost:9001/stream-items
 
 	}
 
@@ -38,10 +37,9 @@ public class FluxController {
 		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
 		// and introduces a delay of 1 second between each emission to simulate a
 		// stream.
-		return Flux
-				.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-				.delayElements(Duration.ofSeconds(2))
-				.log();
+		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5").delayElements(Duration.ofSeconds(2)).log();
+
+		// Test url: http://localhost:9001/stream-items_1
 
 	}
 
@@ -51,9 +49,9 @@ public class FluxController {
 		// Create a Flux that emits items "Item 1", "Item 2", "Item 3"
 		// and introduces a delay of 1 second between each emission to simulate a
 		// stream.
-		return Flux
-				.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-				.delayElements(Duration.ofSeconds(2)).log();
+		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5").delayElements(Duration.ofSeconds(2)).log();
+
+		// Test url: http://localhost:9001/stream-items_2
 
 	}
 
@@ -64,12 +62,11 @@ public class FluxController {
 
 		// Use the delayElements operator to introduce a 3-second delay between each
 		// element
-		return Flux
-				.fromIterable(items)
-				.delayElements(Duration.ofSeconds(3))
-				.log(); // The .log() operator provides
+		return Flux.fromIterable(items).delayElements(Duration.ofSeconds(3)).log(); // The .log() operator provides
 																					// helpful logs to observe the
 																					// emissions
+
+		// Test url: http://localhost:9001/delayed-items
 
 	}
 
@@ -83,12 +80,16 @@ public class FluxController {
 		// This endpoint will gather all items and return a complete JSON array.
 		return Flux.just("Item 1", "Item 2", "Item 3", "Item 4", "Item 5");
 
+		// Test url: http://localhost:9001/items
+
 	}
 
 	@GetMapping("/hello")
 	public Mono<String> hello() {
 
 		return Mono.just("Mono: Hello, World!"); // Returns a single, non-blocking response
+
+		// Test url: http://localhost:9001/hello
 
 	}
 }
