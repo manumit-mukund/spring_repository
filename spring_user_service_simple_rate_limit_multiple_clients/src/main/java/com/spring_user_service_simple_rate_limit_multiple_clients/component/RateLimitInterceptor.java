@@ -27,8 +27,6 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
 		String apiKey = request.getHeader("X-API-KEY");
 
-		System.out.println("apiKey= " + apiKey);
-
 		if (apiKey == null || apiKey.isEmpty()) {
 
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

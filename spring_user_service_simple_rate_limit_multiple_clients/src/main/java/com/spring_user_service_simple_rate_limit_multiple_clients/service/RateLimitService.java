@@ -17,6 +17,8 @@ public class RateLimitService {
 
 	public Bucket resolveBucket(String apiKey) {
 
+		System.out.println("apiKey = " + apiKey);
+
 		// Defines limit: 3 requests per second
 		Bandwidth limit = Bandwidth.classic(3, Refill.intervally(3, Duration.ofSeconds(1)));
 
