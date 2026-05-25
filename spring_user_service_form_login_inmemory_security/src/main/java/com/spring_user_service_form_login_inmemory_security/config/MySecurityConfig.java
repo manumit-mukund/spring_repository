@@ -40,8 +40,7 @@ public class MySecurityConfig {
             .formLogin((form) -> form
             		.loginPage("/login")
             		.loginProcessingUrl("/doLogin")
-            		.successHandler(customSuccessHandler)
-					//.defaultSuccessUrl("/public/home")
+            		.successHandler(customSuccessHandler)				
             )
             .logout(logout -> logout
             		   .logoutSuccessUrl("/login") // Redirect to login page with a logout message
