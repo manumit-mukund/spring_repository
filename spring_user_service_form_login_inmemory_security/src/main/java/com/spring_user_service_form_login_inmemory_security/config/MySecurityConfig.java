@@ -23,7 +23,7 @@ public class MySecurityConfig {
 	private CustomAccessDeniedHandler customAccessDeniedHandler;
 	
 	@Autowired
-    private CustomAuthenticationSuccessHandler customSuccessHandler;
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 	
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -40,7 +40,7 @@ public class MySecurityConfig {
             .formLogin((form) -> form
             		.loginPage("/login")
             		.loginProcessingUrl("/doLogin")
-            		.successHandler(customSuccessHandler)				
+            		.successHandler(customAuthenticationSuccessHandler)				
             )
             .logout(logout -> logout
             		   .logoutSuccessUrl("/login") // Redirect to login page with a logout message

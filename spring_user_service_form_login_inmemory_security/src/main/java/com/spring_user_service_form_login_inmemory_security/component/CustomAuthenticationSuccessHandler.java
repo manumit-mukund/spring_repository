@@ -24,6 +24,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 			Authentication authentication) throws IOException, ServletException {
 
 		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
 		String targetUrl = "/login"; // Default URL
 
 		for (GrantedAuthority grantedAuthority : authorities) {
