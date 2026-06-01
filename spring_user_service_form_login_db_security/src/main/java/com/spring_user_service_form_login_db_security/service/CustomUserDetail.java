@@ -16,8 +16,10 @@ public class CustomUserDetail implements UserDetails {
 	private User user;
 
 	public CustomUserDetail(User user) {
+
 		super();
 		this.user = user;
+
 	}
 
 	@Override
