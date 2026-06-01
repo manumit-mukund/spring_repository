@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring_user_service_form_login_db_security.model.User;
-import com.spring_user_service_form_login_db_security.service.UserServiceImpl;
+import com.spring_user_service_form_login_db_security.service.UserService;
 
 @RestController
 @RequestMapping("/admin/users")
@@ -20,28 +20,28 @@ import com.spring_user_service_form_login_db_security.service.UserServiceImpl;
 public class AdminController {
 
 	@Autowired
-	private UserServiceImpl userUserServiceImpl;
+	private UserService userService;
 
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 
-		return userUserServiceImpl.getUser(username);
-		
-		//Test url: http://localhost:9001/admin/users/abc
+		return userService.getUser(username);
+
+		// Test url: http://localhost:9001/admin/users/abc
 	}
 
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
-		return userUserServiceImpl.getAllUsers();
-		
-		//Test url: http://localhost:9001/admin/users/getall
+		return userService.getAllUsers();
+
+		// Test url: http://localhost:9001/admin/users/getall
 	}
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
 
-		return userUserServiceImpl.addUser(user);
+		return userService.addUser(user);
 
 	}
 
