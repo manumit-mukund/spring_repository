@@ -1,4 +1,4 @@
-package com.spring_user_service_form_login_db_security.exception;
+package com.spring_user_service_form_login_db_security.component;
 
 import java.io.IOException;
 

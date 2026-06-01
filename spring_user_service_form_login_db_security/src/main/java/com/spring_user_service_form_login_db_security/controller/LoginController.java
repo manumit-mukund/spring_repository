@@ -20,4 +20,25 @@ public class LoginController {
 
 	}
 
+	@GetMapping("/user-dashboard")
+	public String userDashboard() {
+
+		return "user-dashboard"; // Name of your HTML/JSP template
+
+	}
+
+	@GetMapping("/admin-dashboard")
+	public String adminDashboard() {
+
+		return "admin-dashboard"; // Name of your HTML/JSP template
+
+	}
+
+	@GetMapping("/guest-dashboard")
+	public String guestDashboard() {
+
+		return "guest-dashboard"; // Name of your HTML/JSP template
+
+	}
+
 }
