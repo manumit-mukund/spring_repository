@@ -1,5 +1,6 @@
 package com.user_service_calling_contact_without_eureka.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,13 +64,16 @@ public class UserController {
 		 * user.setContacts(contacs); }
 		 */
 
+		List<User> listUser = new ArrayList<>();
+		listUser = userService.getAllUsers();
+
 		if (listContact == null) {
-			
+
 			System.out.println("Calling contact service getAllContacts()...");
 
 			listContact = contactService.getAllContacts();
 
-			for (User user : userService.getAllUsers()) {
+			for (User user : listUser) {
 
 				Long userId = user.getUserId();
 
@@ -80,7 +84,7 @@ public class UserController {
 			}
 		}
 
-		return userService.getAllUsers();
+		return listUser;
 
 		// Test url: http://localhost:9001/users/getall
 	}
