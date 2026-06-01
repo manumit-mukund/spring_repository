@@ -8,7 +8,7 @@ public class User {
 
 	@Id
 	private String username;
-	
+
 	private String password;
 	private String email;
 	private String role;
@@ -25,14 +25,6 @@ public class User {
 		this.password = password;
 		this.email = email;
 	}
-
-//	public Long getUserId() {
-//		return userId;
-//	}
-//
-//	public void setUserId(Long userId) {
-//		this.userId = userId;
-//	}
 
 	public String getUsername() {
 		return username;

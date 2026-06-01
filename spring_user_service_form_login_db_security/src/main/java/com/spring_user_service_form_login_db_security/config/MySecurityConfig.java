@@ -21,36 +21,36 @@ public class MySecurityConfig {
 
 	@Autowired
 	private CustomUserDetailService customUserDetailService;
-	
+
 	@Autowired
 	private CustomAccessDeniedHandler customAccessDeniedHandler;
-	
+
 	@Autowired
-    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+	private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.csrf(AbstractHttpConfigurer::disable)
-			.authorizeHttpRequests(
+				.authorizeHttpRequests(
 						authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
 								.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
 								.requestMatchers("/public/**", "/login/**", "/access-denied-error").permitAll()
 								.anyRequest().authenticated())
-			//.httpBasic(Customizer.withDefaults())
-			.formLogin(form -> form
+				// .httpBasic(Customizer.withDefaults())
+				.formLogin(form -> form
 						.loginPage("/login")
 						.loginProcessingUrl("/doLogin")
-						//.defaultSuccessUrl("/public/home")
-						.successHandler(customAuthenticationSuccessHandler)		
-				)
-			.logout(logout -> logout
-		                .permitAll()
-		          )
-		     .exceptionHandling(exception -> exception
-		                // Register the custom access denied handler
-		                .accessDeniedHandler(customAccessDeniedHandler)
-		          );
+						// .defaultSuccessUrl("/public/home")
+						.successHandler(customAuthenticationSuccessHandler))
+				.logout(logout -> logout
+						.logoutSuccessUrl("/login") // Redirect to login page with a logout message
+						.invalidateHttpSession(true) // Invalidate HTTP session
+						.deleteCookies("JSESSIONID") // Delete cookies
+						.permitAll())
+				.exceptionHandling(exception -> exception
+						// Register the custom access denied handler
+						.accessDeniedHandler(customAccessDeniedHandler));
 
 		return http.build();
 
