@@ -1,6 +1,5 @@
 package com.user_service_calling_contact_without_eureka.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,8 +63,7 @@ public class UserController {
 		 * user.setContacts(contacs); }
 		 */
 
-		List<User> listUser = new ArrayList<>();
-		listUser = userService.getAllUsers();
+		List<User> listUser = userService.getAllUsers();
 
 		if (listContact == null) {
 
