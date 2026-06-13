@@ -1,12 +1,12 @@
-package com.user_service_calling_contact_without_eureka_feignclient.service;
+package com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.user_service_calling_contact_without_eureka_feignclient.exception.ResourceNotFoundException;
-import com.user_service_calling_contact_without_eureka_feignclient.model.User;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.exception.ResourceNotFoundException;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

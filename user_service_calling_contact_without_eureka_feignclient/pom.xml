@@ -9,8 +9,8 @@
 		<version>3.2.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user_service_calling_contact_without_eureka_feignclient</groupId>
-	<artifactId>user_service_calling_contact_without_eureka_feignclient</artifactId>
+	<groupId>com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient</groupId>
+	<artifactId>user_service_calling_contact_without_eureka_circuitbreaker_feignclient</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user_service</name>
 	<description>Demo project for Spring Boot</description>

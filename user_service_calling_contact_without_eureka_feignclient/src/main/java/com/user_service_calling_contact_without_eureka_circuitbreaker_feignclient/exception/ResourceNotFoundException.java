@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_feignclient.exception;
+package com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

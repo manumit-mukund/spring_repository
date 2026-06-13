@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_feignclient.service;
+package com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.user_service_calling_contact_without_eureka_feignclient.model.Contact;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.Contact;
 
 //Name matches ContactService application name, url is optional if using Eureka
 @FeignClient(name = "contact-service", url = "http://localhost:9002")

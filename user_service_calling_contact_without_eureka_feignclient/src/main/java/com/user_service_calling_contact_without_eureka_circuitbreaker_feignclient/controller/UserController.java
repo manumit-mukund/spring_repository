@@ -1,4 +1,4 @@
-package com.user_service_calling_contact_without_eureka_feignclient.controller;
+package com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user_service_calling_contact_without_eureka_feignclient.model.Contact;
-import com.user_service_calling_contact_without_eureka_feignclient.model.User;
-import com.user_service_calling_contact_without_eureka_feignclient.service.ContactClient;
-import com.user_service_calling_contact_without_eureka_feignclient.service.UserService;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.Contact;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.User;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service.ContactClient;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
