@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.Contact;
 import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.model.User;
-import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service.ContactClient;
+import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service.FeignClientContact;
 import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclient.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -26,7 +26,7 @@ public class UserController {
 	private UserService userService;
 
 	@Autowired
-	private ContactClient contactClient; // Inject the Feign client
+	private FeignClientContact contactClient; // Inject the Feign client
 
 	@GetMapping("/{userId}")
 	@CircuitBreaker(name = "userService", fallbackMethod = "getUserFallback")

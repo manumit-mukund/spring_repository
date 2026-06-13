@@ -10,7 +10,7 @@ import com.user_service_calling_contact_without_eureka_circuitbreaker_feignclien
 
 //Name matches ContactService application name, url is optional if using Eureka
 @FeignClient(name = "contact-service", url = "http://localhost:9002")
-public interface ContactClient {
+public interface FeignClientContact {
 
 	@GetMapping("/contact/user/{userId}")
 	List<Contact> getContactsOfUser(@PathVariable("userId") Long userId);
