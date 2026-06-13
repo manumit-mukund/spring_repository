@@ -37,7 +37,11 @@ public class UserController {
 
 		User user = userService.getUser(userId);
 
-		String serviceUri = discoveryClient.getInstances("contact_service_with_eureka").get(0).getUri().toString();
+		String serviceUri = discoveryClient
+				.getInstances("contact_service_with_eureka")
+				.get(0)
+				.getUri()
+				.toString();
 
 		System.out.println("serviceUri = " + serviceUri);
 
@@ -54,7 +58,11 @@ public class UserController {
 	@GetMapping("/getall")
 	public List<User> getAllUsers() {
 
-		String serviceUri = discoveryClient.getInstances("contact_service_with_eureka").get(0).getUri().toString();
+		String serviceUri = discoveryClient
+				.getInstances("contact_service_with_eureka")
+				.get(0)
+				.getUri()
+				.toString();
 
 		System.out.println("serviceUri = " + serviceUri);
 
