@@ -8,11 +8,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.user_service_calling_contact_without_eureka_webclient_synchronous.model.Contact;
 
 @Service
-public class ContactService {
+public class WebClient_ContactService {
 
 	private final WebClient webClient;
 
-	public ContactService(WebClient.Builder webClientBuilder) {
+	public WebClient_ContactService(WebClient.Builder webClientBuilder) {
 
 //		WebClient webClient = WebClient.create("http://localhost:9002");
 
