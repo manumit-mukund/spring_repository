@@ -20,7 +20,7 @@ public class BeanConfig {
 //		return new Square();
 //
 //	}
-	
+//	
 	@Bean
 	Circle myCircle() {
 
