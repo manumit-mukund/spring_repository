@@ -15,7 +15,7 @@ public class CarService {
 	public void setCar(Car car) {
 
 		this.car = car;
-		System.out.println("setCar(Car car) caslled..");
+		System.out.println("setCar(Car car) called..");
 
 	}
 
