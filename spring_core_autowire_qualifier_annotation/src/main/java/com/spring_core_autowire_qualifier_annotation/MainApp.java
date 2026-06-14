@@ -9,12 +9,29 @@ public class MainApp {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		ApplicationContext context = null;
 
-		Profile profile = (Profile) context.getBean("profile");
+		try {
 
-		profile.printName();
-		profile.printAge();
+			context = new ClassPathXmlApplicationContext("Beans.xml");
+
+			Profile profile = (Profile) context.getBean("profile");
+
+			profile.printStudentName();
+			profile.printStudentAge();
+
+		}
+
+		catch (Exception e) {
+
+			System.out.println(e.getMessage());
+
+		}
+
+		finally {
+
+			((ClassPathXmlApplicationContext) context).close();
+		}
 
 	}
 }

@@ -15,13 +15,13 @@ public class Profile {
 
 	}
 
-	public void printName() {
+	public void printStudentName() {
 
 		System.out.println("Name : " + student.getName());
 
 	}
 
-	public void printAge() {
+	public void printStudentAge() {
 
 		System.out.println("Age : " + student.getAge());
 
