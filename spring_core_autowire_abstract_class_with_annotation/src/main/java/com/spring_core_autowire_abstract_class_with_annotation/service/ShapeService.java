@@ -13,6 +13,7 @@ public class ShapeService {
 	public ShapeService(Shape shape) {
 
 		this.shape = shape;
+		System.out.println("ShapeService(Shape shape) called...");
 
 	}
 

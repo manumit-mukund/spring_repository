@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.spring_core_autowire_abstract_class_with_annotation.model.Circle;
+import com.spring_core_autowire_abstract_class_with_annotation.model.Square;
 
 @Configuration
 @ComponentScan(basePackages = { "com.spring_core_autowire_abstract_class_with_annotation.model",
@@ -19,7 +20,7 @@ public class BeanConfig {
 //		return new Square();
 //
 //	}
-
+	
 	@Bean
 	Circle myCircle() {
 
