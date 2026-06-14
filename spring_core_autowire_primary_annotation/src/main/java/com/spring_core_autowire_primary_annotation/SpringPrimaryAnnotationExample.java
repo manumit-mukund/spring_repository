@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.spring_core_autowire_primary_annotation.component.Audi;
 import com.spring_core_autowire_primary_annotation.service.CarService;
 
 //@Configuration //It's optional;
@@ -20,6 +21,9 @@ public class SpringPrimaryAnnotationExample {
 		// carService1.printCarName(); //The method printCarName() is undefined for the
 		// type CarService
 
+		carService1.getCar().printCarName();
+
+		carService1.setCar(new Audi());
 		carService1.getCar().printCarName();
 
 	}
