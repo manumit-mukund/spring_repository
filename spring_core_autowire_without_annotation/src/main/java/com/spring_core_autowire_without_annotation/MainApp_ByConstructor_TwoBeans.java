@@ -16,11 +16,13 @@ public class MainApp_ByConstructor_TwoBeans {
 
 		try {
 
-			a.displayB();
+			a.displayC();
 
-			a.displayC(); // java.lang.NullPointerException, if will work if only c is defined in .xml
-							// file. Note: Only one parameterized constructor of A will be called as two
-							// constructors cannot be called together.
+			a.displayB();
+//			java.lang.NullPointerException: Cannot invoke "com.spring_core_autowire_without_annotation.model.B.hello()" because "this.b" is null
+//			at com.spring_core_autowire_without_annotation.model.A.displayB(A.java:66)
+//			at com.spring_core_autowire_without_annotation.MainApp_ByConstructor_TwoBeans.main(MainApp_ByConstructor_TwoBeans.java:19)
+
 			a.displayD();
 
 		} catch (Exception e) {

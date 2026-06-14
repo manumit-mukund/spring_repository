@@ -16,14 +16,14 @@ public class MainApp_ByConstructor_AllBeans {
 
 		try {
 
-			a.displayB(); // jjava.lang.NullPointerException: Cannot invoke
-							// "com.spring_core_autowire_without_annotation.model.B.hello()" because
-							// "this.b" is null. Note: Only one parameterized constructor of A will be
-							// called as two
-			// constructors cannot be called together.
-			a.displayC();
-
 			a.displayD();
+
+			a.displayB();
+//			java.lang.NullPointerException: Cannot invoke "com.spring_core_autowire_without_annotation.model.B.hello()" because "this.b" is null
+//			at com.spring_core_autowire_without_annotation.model.A.displayB(A.java:66)
+//			at com.spring_core_autowire_without_annotation.MainApp_ByConstructor_AllBeans.main(MainApp_ByConstructor_AllBeans.java:19)
+			// as two constructors cannot be called together.
+			a.displayC();
 
 		} catch (Exception e) {
 
