@@ -15,6 +15,17 @@ public class Profile {
 
 	}
 
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+
+		System.out.println("setStudent(Student student)\n");
+		this.student = student;
+
+	}
+
 	public void printStudentName() {
 
 		System.out.println("Name : " + student.getName());
