@@ -1,10 +1,10 @@
-package com.spring_core_autowire_abstract_class_with_annotation;
+package com.spring_core_autowire_abstract_class_without_annotation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.spring_core_autowire_abstract_class_with_annotation.config.BeanConfig;
-import com.spring_core_autowire_abstract_class_with_annotation.service.ShapeService;
+import com.spring_core_autowire_abstract_class_without_annotation.config.BeanConfig;
+import com.spring_core_autowire_abstract_class_without_annotation.service.ShapeService;
 
 public class App {
 

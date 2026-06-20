@@ -1,8 +1,8 @@
-package com.spring_core_autowire_abstract_class_with_annotation.service;
+package com.spring_core_autowire_abstract_class_without_annotation.service;
 
 import org.springframework.stereotype.Service;
 
-import com.spring_core_autowire_abstract_class_with_annotation.model.Shape;
+import com.spring_core_autowire_abstract_class_without_annotation.component.Shape;
 
 //@Component // -- This will also work fine
 @Service
@@ -13,6 +13,7 @@ public class ShapeService {
 	public ShapeService(Shape shape) {
 
 		this.shape = shape;
+
 		System.out.println("ShapeService(Shape shape) called...");
 
 	}

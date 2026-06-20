@@ -1,4 +1,4 @@
-package com.spring_core_autowire_abstract_class_with_annotation.model;
+package com.spring_core_autowire_abstract_class_without_annotation.component;
 
 public class Square extends Shape {
 
