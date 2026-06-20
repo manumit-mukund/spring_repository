@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.spring_core_autowire_abstract_class_without_annotation.component.Shape;
 
 //@Component // -- This will also work fine
-@Service
+@Service // One of the annotations is a must
 public class ShapeService {
 
 	private Shape shape;

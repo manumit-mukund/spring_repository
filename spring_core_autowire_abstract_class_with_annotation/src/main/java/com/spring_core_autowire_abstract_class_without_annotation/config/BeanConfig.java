@@ -8,8 +8,7 @@ import com.spring_core_autowire_abstract_class_without_annotation.component.Circ
 import com.spring_core_autowire_abstract_class_without_annotation.component.Square;
 
 @Configuration
-@ComponentScan(basePackages = { "com.com.spring_core_autowire_abstract_class_with_annotation.component",
-		"com.spring_core_autowire_abstract_class_without_annotation.service" })
+@ComponentScan(basePackages = { "com.spring_core_autowire_abstract_class_without_annotation.service" })
 public class BeanConfig {
 
 //	If we want to use Square, we'll have to comment out the Circle bean
