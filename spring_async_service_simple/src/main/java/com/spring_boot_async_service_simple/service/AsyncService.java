@@ -15,7 +15,7 @@ public class AsyncService {
 			
 			System.out.println("Thread is sleeping...");
 
-			Thread.sleep(3000); // simulate long-running task
+			Thread.sleep(5000); // simulate long-running task
 			
 			System.out.println("Thread is awake...");
 
