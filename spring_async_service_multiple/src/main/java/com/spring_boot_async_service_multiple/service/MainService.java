@@ -23,12 +23,12 @@ public class MainService {
 		CompletableFuture<String> completableFuture3 = asyncService.asyncTaskThree();
 
 		// Wait for all tasks to complete
-		CompletableFuture<Void> allTasks = CompletableFuture.allOf(completableFuture1, completableFuture2,
+		CompletableFuture<Void> completableFutureallTasks = CompletableFuture.allOf(completableFuture1, completableFuture2,
 				completableFuture3);
 
-		allTasks.join();
+		completableFutureallTasks.join();
 
-		System.out.println("completableFuture1.join() = " + completableFuture1.join());
+		//System.out.println("completableFuture1.join() = " + completableFuture1.join()); It will also return the result of task one
 		System.out.println("completableFuture1.get() = " + completableFuture1.get());
 		System.out.println("completableFuture2.get() = " + completableFuture2.get());
 		System.out.println("completableFuture3.get() = " + completableFuture3.get());
