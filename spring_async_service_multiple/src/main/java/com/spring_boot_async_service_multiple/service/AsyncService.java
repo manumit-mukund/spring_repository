@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AsyncService {
 
-	@Async
+	@Async("taskExecutor")
 	public CompletableFuture<String> asyncTaskOne() {
 
 		try {
@@ -24,7 +24,7 @@ public class AsyncService {
 		return CompletableFuture.completedFuture("Result from Task One");
 	}
 
-	@Async
+	@Async("taskExecutor")
 	public CompletableFuture<String> asyncTaskTwo() {
 
 		try {
@@ -40,7 +40,7 @@ public class AsyncService {
 		return CompletableFuture.completedFuture("Result from Task Two");
 	}
 
-	@Async
+	@Async("taskExecutor")
 	public CompletableFuture<String> asyncTaskThree() {
 
 		try {

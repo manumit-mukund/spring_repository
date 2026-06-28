@@ -5,45 +5,35 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring_boot_async_service_multiple.service.AsyncService;
+import com.spring_boot_async_service_multiple.service.MainService;
 
 @RestController
 public class AsyncController {
 
-	private final AsyncService asyncService;
+	private final MainService mainService;
 
-	public AsyncController(AsyncService asyncService) {
+	public AsyncController(MainService mainService) {
 
-		this.asyncService = asyncService;
+		this.mainService = mainService;
 
 	}
 
 	@GetMapping("/multi-async")
-	public CompletableFuture<String> callMultipleAsync() {
+	public CompletableFuture<String> callMultipleAsync() throws Exception {
 
-		long startTime = System.currentTimeMillis();
-		System.out.println("Process started at: " + startTime);
-
-		CompletableFuture<String> task1 = asyncService.asyncTaskOne();
-		CompletableFuture<String> task2 = asyncService.asyncTaskTwo();
-		CompletableFuture<String> task3 = asyncService.asyncTaskThree();
-
-		CompletableFuture<Void> completableFutureAllResult = CompletableFuture.allOf(task1, task2, task3);
-
-		// Combine all results once they are done
-		CompletableFuture<String> finalresult = completableFutureAllResult
-				.thenApply(v -> String.join(" | ", task1.join(), task2.join(), task3.join()));
-
-		long endTime = System.currentTimeMillis();
-		System.out.println("Process ended at: " + startTime);
-
-		long duration = endTime - startTime;
-
-		System.out.println("Total elapsed time in seconds: " + duration + " milliseconds");
-
-		return finalresult;
+		return mainService.executeTasks();
 
 		// Test url: http://localhost:9001/multi-async
 
 	}
 }
+
+//@GetMapping("/multi-async")
+//public CompletableFuture<String> callMultipleAsync() {
+
+//	// Combine all results once they are done
+//	return CompletableFuture.allOf(task1, task2, task3)
+//			.thenApply(v -> String.join(" | ", task1.join(), task2.join(), task3.join()));
+
+//
+//}
