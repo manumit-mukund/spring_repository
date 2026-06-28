@@ -26,7 +26,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String username) {
 
-		return listUser.stream().filter(user -> user.getUsername().equals(username)).findAny().orElse(null);
+		return listUser
+				.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.findAny()
+				.orElse(null);
 
 	}
 
@@ -40,6 +44,7 @@ public class UserServiceImpl implements UserService {
 	public User addUser(User user) {
 
 		listUser.add(user);
+		
 		return user;
 
 	}
