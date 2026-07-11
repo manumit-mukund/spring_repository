@@ -1,0 +1,8 @@
+Steps to test API Gateway through Eureka:
+
+1. Start the Eureka Service and hit the url on your browser: http://localhost:8761
+2. Start the API gateway service and Refresh the Eureka tab to check that it's available there
+3. Start the User service and Refresh the Eureka tab to check that it's available there
+4. Start the Contact service Refresh the Eureka tab to check that it's available there
+5. Open up another tab on your browser and hit the url: http://localhost:8765/users/102 to fetch the contact details of a particular user
+6. Open up another tab on your browser and hit the url: http://localhost:8765/users/getall to fetch the contact details of all the users
