@@ -1,4 +1,4 @@
-Steps to test API Gateway through Eureka:
+Steps to implement the API Gateway via Eureka in SpringBoot microservices :
 
 1. Start the Eureka Service and hit the url on your browser: http://localhost:8761
 2. Start the API gateway service and Refresh the Eureka tab to check that it's available there
