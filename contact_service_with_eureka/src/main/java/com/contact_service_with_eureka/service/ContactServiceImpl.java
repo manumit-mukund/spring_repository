@@ -21,10 +21,10 @@ public class ContactServiceImpl implements ContactService {
 		super();
 		
 		listContact = List.of(
-				new Contact(1L, "c1@gmail.com", "c1", 1311L), 
-				new Contact(2L, "c2@gmail.com", "c2", 1311L),
-				new Contact(3L, "c3@gmail.com", "c3", 1312L), 
-				new Contact(4L, "c4@gmail.com", "c4", 1313L));
+				new Contact(1L, "c1@gmail.com", "c1", 101L), 
+				new Contact(2L, "c2@gmail.com", "c2", 102L),
+				new Contact(3L, "c3@gmail.com", "c3", 102L), 
+				new Contact(4L, "c4@gmail.com", "c4", 103L));
 
 	}
 
