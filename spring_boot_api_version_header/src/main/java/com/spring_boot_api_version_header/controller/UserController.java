@@ -13,7 +13,7 @@ public class UserController {
 
 		return "Users API Version 1";
 
-		// Postman Test url: http://localhost:9001/api/users
+		// Postman GET Test url: http://localhost:9001/api/users
 		// Headers info:
 		// key: X-API-VERSION
 		// value: 1
@@ -25,7 +25,7 @@ public class UserController {
 
 		return "Users API Version 2";
 
-		// Postman Test url: http://localhost:9001/api/users
+		// Postman GET Test url: http://localhost:9001/api/users
 		// Headers info:
 		// key: X-API-VERSION
 		// value: 2
