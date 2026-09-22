@@ -1,5 +1,6 @@
 package com.spring_boot_saga_orchestrator_pattern.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +15,8 @@ import com.spring_boot_saga_orchestrator_pattern.service.OrderService;
 @RequestMapping("/order")
 public class OrderController {
 
-	private final OrderService orderService;
-
-	public OrderController(OrderService orderService) {
-
-		this.orderService = orderService;
-
-	}
+	@Autowired
+	private OrderService orderService;
 
 	@PostMapping("/create")
 	public ResponseEntity<String> createOrder(@RequestBody OrderRequest orderRequest) {
@@ -38,7 +34,7 @@ public class OrderController {
 		}
 
 //		Tet url: http://localhost:9001/order/create
-//		Postman data: 
+//		Postman data (in body tab-raw tab and select json data type):  
 //		{
 //
 //		    "orderId": "1" ,

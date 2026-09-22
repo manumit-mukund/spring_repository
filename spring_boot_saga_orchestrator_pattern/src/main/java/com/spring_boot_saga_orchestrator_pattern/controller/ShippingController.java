@@ -16,14 +16,13 @@ public class ShippingController {
 	@PostMapping("/ship")
 	public ResponseEntity<String> shipOrder(@RequestBody ShippingRequest shippingRequest) {
 
-		// Assume shipping logic here
 		if (shippingRequest.getProduct() != null && !shippingRequest.getProduct().isEmpty()) {
 
-			return new ResponseEntity<>("Shipping successful", HttpStatus.OK);
+			return new ResponseEntity<>("ShippingController: Shipping successful", HttpStatus.OK);
 
 		} else {
 
-			return new ResponseEntity<>("Shipping failed", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("ShippingController: Shipping failed", HttpStatus.BAD_REQUEST);
 
 		}
 	}

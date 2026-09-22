@@ -37,7 +37,5 @@ public class ShippingRequest {
 	public String toString() {
 		return "ShippingRequest [orderId=" + orderId + ", product=" + product + "]";
 	}
-	
-	
 
 }

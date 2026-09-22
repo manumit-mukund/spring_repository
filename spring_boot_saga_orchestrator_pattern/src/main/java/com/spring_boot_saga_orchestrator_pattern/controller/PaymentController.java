@@ -16,13 +16,17 @@ public class PaymentController {
 	@PostMapping("/process")
 	public ResponseEntity<String> processPayment(@RequestBody PaymentRequest paymentRequest) {
 
+		//PaymentResponse paymentResponse = new PaymentResponse(paymentRequest.getOrderId(), paymentRequest.getAmount());
+		
 		if (paymentRequest.getAmount() > 0) {
 
-			return new ResponseEntity<>("Payment successful", HttpStatus.OK);
+			return new ResponseEntity<>(HttpStatus.OK);
 
 		} else {
+			
+			System.out.println("HttpStatus.BAD_REQUEST");
 
-			return new ResponseEntity<>("Payment failed", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
 		}
 	}
