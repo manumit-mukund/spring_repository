@@ -13,7 +13,7 @@ public class UserController {
 
 		return "Users API Version 1";
 
-		// test url: http://localhost:9001/api/v1/users
+		// Postman GET test url: http://localhost:9001/api/v1/users
 
 	}
 
@@ -22,7 +22,7 @@ public class UserController {
 
 		return "Users API Version 2";
 
-		// Test url: http://localhost:9001/api/v2/users
+		// Postman GET Test url: http://localhost:9001/api/v2/users
 
 	}
 }
