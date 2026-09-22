@@ -13,7 +13,7 @@ public class UserController {
 
 		return "Users API Version 1";
 
-		// Test url: Postman: http://localhost:9001/api/users
+		// Postman GET Test url: http://localhost:9001/api/users
 		// Headers:
 		// key: Accept
 		// value: application/vnd.app-v1+json
@@ -25,7 +25,7 @@ public class UserController {
 
 		return "Users API Version 2";
 
-		// Test url: Postman: http://localhost:9001/api/users
+		// Postman GET Test url: http://localhost:9001/api/users
 		// Headers:
 		// key: Accept
 		// value: application/vnd.app-v2+json
